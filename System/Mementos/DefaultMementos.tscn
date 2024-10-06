@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvhwksmq8kg5n"]
+
+[ext_resource type="Script" path="res://System/Mementos/PaleGlass.gd" id="1_tgmlf"]
+[ext_resource type="Texture2D" uid="uid://c4kkefabeuf7h" path="res://System/Mementos/Sprites/MementoGraphics2.png" id="2_ec0sg"]
+[ext_resource type="Script" path="res://System/Mementos/Lodestone.gd" id="3_fqx3t"]
+[ext_resource type="Texture2D" uid="uid://dvbwt55ljry4o" path="res://System/Mementos/Sprites/MementoGraphics3.png" id="4_baelx"]
+
+[node name="DefaultMementos" type="Node"]
+
+[node name="PaleGlass" type="Node" parent="."]
+script = ExtResource("1_tgmlf")
+displayedName = "Pale Glass"
+description = "Reduces the maximum uses to 1, but adds 1 level."
+displayTexture = ExtResource("2_ec0sg")
+
+[node name="Lodestone" type="Node" parent="."]
+script = ExtResource("3_fqx3t")
+displayedName = "Lodestone"
+description = "Doubles maximum uses, but reduces level by 1."
+displayTexture = ExtResource("4_baelx")

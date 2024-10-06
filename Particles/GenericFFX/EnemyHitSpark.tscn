@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5in4bg4pehfs"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_uopns"]
+[ext_resource type="Texture2D" uid="uid://dollvreuce33s" path="res://Particles/DefaultSprites/flameParts2.png" id="2_bl4ts"]
+[ext_resource type="Texture2D" uid="uid://crn7waveg1wsr" path="res://Particles/DefaultSprites/ThiccLine.png" id="3_45qig"]
+
+[sub_resource type="Curve" id="Curve_ppvp5"]
+_data = [Vector2(0.00531915, 0.00564682), 0.0, 0.813807, 0, 0, Vector2(1, 1), 1.29047, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_cdulx"]
+offsets = PackedFloat32Array(0, 0.689655, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.491498, 0.959618, 0.686275, 0.00633324, 0, 0.38, 0)
+
+[sub_resource type="Gradient" id="Gradient_0e4pt"]
+offsets = PackedFloat32Array(0, 0.853448, 1)
+colors = PackedColorArray(1, 0.774164, 0.719625, 1, 0.999098, 0.631408, 0.614502, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_c3ip1"]
+offsets = PackedFloat32Array(0, 0.689655, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.491498, 0.959618, 0.686275, 0.00633324, 0, 0.38, 0)
+
+[sub_resource type="Gradient" id="Gradient_ebvtn"]
+offsets = PackedFloat32Array(0, 0.853448, 1)
+colors = PackedColorArray(1, 0.774164, 0.719625, 1, 0.999098, 0.631408, 0.614502, 1, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+z_index = 1000
+script = ExtResource("1_uopns")
+
+[node name="Sphere" type="CPUParticles2D" parent="."]
+amount = 3
+lifetime = 0.2
+explosiveness = 1.0
+texture = ExtResource("2_bl4ts")
+spread = 66.82
+gravity = Vector2(0, 0)
+initial_velocity_min = 171.72
+initial_velocity_max = 479.8
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ppvp5")
+color_ramp = SubResource("Gradient_cdulx")
+color_initial_ramp = SubResource("Gradient_0e4pt")
+
+[node name="StraightSparks" type="CPUParticles2D" parent="."]
+amount = 7
+lifetime = 0.15
+explosiveness = 1.0
+texture = ExtResource("3_45qig")
+particle_flag_align_y = true
+spread = 23.82
+gravity = Vector2(0, 0)
+initial_velocity_min = 712.12
+initial_velocity_max = 1000.0
+scale_amount_min = 0.33
+scale_amount_max = 0.75
+scale_amount_curve = SubResource("Curve_ppvp5")
+color_ramp = SubResource("Gradient_c3ip1")
+color_initial_ramp = SubResource("Gradient_ebvtn")
+
+[node name="StraightSparks2" type="CPUParticles2D" parent="."]
+amount = 4
+lifetime = 0.15
+explosiveness = 1.0
+texture = ExtResource("3_45qig")
+particle_flag_align_y = true
+spread = 157.06
+gravity = Vector2(0, 0)
+initial_velocity_min = 197.41
+initial_velocity_max = 406.86
+scale_amount_min = 0.33
+scale_amount_max = 0.75
+scale_amount_curve = SubResource("Curve_ppvp5")
+color_ramp = SubResource("Gradient_c3ip1")
+color_initial_ramp = SubResource("Gradient_ebvtn")

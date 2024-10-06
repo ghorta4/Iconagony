@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c5pjsx0cy5i8d"
+path="res://.godot/imported/StageWin.ogg-4bed5f238eb147242218dc91975bab1c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Library/Universal/UI/StageWin.ogg"
+dest_files=["res://.godot/imported/StageWin.ogg-4bed5f238eb147242218dc91975bab1c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

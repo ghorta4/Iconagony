@@ -1,0 +1,338 @@
+[gd_scene load_steps=22 format=3 uid="uid://blb30fcn746b1"]
+
+[ext_resource type="Shader" path="res://Stages/Heavy Heart Gate/Scripts/ColorPillar.gdshader" id="1_hc56t"]
+[ext_resource type="Script" path="res://System/Stages/Stage.gd" id="1_n8jak"]
+[ext_resource type="Texture2D" uid="uid://b3bvxugfoy4od" path="res://Stages/Heavy Heart Gate/Sprites/FarLoop3.png" id="2_0q20r"]
+[ext_resource type="Texture2D" uid="uid://fn8hdlllwa7d" path="res://white square.png" id="2_2hiha"]
+[ext_resource type="Texture2D" uid="uid://c0fs5lwat3oig" path="res://Stages/Heavy Heart Gate/Sprites/FarLoop1.png" id="2_7djgo"]
+[ext_resource type="Texture2D" uid="uid://dfkhea6rejtur" path="res://Stages/Heavy Heart Gate/Sprites/FarLoop2.png" id="3_28vi6"]
+[ext_resource type="Texture2D" uid="uid://vgwosxgphp3a" path="res://Stages/Heavy Heart Gate/Sprites/FarLoop4.png" id="3_omlb1"]
+[ext_resource type="Texture2D" uid="uid://b3hqa8bhnkkuv" path="res://Stages/Heavy Heart Gate/Sprites/GroundStuffs2.png" id="3_vpr01"]
+[ext_resource type="Texture2D" uid="uid://v4ph1bnyurbn" path="res://Stages/Heavy Heart Gate/Sprites/CloseLoop4.png" id="4_cukjd"]
+[ext_resource type="Texture2D" uid="uid://dgyqajm0t1fyb" path="res://Stages/Heavy Heart Gate/Sprites/CloseLoop5.png" id="4_kec55"]
+[ext_resource type="Script" path="res://System/Stages/SpireMovement.gd" id="4_xepbj"]
+[ext_resource type="Texture2D" uid="uid://lq6jtm2hso1c" path="res://Stages/Heavy Heart Gate/Sprites/CloseLoop3.png" id="5_mpw08"]
+[ext_resource type="Texture2D" uid="uid://dfcr0qb84d08r" path="res://Stages/Heavy Heart Gate/Sprites/CloseLoop1.png" id="5_rp4b0"]
+[ext_resource type="Texture2D" uid="uid://dcsyivm2rhkpj" path="res://Stages/Heavy Heart Gate/Sprites/GroundStuffs1.png" id="6_6cuso"]
+[ext_resource type="Texture2D" uid="uid://c0tj12ahpfhac" path="res://Stages/Heavy Heart Gate/Sprites/CloseLoop2.png" id="6_s1id3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mb5cd"]
+shader = ExtResource("1_hc56t")
+shader_parameter/curve = 0.9
+shader_parameter/alphaReduction = 2.88
+shader_parameter/alphaFalloff = 8.645
+shader_parameter/fogDivisor = 0.3
+shader_parameter/gridSize = Vector2(15, 36)
+shader_parameter/timeScale = Vector2(-0.012, -0.03)
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/targetColor1 = Color(0.213403, 0.642109, 0.799719, 1)
+shader_parameter/targetColor2 = Color(0.137299, 0.400946, 0.597716, 1)
+shader_parameter/targetColor3 = Color(0.548262, 0.742687, 0.821767, 1)
+shader_parameter/targetColor4 = Color(0.000246983, 0.0726707, 0.345642, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mop6"]
+shader = ExtResource("1_hc56t")
+shader_parameter/curve = -2.86
+shader_parameter/alphaReduction = 2.88
+shader_parameter/alphaFalloff = 8.645
+shader_parameter/fogDivisor = 1.055
+shader_parameter/gridSize = Vector2(9, 12)
+shader_parameter/timeScale = Vector2(0.037, 0.03)
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/targetColor1 = Color(0.340987, 0.756493, 0.919604, 1)
+shader_parameter/targetColor2 = Color(0.137299, 0.400946, 0.597716, 1)
+shader_parameter/targetColor3 = Color(0.655745, 0.789319, 0.790287, 1)
+shader_parameter/targetColor4 = Color(0.1365, 0.182758, 0.35, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fi0wk"]
+shader = ExtResource("1_hc56t")
+shader_parameter/curve = 0.9
+shader_parameter/alphaReduction = 13.88
+shader_parameter/alphaFalloff = 27.325
+shader_parameter/fogDivisor = 0.3
+shader_parameter/gridSize = Vector2(19, 45)
+shader_parameter/timeScale = Vector2(-0.012, -0.03)
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/targetColor1 = Color(0.213403, 0.642109, 0.799719, 1)
+shader_parameter/targetColor2 = Color(0.137299, 0.400946, 0.597716, 1)
+shader_parameter/targetColor3 = Color(0.548262, 0.742687, 0.821767, 1)
+shader_parameter/targetColor4 = Color(0.0687952, 0, 0.441199, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mtk3"]
+shader = ExtResource("1_hc56t")
+shader_parameter/curve = 2.0
+shader_parameter/alphaReduction = 14.2
+shader_parameter/alphaFalloff = 27.325
+shader_parameter/fogDivisor = 0.3
+shader_parameter/gridSize = Vector2(19, 45)
+shader_parameter/timeScale = Vector2(-0.012, -0.03)
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/targetColor1 = Color(0.213403, 0.642109, 0.799719, 1)
+shader_parameter/targetColor2 = Color(0.137299, 0.400946, 0.597716, 1)
+shader_parameter/targetColor3 = Color(0.566845, 0.74321, 0.786451, 1)
+shader_parameter/targetColor4 = Color(0.0687952, 0, 0.441199, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwlti"]
+shader = ExtResource("1_hc56t")
+shader_parameter/curve = 0.84
+shader_parameter/alphaReduction = 8.175
+shader_parameter/alphaFalloff = 17.3
+shader_parameter/fogDivisor = 0.86
+shader_parameter/gridSize = Vector2(16, 20)
+shader_parameter/timeScale = Vector2(0.012, 0.03)
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/targetColor1 = Color(0.213403, 0.642109, 0.799719, 1)
+shader_parameter/targetColor2 = Color(0.137299, 0.400946, 0.597716, 1)
+shader_parameter/targetColor3 = Color(0.666921, 0.722703, 0.754377, 1)
+shader_parameter/targetColor4 = Color(0.0687952, 0, 0.441199, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vutp"]
+shader = ExtResource("1_hc56t")
+shader_parameter/curve = 0.0
+shader_parameter/alphaReduction = -0.215
+shader_parameter/alphaFalloff = 3.805
+shader_parameter/fogDivisor = 1.08
+shader_parameter/gridSize = Vector2(6, 9)
+shader_parameter/timeScale = Vector2(0.007, 0.03)
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 1.0
+shader_parameter/targetColor1 = Color(0.340987, 0.756493, 0.919604, 1)
+shader_parameter/targetColor2 = Color(0.137299, 0.400946, 0.597716, 1)
+shader_parameter/targetColor3 = Color(0.66, 0.949, 1, 1)
+shader_parameter/targetColor4 = Color(0.471382, 0.55597, 0.821561, 1)
+
+[node name="UnlockingStage" type="Node2D"]
+script = ExtResource("1_n8jak")
+
+[node name="Scroller" type="ParallaxBackground" parent="."]
+
+[node name="Back3" type="ParallaxLayer" parent="Scroller"]
+z_index = -1003
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex3" type="Sprite2D" parent="Scroller/Back3"]
+modulate = Color(0.72, 0.72, 0.72, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 203)
+scale = Vector2(1, 99)
+texture = ExtResource("2_0q20r")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 512)
+
+[node name="Back2" type="ParallaxLayer" parent="Scroller"]
+z_index = -1002
+position = Vector2(0, 499.98)
+motion_scale = Vector2(-0.75, 0.6)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex3" type="Sprite2D" parent="Scroller/Back2"]
+modulate = Color(0.72, 0.72, 0.72, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -202.11)
+texture = ExtResource("3_28vi6")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 512)
+
+[node name="Back1" type="ParallaxLayer" parent="Scroller"]
+z_index = -1001
+position = Vector2(0, 499.98)
+motion_scale = Vector2(-0.5, 0.7)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex2" type="Sprite2D" parent="Scroller/Back1"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -245)
+texture = ExtResource("2_7djgo")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 512)
+
+[node name="tex3" type="Sprite2D" parent="Scroller/Back1"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -754)
+texture = ExtResource("3_omlb1")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 512)
+
+[node name="Spires" type="ParallaxLayer" parent="Scroller"]
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0, 0.85)
+
+[node name="thicc" type="Sprite2D" parent="Scroller/Spires"]
+material = SubResource("ShaderMaterial_mb5cd")
+position = Vector2(389, -378)
+scale = Vector2(3, 7)
+texture = ExtResource("2_2hiha")
+script = ExtResource("4_xepbj")
+curveIntensity = -0.9
+carouselSizeDilation = 0.3
+
+[node name="thicc2" type="Sprite2D" parent="Scroller/Spires"]
+material = SubResource("ShaderMaterial_0mop6")
+position = Vector2(389, -405.98)
+scale = Vector2(3, 7)
+texture = ExtResource("2_2hiha")
+script = ExtResource("4_xepbj")
+curveIntensity = -0.2
+carouselMovement = Vector2(560, 20)
+carouselAngleOffset = -0.8
+carouselSizeDilation = 0.4
+
+[node name="thin" type="Sprite2D" parent="Scroller/Spires"]
+z_index = 1
+material = SubResource("ShaderMaterial_fi0wk")
+position = Vector2(383, -354)
+scale = Vector2(3, 7)
+texture = ExtResource("2_2hiha")
+script = ExtResource("4_xepbj")
+curveIntensity = -0.2
+carouselMovement = Vector2(360, 25)
+carouselAngleOffset = 1.0
+carouselSizeDilation = 0.3
+
+[node name="thin2" type="Sprite2D" parent="Scroller/Spires"]
+material = SubResource("ShaderMaterial_4mtk3")
+position = Vector2(383, -896.98)
+scale = Vector2(3, 7)
+texture = ExtResource("2_2hiha")
+offset = Vector2(0, 100)
+script = ExtResource("4_xepbj")
+curveIntensity = 2.0
+carouselMovement = Vector2(420, 25)
+carouselAngleOffset = 1.5
+carouselSizeDilation = 0.33
+
+[node name="thin3" type="Sprite2D" parent="Scroller/Spires"]
+material = SubResource("ShaderMaterial_jwlti")
+position = Vector2(383, -1000)
+scale = Vector2(3, 7)
+texture = ExtResource("2_2hiha")
+offset = Vector2(0, 100)
+script = ExtResource("4_xepbj")
+curveIntensity = 0.6
+carouselMovement = Vector2(460, 25)
+carouselAngleOffset = -2.0
+carouselSizeDilation = 0.33
+
+[node name="Main" type="Sprite2D" parent="Scroller/Spires"]
+material = SubResource("ShaderMaterial_7vutp")
+position = Vector2(389, 78)
+scale = Vector2(2, 5)
+texture = ExtResource("2_2hiha")
+script = ExtResource("4_xepbj")
+curveIntensity = 0.0
+ignoreSuperTick = true
+carouselMovement = Vector2(0, 0)
+carouselSizeDilation = 0.0
+
+[node name="FF2" type="ParallaxLayer" parent="Scroller"]
+z_index = 1001
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0.5, 0.9)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex2" type="Sprite2D" parent="Scroller/FF2"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -786)
+texture = ExtResource("5_mpw08")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 512)
+
+[node name="FF" type="ParallaxLayer" parent="Scroller"]
+z_index = 1002
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0.64, 0.94)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/FF"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -40)
+texture = ExtResource("4_kec55")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+
+[node name="FM2" type="ParallaxLayer" parent="Scroller"]
+z_index = 1003
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0.84, 0.96)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="top1" type="Sprite2D" parent="Scroller/FM2"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -949)
+texture = ExtResource("5_rp4b0")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2048, 512)
+
+[node name="top2" type="Sprite2D" parent="Scroller/FM2"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -5030)
+texture = ExtResource("6_s1id3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2048, 4096)
+
+[node name="FM" type="ParallaxLayer" parent="Scroller"]
+z_index = 1004
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0.87, 0.97)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/FM"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("4_cukjd")
+centered = false
+offset = Vector2(0, -100)
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+
+[node name="Front" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(0, 499.98)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex2" type="Sprite2D" parent="Scroller/Front"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(1, 100)
+texture = ExtResource("6_6cuso")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+
+[node name="tex" type="Sprite2D" parent="Scroller/Front"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("3_vpr01")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+
+[node name="Ground" type="Node2D" parent="."]

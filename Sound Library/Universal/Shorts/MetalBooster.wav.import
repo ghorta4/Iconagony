@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds2sayuonmsvg"
+path="res://.godot/imported/MetalBooster.wav-e020eceee92cbb899a630806c8fa4c37.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Shorts/MetalBooster.wav"
+dest_files=["res://.godot/imported/MetalBooster.wav-e020eceee92cbb899a630806c8fa4c37.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,120 @@
+[gd_scene load_steps=14 format=3 uid="uid://b6m1kxt1eyjcs"]
+
+[ext_resource type="Script" path="res://UI/DefaultControlScheme/AdvMoveButton.gd" id="1_0dkv7"]
+[ext_resource type="Shader" path="res://UI/MoveButton.gdshader" id="1_c6gcu"]
+[ext_resource type="Texture2D" uid="uid://tb581ubn7nwq" path="res://UI/Graphics/MoveButton.png" id="2_gddts"]
+[ext_resource type="FontFile" uid="uid://bkawxbab3y72x" path="res://UI/Fonts/DMSans_18pt-ExtraBold.ttf" id="3_ohd8c"]
+[ext_resource type="Texture2D" uid="uid://dpule6mhb77o0" path="res://UI/Graphics/MoveButton2.png" id="4_x5sbs"]
+[ext_resource type="AudioStream" uid="uid://c2wbnm5bcygse" path="res://Sound Library/Universal/UI/Ping2.wav" id="6_eryuc"]
+[ext_resource type="AudioStream" uid="uid://ctb47oir488w1" path="res://Sound Library/Universal/Shorts/Metronome.wav" id="7_137ft"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8vqa6"]
+shader = ExtResource("1_c6gcu")
+shader_parameter/targetColor1 = Color(1, 1, 1, 1)
+shader_parameter/targetColor2 = Color(0.878431, 0.878431, 0.878431, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0.966785, 0.595741, 0.572861, 1)
+shader_parameter/enableRainbowSheen = false
+shader_parameter/foilModulate = Color(1, 1, 1, 1)
+shader_parameter/foilDesaturate = 0.0
+shader_parameter/enableFoilNoise = false
+shader_parameter/enableScreenReflection = false
+shader_parameter/fillPercent = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwg76"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omykq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8r3m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ieemt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvnyv"]
+
+[node name="AdvButton" type="Control"]
+material = SubResource("ShaderMaterial_8vqa6")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -800.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 20)
+mouse_filter = 1
+script = ExtResource("1_0dkv7")
+
+[node name="HForm" type="Control" parent="."]
+use_parent_material = true
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="Back" type="TextureRect" parent="HForm"]
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_right = 253.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_gddts")
+
+[node name="Text" type="Button" parent="HForm"]
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 39.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ohd8c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qwg76")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_omykq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a8r3m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ieemt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fvnyv")
+action_mode = 0
+text = "<error>"
+
+[node name="VForm" type="Control" parent="."]
+visible = false
+use_parent_material = true
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="Back" type="TextureRect" parent="VForm"]
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_right = 253.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("4_x5sbs")
+
+[node name="Text" type="Button" parent="VForm"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -6.0
+offset_right = 273.0
+offset_bottom = 33.0
+rotation = 0.436332
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ohd8c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qwg76")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_omykq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a8r3m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ieemt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fvnyv")
+action_mode = 0
+text = "<error>"
+
+[node name="MouseOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_eryuc")
+volume_db = -8.915
+
+[node name="BreakBeep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_137ft")
+volume_db = 2.476

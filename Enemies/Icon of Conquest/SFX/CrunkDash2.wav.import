@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbiqn44ebavlv"
+path="res://.godot/imported/CrunkDash2.wav-9d5c3183cab1c7257db4da110bdbf750.sample"
+
+[deps]
+
+source_file="res://Enemies/Icon of Conquest/SFX/CrunkDash2.wav"
+dest_files=["res://.godot/imported/CrunkDash2.wav-9d5c3183cab1c7257db4da110bdbf750.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

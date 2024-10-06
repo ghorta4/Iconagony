@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjm81v3txo4vf"]
+
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="1_qu0ww"]
+
+[node name="MovementBox" type="Node2D"]
+script = ExtResource("1_qu0ww")
+damage = null
+useDefaultDamagePowerScaling = null
+damageIncreasePerLevel = null
+damageReductionFactor = null
+hitGroup = null
+hitPriority = null
+knockbackDirection = null
+knockbackForce = null
+knockbackAwayFromCenter = null
+inheritAttackersSpeedOnHitPercent = null
+stunTicks = null
+hitstopTicks = null
+selfHitstopTicks = null
+hurtState = null
+hurtStateAir = null
+startFrame = null
+duration = null
+hitcancellable = null
+hitcancelDelay = null
+loopHitbox = null
+ticksPerLoop = null
+hitSoundVolume = null
+bassSoundVolume = null
+whiffSoundVolume = null
+playWhiffOnHit = null
+allowFallbackParticles = null
+autoAdjustParticleAngle = null
+particleOffset = null

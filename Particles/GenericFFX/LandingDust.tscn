@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg3ngxu8ysld1"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_3vxqx"]
+[ext_resource type="Texture2D" uid="uid://b8p2p24b4k7jp" path="res://Particles/DefaultSprites/MiscParticles3.png" id="2_6vht3"]
+
+[sub_resource type="Curve" id="Curve_wlakx"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 186.902), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_pixps"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 5.85643), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_su5mp"]
+offsets = PackedFloat32Array(0, 0.475694, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_tepcl"]
+colors = PackedColorArray(1, 1, 1, 0.384314, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_3vxqx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 6
+lifetime = 0.2
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+texture = ExtResource("2_6vht3")
+emission_shape = 3
+emission_rect_extents = Vector2(30, 1)
+direction = Vector2(0, 1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 71.43
+initial_velocity_max = 113.09
+radial_accel_min = 4.76
+radial_accel_max = 4.76
+radial_accel_curve = SubResource("Curve_wlakx")
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_pixps")
+color_ramp = SubResource("Gradient_su5mp")
+color_initial_ramp = SubResource("Gradient_tepcl")

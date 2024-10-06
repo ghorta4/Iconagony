@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c35eu6ng7f2mn"
+path="res://.godot/imported/Ping.wav-25cc190f91583177bbad7cbafcb9fc88.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/UI/Ping.wav"
+dest_files=["res://.godot/imported/Ping.wav-25cc190f91583177bbad7cbafcb9fc88.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

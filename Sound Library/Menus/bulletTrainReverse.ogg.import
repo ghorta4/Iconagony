@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1jvbytt3aesl"
+path="res://.godot/imported/bulletTrainReverse.ogg-b5366591341a5ba8dce74b938c59ae4d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Library/Menus/bulletTrainReverse.ogg"
+dest_files=["res://.godot/imported/bulletTrainReverse.ogg-b5366591341a5ba8dce74b938c59ae4d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

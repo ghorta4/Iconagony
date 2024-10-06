@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://sbxndcay1wyk"]
+
+[ext_resource type="Texture2D" uid="uid://cd2y3skopbfjk" path="res://UI/Graphics/MoveEditorButton.png" id="1_xhwpv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5jmj"]
+texture = ExtResource("1_xhwpv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7mx5"]
+texture = ExtResource("1_xhwpv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+modulate_color = Color(0.877616, 0.877616, 0.877616, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mklmo"]
+texture = ExtResource("1_xhwpv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+modulate_color = Color(0.597174, 0.597177, 0.597175, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7f1kg"]
+texture = ExtResource("1_xhwpv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 16, 16)
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nam38"]
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_v5jmj")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_q7mx5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_mklmo")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_7f1kg")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_nam38")

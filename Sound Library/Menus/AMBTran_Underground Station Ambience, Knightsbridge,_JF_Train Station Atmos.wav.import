@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lcbqa14t5vrd"
+path="res://.godot/imported/AMBTran_Underground Station Ambience, Knightsbridge,_JF_Train Station Atmos.wav-90f710e78dbd204d91290fa206020792.sample"
+
+[deps]
+
+source_file="res://Sound Library/Menus/AMBTran_Underground Station Ambience, Knightsbridge,_JF_Train Station Atmos.wav"
+dest_files=["res://.godot/imported/AMBTran_Underground Station Ambience, Knightsbridge,_JF_Train Station Atmos.wav-90f710e78dbd204d91290fa206020792.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

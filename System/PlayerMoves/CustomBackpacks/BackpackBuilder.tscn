@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cefv5weaff1mp"]
+
+[ext_resource type="Script" path="res://System/PlayerMoves/CustomBackpacks/DefaultPack.gd" id="1_ueqfv"]
+[ext_resource type="Script" path="res://System/PlayerMoves/CustomBackpacks/CollectorsEdition.gd" id="2_phpxe"]
+[ext_resource type="Script" path="res://System/PlayerMoves/CustomBackpacks/ScalperPack.gd" id="3_dnqwy"]
+[ext_resource type="Script" path="res://System/PlayerMoves/CustomBackpacks/LimitedPack.gd" id="4_2uf4v"]
+
+[node name="BackpackBuilder" type="Node"]
+
+[node name="Basic" type="Node" parent="."]
+script = ExtResource("1_ueqfv")
+displayName = "Basic Pack"
+displayDescription = "A standard pack that balances equally between the sidepack, the main pack, and the pickup moves. Sidepack moves can be reused infinitely and gain a level boost."
+
+[node name="Collectors" type="Node" parent="."]
+script = ExtResource("2_phpxe")
+displayName = "Collector's Edition"
+displayDescription = "A backpack with a large inventory, but not much else."
+MaxMoveSlots = 9
+MaxSidepackSlots = 1
+MaxPickupSlots = 2
+
+[node name="Scalper" type="Node" parent="."]
+script = ExtResource("3_dnqwy")
+displayName = "Scalper Kit"
+displayDescription = "A small pack, but every move in it is much stronger... if you can forgive the fact that it doesn't have any sidepack slots."
+MaxMoveSlots = 5
+MaxSidepackSlots = 0
+MaxPickupSlots = 3
+
+[node name="Limited" type="Node" parent="."]
+script = ExtResource("4_2uf4v")
+displayName = "Limited Collection"
+displayDescription = "Has more of everything, but it comes with a (lackluster) curse...!"
+MaxMoveSlots = 7
+MaxSidepackSlots = 3
+MaxPickupSlots = 5

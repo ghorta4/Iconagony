@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv1w0m5hl70du"]
+
+[ext_resource type="Script" path="res://System/PlayerMoves/MoveClass.gd" id="1_mwexk"]
+[ext_resource type="PackedScene" uid="uid://c3guuasf5varg" path="res://Strife/ActionUI/JumpPlot.tscn" id="2_p57bc"]
+[ext_resource type="PackedScene" uid="uid://d1m0cceltdyuy" path="res://UI/Slider/Slider.tscn" id="3_bwhoc"]
+[ext_resource type="Script" path="res://Strife/MoveClasses/Grindstone.gd" id="4_3k7u5"]
+[ext_resource type="PackedScene" uid="uid://xqlv7jxvtv50" path="res://Strife/ActionUI/CirclePlot.tscn" id="5_wirba"]
+
+[node name="MoveBuilder" type="Node"]
+
+[node name="BaseSet" type="Node" parent="."]
+
+[node name="Ascend" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "March 10th"
+description = "Jumps upwards. Good vertical movement, but poor horizontal utility."
+flavorDesc = "Good thing you can't break your legs. Or anything, really."
+groundedState = "Jump"
+aerialState = "Jump"
+defaultMaxUses = 7
+pickupMoves = "Bloodstep
+0.05"
+UIScene = ExtResource("2_p57bc")
+
+[node name="Escapade" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Abscond"
+description = "Move quickly. Nearly instant."
+flavorDesc = "Why does an icon move? No concept is truly immutable- they're shaped by the world around them. To change position is to change your very existence."
+groundedState = "Dash"
+aerialState = "Dash"
+usability = 2
+pickupMoves = "Bloodstep
+0.05"
+UIScene = ExtResource("3_bwhoc")
+
+[node name="The Line" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "The Line"
+description = "Basic horizontal strike. Has extremely high durability."
+flavorDesc = "\"I'll say it again: It's not a staff, it's a LINE!\"  \"A line is full of potential, possibilities. It's many things, whatever I wish it to be.\""
+groundedState = "Swipe1G"
+aerialState = "Swipe1A"
+defaultMaxUses = 8
+pickupMoves = "Grindstone
+0.1"
+
+[node name="Grindstone" type="Node" parent="BaseSet"]
+script = ExtResource("4_3k7u5")
+displayName = "Grindstone"
+description = "Lackluster overhead attack. Boosts the level of the above move by 1, and reduces the level of the below move by 1."
+flavorDesc = "All systems are inherently balanced. But, why do we succeed? It's because we learn to break these systems."
+groundedState = "GrindG"
+aerialState = "GrindA"
+defaultMaxUses = 4
+usability = null
+pickupMoves = "FireSnap
+0.05"
+
+[node name="Divebomb" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Rocking Stone"
+description = "Spinning divekick. Air only."
+flavorDesc = "There exists nothing beneath our world, for waking eyes have never set upon it."
+groundedState = "DiveStart"
+aerialState = "DiveStart"
+defaultMaxUses = 5
+usability = 1
+UIScene = ExtResource("5_wirba")
+
+[node name="Bloodstep" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Bloodstep"
+description = "A quick dodge. Can be aimed."
+flavorDesc = "Few have ever made a living hunting the icons, even when they were first born. They work outside the normal machinations of time, after all..."
+groundedState = "DodgeG"
+aerialState = "DodgeA"
+defaultMaxUses = 4
+pickupMoves = "FireSnap
+0.05"
+UIScene = ExtResource("5_wirba")
+
+[node name="FireSnap" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "GLOOM"
+description = "A slow, powerful blast."
+flavorDesc = "We live in the realm at the end of all time, home of the dead and origin of the new living. They thought none were left to arrive, but..."
+groundedState = "SnapG1"
+aerialState = "SnapA1"
+defaultMaxUses = 2

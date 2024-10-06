@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4cyfcsav4po5"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_tlb5n"]
+[ext_resource type="Texture2D" uid="uid://2hiy8xh4y342" path="res://Particles/DefaultSprites/MiscParticles8.png" id="2_hq5x7"]
+[ext_resource type="Texture2D" uid="uid://bp8kqu08exhuj" path="res://Particles/DefaultSprites/MiscParticles9.png" id="2_l6iut"]
+
+[sub_resource type="Curve" id="Curve_u85oo"]
+max_value = 5.0
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(0.765957, 0), 0.0521639, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ocggg"]
+offsets = PackedFloat32Array(0, 0.399425, 0.494253, 0.655172, 0.859195, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.927922, 0.867373, 0.826747, 1, 0.586753, 0.239605, 0.00668247, 1, 0.180268, 0.180268, 0.180268, 1, 0.14, 0.14, 0.14, 1, 0.08, 0.08, 0.08, 0)
+
+[sub_resource type="Gradient" id="Gradient_ipk1c"]
+colors = PackedColorArray(0.99, 0.90915, 0.6435, 1, 1, 0.747, 0.54, 1)
+
+[sub_resource type="Curve" id="Curve_tow5r"]
+max_value = 5.0
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), -14.2696, 0.0, 0, 0]
+point_count = 2
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_tlb5n")
+maxLifetime = 1.4
+
+[node name="Beeg" type="CPUParticles2D" parent="."]
+amount = 56
+lifetime = 1.4
+speed_scale = 1.7
+explosiveness = 0.92
+lifetime_randomness = 0.8
+texture = ExtResource("2_l6iut")
+direction = Vector2(0, -1)
+spread = 100.68
+gravity = Vector2(0, -40)
+initial_velocity_min = 101.72
+initial_velocity_max = 297.98
+damping_min = 36.364
+damping_max = 36.364
+damping_curve = SubResource("Curve_u85oo")
+color_ramp = SubResource("Gradient_ocggg")
+color_initial_ramp = SubResource("Gradient_ipk1c")
+
+[node name="Beeg2" type="CPUParticles2D" parent="."]
+z_index = 14
+amount = 13
+lifetime = 1.4
+speed_scale = 1.7
+explosiveness = 0.92
+lifetime_randomness = 0.8
+texture = ExtResource("2_l6iut")
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, -40)
+initial_velocity_min = 62.5
+initial_velocity_max = 175.43
+damping_min = 36.364
+damping_max = 36.364
+damping_curve = SubResource("Curve_u85oo")
+color_ramp = SubResource("Gradient_ocggg")
+color_initial_ramp = SubResource("Gradient_ipk1c")
+
+[node name="Small" type="CPUParticles2D" parent="."]
+amount = 56
+speed_scale = 1.3
+explosiveness = 0.92
+lifetime_randomness = 0.67
+texture = ExtResource("2_hq5x7")
+direction = Vector2(0, -1)
+spread = 100.68
+gravity = Vector2(0, 0)
+initial_velocity_min = 435.06
+initial_velocity_max = 888.89
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_tow5r")
+color_ramp = SubResource("Gradient_ocggg")
+color_initial_ramp = SubResource("Gradient_ipk1c")
+
+[node name="Small2" type="CPUParticles2D" parent="."]
+z_index = 15
+amount = 30
+speed_scale = 1.3
+explosiveness = 0.92
+lifetime_randomness = 0.67
+texture = ExtResource("2_hq5x7")
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 435.06
+initial_velocity_max = 888.89
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_tow5r")
+color_ramp = SubResource("Gradient_ocggg")
+color_initial_ramp = SubResource("Gradient_ipk1c")

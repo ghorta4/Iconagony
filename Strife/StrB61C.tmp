@@ -1,0 +1,290 @@
+[gd_scene load_steps=33 format=3 uid="uid://b3bxr6syskysx"]
+
+[ext_resource type="PackedScene" uid="uid://c4ndnsar8nwlh" path="res://System/ObjectTemplates/PlayerObject.tscn" id="1_lb1vs"]
+[ext_resource type="Texture2D" uid="uid://da5gev3oo7bat" path="res://Strife/Sprites/BaseSet/idleAndRef2.png" id="2_gqiqr"]
+[ext_resource type="Script" path="res://Strife/StrifeBehavior.gd" id="2_ide4l"]
+[ext_resource type="Texture2D" uid="uid://bbvida8isahul" path="res://Strife/Sprites/BaseSet/idleAndRef3.png" id="3_1k1qj"]
+[ext_resource type="Texture2D" uid="uid://wmpiedstixk1" path="res://Strife/Sprites/BaseSet/idleAndRef22.png" id="3_pys3n"]
+[ext_resource type="Texture2D" uid="uid://c37laqhw528k7" path="res://Strife/Sprites/BaseSet/idleAndRef4.png" id="4_lettx"]
+[ext_resource type="Texture2D" uid="uid://b88uwbtfhher2" path="res://Strife/Sprites/BaseSet/idleAndRef23.png" id="4_uo8re"]
+[ext_resource type="Texture2D" uid="uid://celbks37l0lkn" path="res://Strife/Sprites/BaseSet/idleAndRef24.png" id="5_boqe5"]
+[ext_resource type="Texture2D" uid="uid://cw4n1fhgibjxp" path="res://Strife/Sprites/BaseSet/idleAndRef5.png" id="5_t6ipu"]
+[ext_resource type="Texture2D" uid="uid://cmx3bp5t25cvb" path="res://Strife/Sprites/BaseSet/idleAndRef13.png" id="6_c6m3i"]
+[ext_resource type="Texture2D" uid="uid://cffjtm1tshneo" path="res://Strife/Sprites/BaseSet/idleAndRef14.png" id="6_vq2lp"]
+[ext_resource type="Texture2D" uid="uid://c8c41nwg8dny1" path="res://Strife/Sprites/BaseSet/idleAndRef11.png" id="7_1jwvb"]
+[ext_resource type="Texture2D" uid="uid://cnvtacvmjq6ql" path="res://Strife/Sprites/BaseSet/idleAndRef6.png" id="7_brgf6"]
+[ext_resource type="Texture2D" uid="uid://b7vumfsmqtleb" path="res://Strife/Sprites/BaseSet/idleAndRef25.png" id="7_fvxxr"]
+[ext_resource type="Texture2D" uid="uid://er847taxktfy" path="res://Strife/Sprites/BaseSet/idleAndRef26.png" id="8_3hi1y"]
+[ext_resource type="Texture2D" uid="uid://ibn2jyma3rh3" path="res://Strife/Sprites/BaseSet/idleAndRef7.png" id="8_dtui1"]
+[ext_resource type="Texture2D" uid="uid://cttfgp4uxmp26" path="res://Strife/Sprites/BaseSet/idleAndRef10.png" id="8_x3fm5"]
+[ext_resource type="Texture2D" uid="uid://bw6b1p23i8pyl" path="res://Strife/Sprites/BaseSet/idleAndRef12.png" id="9_oo6wc"]
+[ext_resource type="Texture2D" uid="uid://d3njg51pcs3yx" path="res://Strife/Sprites/BaseSet/idleAndRef8.png" id="9_tc2ug"]
+[ext_resource type="Texture2D" uid="uid://dq341x57m3hy1" path="res://Strife/Sprites/BaseSet/idleAndRef27.png" id="9_ulllb"]
+[ext_resource type="Texture2D" uid="uid://cfon6v688d4rd" path="res://Strife/Sprites/BaseSet/idleAndRef9.png" id="10_jwd23"]
+[ext_resource type="Texture2D" uid="uid://5g0fwmuobi3l" path="res://Strife/Sprites/BaseSet/idleAndRef28.png" id="14_kaycw"]
+[ext_resource type="Texture2D" uid="uid://7o6a5de1kyx2" path="res://Strife/Sprites/BaseSet/idleAndRef29.png" id="15_oayje"]
+[ext_resource type="Texture2D" uid="uid://b2vd5g58q0hwn" path="res://Strife/Sprites/BaseSet/idleAndRef39.png" id="19_62k7j"]
+[ext_resource type="Texture2D" uid="uid://bkoak70mp3g8d" path="res://Strife/Sprites/BaseSet/idleAndRef40.png" id="20_v4uup"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Dash.gd" id="20_vo1ly"]
+[ext_resource type="Texture2D" uid="uid://bqbxhs06re363" path="res://Strife/Sprites/BaseSet/idleAndRef41.png" id="21_wh4mn"]
+[ext_resource type="Texture2D" uid="uid://d4hjo3qd2q8le" path="res://Strife/Sprites/BaseSet/idleAndRef42.png" id="22_n6nvs"]
+[ext_resource type="Texture2D" uid="uid://cnx30f3px8pd" path="res://Strife/Sprites/BaseSet/idleAndRef43.png" id="23_mb1fn"]
+[ext_resource type="Script" path="res://System/CharacterState.gd" id="26_tdom3"]
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="27_4fx2p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ilb7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pys3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uo8re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_boqe5")
+}],
+"loop": true,
+"name": &"Dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c6m3i")
+}],
+"loop": true,
+"name": &"HurtA",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1jwvb")
+}],
+"loop": true,
+"name": &"HurtGH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x3fm5")
+}],
+"loop": true,
+"name": &"HurtGL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_oo6wc")
+}],
+"loop": true,
+"name": &"HurtGM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gqiqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1k1qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lettx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t6ipu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_brgf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dtui1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tc2ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jwd23")
+}],
+"loop": true,
+"name": &"IdleAir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fvxxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3hi1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3hi1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ulllb")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kaycw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kaycw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oayje")
+}],
+"loop": true,
+"name": &"Landing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_62k7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_62k7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_v4uup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wh4mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_n6nvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_n6nvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mb1fn")
+}],
+"loop": true,
+"name": &"Swipe1G",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vq2lp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Strife" instance=ExtResource("1_lb1vs")]
+script = ExtResource("2_ide4l")
+groundFrictionCoefficient = Vector2(0.09, 0.01)
+airFrictionCoefficient = Vector2(0.003, 0.01)
+
+[node name="MovementBox" parent="." index="0"]
+texture_filter = 1
+position = Vector2(0, 2)
+bounds = Vector2(30, 46)
+
+[node name="HurtBox" parent="." index="1"]
+position = Vector2(0, 3.715)
+bounds = Vector2(25.18, 38.585)
+
+[node name="Sprite" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_ilb7w")
+animation = &"HurtGM"
+
+[node name="Idle" parent="StateMachine" index="0"]
+animationName = "Idle"
+loopAnimation = true
+animationLength = 4
+ticksPerFrame = 10
+fallbackState = "Idle"
+
+[node name="Default" parent="StateMachine" index="1"]
+animationName = "default"
+animationLength = 4
+ticksPerFrame = 10
+duration = 0
+fallbackState = "Idle"
+
+[node name="Jump" parent="StateMachine" index="2"]
+jumpTick = 10
+jumpForce = 600.0
+animationName = "Jump"
+animationLength = 4
+ticksPerFrame = 3
+fallbackState = "IdleAir"
+
+[node name="IdleAir" parent="StateMachine" index="3"]
+animationName = "IdleAir"
+loopAnimation = true
+animationLength = 4
+ticksPerFrame = 3
+
+[node name="Landing" parent="StateMachine" index="4"]
+animationName = "Landing"
+animationLength = 3
+
+[node name="Dash" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("20_vo1ly")
+speed = 12.0
+startMovingAt = 7
+IASA = 15
+canLandCancel = false
+animationName = "Dash"
+animationLength = 3
+ticksPerFrame = 3
+duration = 30
+fallbackState = "Idle"
+continueOnWait = false
+
+[node name="Swipe1G" type="Node" parent="StateMachine" index="6"]
+script = ExtResource("26_tdom3")
+canLandCancel = false
+interruptOnExit = true
+animationName = "Swipe1G"
+animationLength = 7
+duration = 27
+fallbackState = "Idle"
+continueOnWait = false
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Swipe1G" index="0"]
+position = Vector2(13.75, 0)
+script = ExtResource("27_4fx2p")
+knockbackDirection = Vector2(1, 0.4)
+knockbackForce = 300.0
+hitstopTicks = 3
+hurtState = "HurtGM"
+startFrame = 13
+duration = 4
+hitcancelDelay = 4
+bounds = Vector2(30.65, 43.255)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Swipe1G" index="1"]
+position = Vector2(22.045, 0)
+script = ExtResource("27_4fx2p")
+knockbackDirection = Vector2(1, 0.4)
+knockbackForce = 300.0
+hitstopTicks = 3
+hurtState = "HurtGM"
+startFrame = 13
+duration = 4
+hitcancelDelay = 4
+bounds = Vector2(33.91, 30.645)
+
+[node name="HurtGL" parent="StateMachine" index="7"]
+animationName = "HurtGL"
+
+[node name="HurtGM" parent="StateMachine" index="8"]
+animationName = "HurtGM"
+
+[node name="HurtGH" parent="StateMachine" index="9"]
+animationName = "HurtGH"
+
+[node name="HurtA" parent="StateMachine" index="10"]
+animationName = "HurtA"

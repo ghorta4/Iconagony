@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl1lrc3bm282s"
+path="res://.godot/imported/TakingTurn.wav-af2fa4c833312b548f39cc576dc4c817.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Ambiance/TakingTurn.wav"
+dest_files=["res://.godot/imported/TakingTurn.wav-af2fa4c833312b548f39cc576dc4c817.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

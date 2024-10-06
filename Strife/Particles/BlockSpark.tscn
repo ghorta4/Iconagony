@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://b42gd4asrw6cb"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_ec5ab"]
+[ext_resource type="Texture2D" uid="uid://crn7waveg1wsr" path="res://Particles/DefaultSprites/ThiccLine.png" id="2_r8usb"]
+[ext_resource type="Texture2D" uid="uid://4tmw4kxuqwrl" path="res://Particles/DefaultSprites/MiscParticles11.png" id="3_qjoji"]
+
+[sub_resource type="Gradient" id="Gradient_dhnu6"]
+offsets = PackedFloat32Array(0, 0.235632, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_pavk7"]
+colors = PackedColorArray(0.458008, 0.875283, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_xvdnj"]
+offsets = PackedFloat32Array(0, 0.235632, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_vg1di"]
+colors = PackedColorArray(0.458008, 0.875283, 1, 1, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_ec5ab")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 7
+amount = 10
+lifetime = 0.5
+speed_scale = 3.0
+explosiveness = 1.0
+texture = ExtResource("2_r8usb")
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 162.34
+initial_velocity_max = 489.9
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_dhnu6")
+color_initial_ramp = SubResource("Gradient_pavk7")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 7
+scale = Vector2(0.5, 0.5)
+amount = 3
+lifetime = 0.3
+speed_scale = 2.0
+explosiveness = 1.0
+texture = ExtResource("3_qjoji")
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 580.81
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_xvdnj")
+color_initial_ramp = SubResource("Gradient_vg1di")

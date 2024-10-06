@@ -1,0 +1,704 @@
+[gd_scene load_steps=72 format=3 uid="uid://ddkkk2ilnuwko"]
+
+[ext_resource type="PackedScene" uid="uid://de43yyxgdi5wh" path="res://System/ObjectTemplates/GameObject.tscn" id="1_uj7yp"]
+[ext_resource type="Script" path="res://Enemies/Unlocking Runoff/RunoffAI.gd" id="2_bqvnl"]
+[ext_resource type="Texture2D" uid="uid://yp5hm3bljs8p" path="res://Enemies/Unlocking Runoff/Sprites/set42.png" id="3_aooix"]
+[ext_resource type="PackedScene" uid="uid://b5in4bg4pehfs" path="res://Particles/GenericFFX/EnemyHitSpark.tscn" id="3_dp24a"]
+[ext_resource type="Texture2D" uid="uid://cpknnv758if4h" path="res://Enemies/Unlocking Runoff/Sprites/set43.png" id="4_6qncs"]
+[ext_resource type="Texture2D" uid="uid://jdvy87u4vq45" path="res://Enemies/Unlocking Runoff/Sprites/set44.png" id="5_02mgf"]
+[ext_resource type="Texture2D" uid="uid://6a7oqppu2w5a" path="res://Enemies/Unlocking Runoff/Sprites/set39.png" id="6_b2iar"]
+[ext_resource type="Texture2D" uid="uid://qs3wyi03a4dv" path="res://Enemies/Unlocking Runoff/Sprites/set40.png" id="7_rlkkw"]
+[ext_resource type="Texture2D" uid="uid://c1yq082uhm88a" path="res://Enemies/Unlocking Runoff/Sprites/set41.png" id="8_btvmb"]
+[ext_resource type="Texture2D" uid="uid://bqq6lpx3aj0f1" path="res://Enemies/Unlocking Runoff/Sprites/set35.png" id="9_iv1vi"]
+[ext_resource type="Texture2D" uid="uid://r71vtbop3uec" path="res://Enemies/Unlocking Runoff/Sprites/set36.png" id="10_aafpj"]
+[ext_resource type="Texture2D" uid="uid://c7o2wasex3qec" path="res://Enemies/Unlocking Runoff/Sprites/set37.png" id="11_im50a"]
+[ext_resource type="Texture2D" uid="uid://c0sfmdmmns3oh" path="res://Enemies/Unlocking Runoff/Sprites/set38.png" id="12_2jomf"]
+[ext_resource type="Texture2D" uid="uid://cjyngo3wane4p" path="res://Enemies/Unlocking Runoff/Sprites/set11.png" id="13_hbkkj"]
+[ext_resource type="Texture2D" uid="uid://6yv3l1qolv8s" path="res://Enemies/Unlocking Runoff/Sprites/set19.png" id="14_kpb8o"]
+[ext_resource type="Texture2D" uid="uid://br6ag11atf48u" path="res://Enemies/Unlocking Runoff/Sprites/set9.png" id="15_x11ja"]
+[ext_resource type="Texture2D" uid="uid://ib0nhcbjxnap" path="res://Enemies/Unlocking Runoff/Sprites/set8.png" id="16_xq2ik"]
+[ext_resource type="Texture2D" uid="uid://burus8v6jj0pi" path="res://Enemies/Unlocking Runoff/Sprites/set10.png" id="17_gl3vp"]
+[ext_resource type="Texture2D" uid="uid://rlbispmjtia1" path="res://Enemies/Unlocking Runoff/Sprites/set15.png" id="18_bdwag"]
+[ext_resource type="Texture2D" uid="uid://c6jij3ri1gyan" path="res://Enemies/Unlocking Runoff/Sprites/set12.png" id="19_lg2wj"]
+[ext_resource type="Texture2D" uid="uid://u27j0nucuo8w" path="res://Enemies/Unlocking Runoff/Sprites/set13.png" id="20_ww8yw"]
+[ext_resource type="Texture2D" uid="uid://cnoll0dpa5qlp" path="res://Enemies/Unlocking Runoff/Sprites/set14.png" id="21_3vmtn"]
+[ext_resource type="Texture2D" uid="uid://crul4xlp83fc1" path="res://Enemies/Unlocking Runoff/Sprites/set16.png" id="22_sxch7"]
+[ext_resource type="Texture2D" uid="uid://cdwvl036dhae3" path="res://Enemies/Unlocking Runoff/Sprites/set2.png" id="23_4k6dn"]
+[ext_resource type="Texture2D" uid="uid://6nwlny82b2se" path="res://Enemies/Unlocking Runoff/Sprites/set3.png" id="24_fbe4n"]
+[ext_resource type="Texture2D" uid="uid://dd0wwb7oulher" path="res://Enemies/Unlocking Runoff/Sprites/set4.png" id="25_syp2g"]
+[ext_resource type="Texture2D" uid="uid://wnhd331fsdmc" path="res://Enemies/Unlocking Runoff/Sprites/set5.png" id="26_iqdw5"]
+[ext_resource type="Texture2D" uid="uid://d1k2xm2cxjcbs" path="res://Enemies/Unlocking Runoff/Sprites/set6.png" id="27_8l4un"]
+[ext_resource type="Texture2D" uid="uid://envkrjapx7qp" path="res://Enemies/Unlocking Runoff/Sprites/set7.png" id="28_iwj8h"]
+[ext_resource type="Texture2D" uid="uid://pefuky5lyvo1" path="res://Enemies/Unlocking Runoff/Sprites/set18.png" id="29_y0573"]
+[ext_resource type="Texture2D" uid="uid://dqb5mq8nvy8vy" path="res://Enemies/Unlocking Runoff/Sprites/set17.png" id="30_juwf6"]
+[ext_resource type="Texture2D" uid="uid://bcmk3vqbdm88f" path="res://Enemies/Unlocking Runoff/Sprites/set20.png" id="31_qwu6x"]
+[ext_resource type="Texture2D" uid="uid://byog4j06xduxp" path="res://Enemies/Unlocking Runoff/Sprites/set21.png" id="32_0450x"]
+[ext_resource type="Texture2D" uid="uid://cp3sfr6bcwc6i" path="res://Enemies/Unlocking Runoff/Sprites/set29.png" id="33_v145v"]
+[ext_resource type="Texture2D" uid="uid://c2c07xblpfxib" path="res://Enemies/Unlocking Runoff/Sprites/set30.png" id="34_l1ctb"]
+[ext_resource type="Texture2D" uid="uid://v868avr2pdq6" path="res://Enemies/Unlocking Runoff/Sprites/set31.png" id="35_ggfl1"]
+[ext_resource type="Texture2D" uid="uid://bo63548jlav20" path="res://Enemies/Unlocking Runoff/Sprites/set32.png" id="36_2lqrp"]
+[ext_resource type="Texture2D" uid="uid://c04do6ijqjjev" path="res://Enemies/Unlocking Runoff/Sprites/set33.png" id="37_05063"]
+[ext_resource type="Texture2D" uid="uid://qrcv00drj8jo" path="res://Enemies/Unlocking Runoff/Sprites/set34.png" id="38_18x77"]
+[ext_resource type="Texture2D" uid="uid://dc8fl42fxno4p" path="res://Enemies/Unlocking Runoff/Sprites/set22.png" id="39_0bcr7"]
+[ext_resource type="Texture2D" uid="uid://doh05l2jyx0vb" path="res://Enemies/Unlocking Runoff/Sprites/set23.png" id="40_jmh7m"]
+[ext_resource type="Texture2D" uid="uid://dlt2po81ssdgv" path="res://Enemies/Unlocking Runoff/Sprites/set24.png" id="41_cmvuy"]
+[ext_resource type="Texture2D" uid="uid://c5u4jghrwgh6h" path="res://Enemies/Unlocking Runoff/Sprites/set25.png" id="42_31f0p"]
+[ext_resource type="Texture2D" uid="uid://v44od1cq70h4" path="res://Enemies/Unlocking Runoff/Sprites/set26.png" id="43_g4swf"]
+[ext_resource type="Texture2D" uid="uid://cbblo4kjvo7x5" path="res://Enemies/Unlocking Runoff/Sprites/set27.png" id="44_j0wfx"]
+[ext_resource type="Texture2D" uid="uid://xrjhpsllcb05" path="res://Enemies/Unlocking Runoff/Sprites/set28.png" id="45_188hx"]
+[ext_resource type="Texture2D" uid="uid://d3jnou8pyssmq" path="res://Enemies/Unlocking Runoff/Sprites/set45.png" id="46_6olvt"]
+[ext_resource type="Texture2D" uid="uid://kvxmqoaps1wo" path="res://Enemies/Unlocking Runoff/Sprites/set46.png" id="47_0majh"]
+[ext_resource type="Texture2D" uid="uid://ch5mc68mheyxs" path="res://Enemies/Unlocking Runoff/Sprites/set47.png" id="48_q4j2w"]
+[ext_resource type="Texture2D" uid="uid://cy2npaxb6ojkc" path="res://Enemies/Unlocking Runoff/Sprites/set48.png" id="49_n81o5"]
+[ext_resource type="Texture2D" uid="uid://cqpfbvo7braes" path="res://Enemies/Unlocking Runoff/Sprites/set49.png" id="50_al7yp"]
+[ext_resource type="Texture2D" uid="uid://cauwnm7k3r0lt" path="res://Enemies/Unlocking Runoff/Sprites/set50.png" id="51_xppuy"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Idle.gd" id="52_8842q"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Walk.gd" id="53_6ydlr"]
+[ext_resource type="Script" path="res://System/CharacterState.gd" id="53_axkb8"]
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="55_ufmqs"]
+[ext_resource type="AudioStream" uid="uid://fl6yxstncfag" path="res://Sound Library/Universal/Shorts/whoosh.ogg" id="56_8lfjk"]
+[ext_resource type="AudioStream" uid="uid://1ylrjo73mcol" path="res://Sound Library/Universal/Shorts/WeirdHit.wav" id="56_r3f6f"]
+[ext_resource type="AudioStream" uid="uid://diknc4sxrv1uk" path="res://Sound Library/Universal/Shorts/WeirdBass.wav" id="57_12h2u"]
+[ext_resource type="AudioStream" uid="uid://c44wr4q3buvhw" path="res://Sound Library/Universal/Shorts/HollowHit.wav" id="57_bl67n"]
+[ext_resource type="AudioStream" uid="uid://c1w417o30ocdu" path="res://Sound Library/Universal/Shorts/swing1.ogg" id="58_elmd5"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/SpecialLandingState.gd" id="59_jmk3o"]
+[ext_resource type="AudioStream" uid="uid://bygj4ac0iouxu" path="res://Strife/SFX/Bounce.wav" id="60_7a587"]
+[ext_resource type="AudioStream" uid="uid://bmes2h3shh1qs" path="res://Sound Library/Universal/Shorts/Dash.wav" id="61_sg5c0"]
+[ext_resource type="AudioStream" uid="uid://c5h4acjew2w2l" path="res://Strife/SFX/generator.wav" id="62_jp4g1"]
+[ext_resource type="AudioStream" uid="uid://c8oiivlloo73c" path="res://Strife/SFX/Hit1Echo.wav" id="63_g20cv"]
+[ext_resource type="PackedScene" uid="uid://dyo78mkxexg1a" path="res://Strife/Particles/DivebombSpark.tscn" id="65_0a0fi"]
+[ext_resource type="AudioStream" uid="uid://b7oo77kf3suqq" path="res://Strife/SFX/CrashLand.wav" id="66_0n2am"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jya6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aooix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6qncs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6qncs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_02mgf")
+}],
+"loop": true,
+"name": &"DiveEnd",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b2iar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rlkkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_btvmb")
+}],
+"loop": true,
+"name": &"DiveLoop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_iv1vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aafpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_im50a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_im50a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2jomf")
+}],
+"loop": true,
+"name": &"DiveStart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_hbkkj")
+}],
+"loop": true,
+"name": &"HurtA",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kpb8o")
+}],
+"loop": true,
+"name": &"HurtDazed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_x11ja")
+}],
+"loop": true,
+"name": &"HurtGH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xq2ik")
+}],
+"loop": true,
+"name": &"HurtGL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_gl3vp")
+}],
+"loop": true,
+"name": &"HurtGM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_bdwag")
+}],
+"loop": true,
+"name": &"HurtGrabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_lg2wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ww8yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3vmtn")
+}],
+"loop": true,
+"name": &"HurtOTG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_sxch7")
+}],
+"loop": true,
+"name": &"HurtThrown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_4k6dn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_fbe4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_syp2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_iqdw5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_8l4un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_iwj8h")
+}],
+"loop": true,
+"name": &"IdleAir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_y0573")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_juwf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_juwf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qwu6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0450x")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_juwf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_y0573")
+}],
+"loop": true,
+"name": &"Landing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_v145v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_v145v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_l1ctb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_l1ctb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ggfl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_2lqrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_05063")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_05063")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_18x77")
+}],
+"loop": true,
+"name": &"Sweep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_0bcr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_jmh7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_jmh7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cmvuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_31f0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_g4swf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_g4swf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j0wfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_188hx")
+}],
+"loop": true,
+"name": &"Thrust",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_6olvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0majh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_q4j2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_n81o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_al7yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_xppuy")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5scns"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn3og"]
+bg_color = Color(0.95, 0.95, 0, 1)
+
+[node name="Unlocking" instance=ExtResource("1_uj7yp")]
+script = ExtResource("2_bqvnl")
+internalName = "unlocking"
+difficultyWeight = 1.0
+spawnWeight = 1.0
+MaxHP = 75.0
+MaxSP = 100.0
+IgnoreYShake = false
+pickupMoves = "Divebomb
+0.25"
+airFrictionCoefficient = Vector2(0, 0.01)
+speedLimits = Vector2(1000, 100000)
+defaultHitspark = ExtResource("3_dp24a")
+
+[node name="MovementBox" parent="." index="0"]
+position = Vector2(0, 4)
+bounds = Vector2(37, 36)
+
+[node name="HurtBox" parent="." index="1"]
+visible = false
+position = Vector2(0, 3)
+bounds = Vector2(40, 40)
+
+[node name="Sprite" parent="." index="3"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_jya6l")
+animation = &"HurtOTG"
+
+[node name="Idle" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("52_8842q")
+InterruptabilityInterval = 24
+canLandCancel = false
+animationName = "Idle"
+loopAnimation = true
+animationLength = 4
+ticksPerFrame = 8
+duration = 24
+endless = true
+fallbackState = "Idle"
+
+[node name="IdleAir" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("52_8842q")
+OtherIdleState = "Idle"
+InterruptabilityInterval = 24
+landCancelLag = 4
+animationName = "IdleAir"
+loopAnimation = true
+animationLength = 2
+ticksPerFrame = 19
+duration = 38
+endless = true
+fallbackState = "IdleAir"
+
+[node name="Walk" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("53_6ydlr")
+InterruptabilityInterval = 18
+WalkSpeed = 10.0
+canLandCancel = false
+animationName = "Walk"
+loopAnimation = true
+animationLength = 6
+ticksPerFrame = 6
+duration = 36
+endless = true
+fallbackState = "Walk"
+
+[node name="Default" parent="StateMachine" index="3"]
+animationName = "Idle"
+duration = 0
+fallbackState = "Idle"
+
+[node name="HurtGL" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGL"
+fallbackState = "Idle"
+
+[node name="HurtGrabbed" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGrabbed"
+fallbackState = "Idle"
+
+[node name="HurtThrown" type="Node" parent="StateMachine" index="6"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtThrown"
+fallbackState = "Idle"
+
+[node name="HurtGM" type="Node" parent="StateMachine" index="7"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGM"
+fallbackState = "Idle"
+
+[node name="HurtGH" type="Node" parent="StateMachine" index="8"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGH"
+fallbackState = "Idle"
+
+[node name="HurtA" type="Node" parent="StateMachine" index="9"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtA"
+fallbackState = "Idle"
+
+[node name="HurtOTG" type="Node" parent="StateMachine" index="10"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+animationName = "HurtOTG"
+animationLength = 3
+ticksPerFrame = 10
+duration = 30
+fallbackState = "Idle"
+
+[node name="HurtDazed" type="Node" parent="StateMachine" index="11"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtDazed"
+fallbackState = "Idle"
+
+[node name="Thrust" type="Node" parent="StateMachine" index="12"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+enterForce = Vector2(-16, 0)
+appliedForce = Vector2(40, 0)
+appliedForceTick = 16
+animationName = "Thrust"
+animationLength = 9
+ticksPerFrame = 5
+duration = 42
+fallbackState = "Idle"
+continueOnWait = false
+SFX = ExtResource("56_8lfjk")
+SFXVolume = -3.0
+SFXTick = 16
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Thrust" index="0"]
+position = Vector2(15.02, 2.72)
+script = ExtResource("55_ufmqs")
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 450.0
+stunTicks = 18
+selfHitstopTicks = 1
+hurtState = "HurtGM"
+startFrame = 16
+duration = 5
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("56_r3f6f")
+hitSoundVolume = -4.0
+bassSound = ExtResource("57_12h2u")
+bassSoundVolume = -9.0
+bounds = Vector2(30.65, 13.295)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Thrust" index="1"]
+position = Vector2(23.17, 4.57)
+script = ExtResource("55_ufmqs")
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 450.0
+stunTicks = 18
+selfHitstopTicks = 1
+hurtState = "HurtGM"
+startFrame = 21
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("56_r3f6f")
+hitSoundVolume = -4.0
+bassSound = ExtResource("57_12h2u")
+bassSoundVolume = -9.0
+bounds = Vector2(30.65, 13.295)
+
+[node name="Sweep" type="Node" parent="StateMachine" index="13"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+enterForce = Vector2(16, 0)
+appliedForce = Vector2(-12, 0)
+appliedForceTick = 25
+animationName = "Sweep"
+animationLength = 9
+ticksPerFrame = 6
+duration = 62
+fallbackState = "Idle"
+continueOnWait = false
+SFX = ExtResource("58_elmd5")
+SFXVolume = -8.0
+SFXTick = 25
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Sweep" index="0"]
+position = Vector2(13.695, -0.81)
+script = ExtResource("55_ufmqs")
+knockbackDirection = Vector2(0.5, -0.8)
+knockbackForce = 350.0
+stunTicks = 18
+selfHitstopTicks = 1
+hurtState = "HurtA"
+startFrame = 25
+duration = 6
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("56_r3f6f")
+hitSoundVolume = -4.0
+bassSound = ExtResource("57_12h2u")
+bassSoundVolume = -9.0
+bounds = Vector2(31.375, 29.56)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Sweep" index="1"]
+position = Vector2(9.475, -15.06)
+script = ExtResource("55_ufmqs")
+knockbackDirection = Vector2(0.5, -0.8)
+knockbackForce = 350.0
+stunTicks = 18
+selfHitstopTicks = 1
+hurtState = "HurtA"
+startFrame = 31
+duration = 5
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("56_r3f6f")
+hitSoundVolume = -4.0
+bassSound = ExtResource("57_12h2u")
+bassSoundVolume = -9.0
+bounds = Vector2(30.65, 37.995)
+
+[node name="Jump" type="Node" parent="StateMachine" index="14"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+appliedForce = Vector2(150, -480)
+appliedForceTick = 10
+animationName = "Jump"
+animationLength = 5
+ticksPerFrame = 3
+duration = 19
+fallbackState = "IdleAir"
+continueOnWait = false
+SFX = ExtResource("61_sg5c0")
+SFXVolume = -6.0
+SFXTick = 9
+
+[node name="DivebombStart" type="Node" parent="StateMachine" index="15"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+enterForce = Vector2(-55, -70)
+preservedMomentum = Vector2(0.7, 0.1)
+overrideFallSpeed = true
+animationName = "DiveStart"
+animationLength = 5
+duration = 20
+fallbackState = "Divebomb"
+onEnterSFX = ExtResource("60_7a587")
+enterSFXVolume = -12.0
+
+[node name="Divebomb" type="Node" parent="StateMachine" index="16"]
+script = ExtResource("59_jmk3o")
+landingState = "DivebombEnd"
+canLandCancel = false
+enterForce = Vector2(600, 750)
+animationName = "DiveLoop"
+loopAnimation = true
+animationLength = 3
+ticksPerFrame = 3
+duration = 20
+endless = true
+fallbackState = "DivebombEnd"
+SFX = ExtResource("62_jp4g1")
+SFXVolume = -7.0
+SFXTick = 2
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Divebomb" index="0"]
+position = Vector2(0, -1.1)
+script = ExtResource("55_ufmqs")
+damage = 18
+knockbackDirection = Vector2(0.5, 0.5)
+knockbackForce = 400.0
+stunTicks = 28
+hitstopTicks = 0
+hurtState = "HurtGH"
+startFrame = 0
+duration = 9999
+hitcancellable = false
+loopHitbox = true
+hitSound = ExtResource("63_g20cv")
+hitSoundVolume = -4.0
+bassSound = ExtResource("57_bl67n")
+bassSoundVolume = -9.0
+allowFallbackParticles = false
+autoAdjustParticleAngle = false
+particleEffect = ExtResource("65_0a0fi")
+bounds = Vector2(29.83, 40)
+
+[node name="DivebombEnd" type="Node" parent="StateMachine" index="17"]
+script = ExtResource("59_jmk3o")
+landingState = "DivebombEnd"
+canLandCancel = false
+animationName = "DiveEnd"
+animationLength = 4
+ticksPerFrame = 5
+duration = 24
+fallbackState = "Idle"
+onEnterSFX = ExtResource("66_0n2am")
+enterSFXVolume = -8.0
+
+[node name="Landing" type="Node" parent="StateMachine" index="18"]
+script = ExtResource("53_axkb8")
+canLandCancel = false
+interruptOnExit = true
+preservedMomentum = Vector2(0.3, 1)
+animationName = "Landing"
+animationLength = 2
+ticksPerFrame = 8
+duration = 16
+fallbackState = "Idle"
+
+[node name="HealthBar" type="Control" parent="." index="5"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -13.0
+offset_top = 70.0
+offset_right = 32.0
+offset_bottom = 76.0
+rotation = -1.11701
+
+[node name="ColorRect" type="ColorRect" parent="HealthBar" index="0"]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 1)
+
+[node name="HPDisplay" type="ProgressBar" parent="HealthBar" index="1"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_5scns")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sn3og")
+value = 50.0
+show_percentage = false

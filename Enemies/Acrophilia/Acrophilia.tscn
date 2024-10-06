@@ -1,0 +1,376 @@
+[gd_scene load_steps=43 format=3 uid="uid://ce70i04setjqn"]
+
+[ext_resource type="PackedScene" uid="uid://dec02kajrpa0y" path="res://System/ObjectTemplates/CharacterObject.tscn" id="1_srfhu"]
+[ext_resource type="Script" path="res://Enemies/Acrophilia/AcroAI.gd" id="2_7ys61"]
+[ext_resource type="Texture2D" uid="uid://cg4sgf4liuyp8" path="res://Enemies/Acrophilia/BaseSet/BaseSet9.png" id="2_m2o8y"]
+[ext_resource type="Texture2D" uid="uid://b4udcgo5tp2hu" path="res://Enemies/Acrophilia/BaseSet/BaseSet1.png" id="2_u6gn6"]
+[ext_resource type="Texture2D" uid="uid://y1sqgyu2nk0c" path="res://Enemies/Acrophilia/BaseSet/BaseSet21.png" id="3_e0nwm"]
+[ext_resource type="PackedScene" uid="uid://b5in4bg4pehfs" path="res://Particles/GenericFFX/EnemyHitSpark.tscn" id="3_e625e"]
+[ext_resource type="Texture2D" uid="uid://dgbhllpp33k02" path="res://Enemies/Acrophilia/BaseSet/BaseSet13.png" id="3_ufsqv"]
+[ext_resource type="Texture2D" uid="uid://hjlns0f7t5f6" path="res://Enemies/Acrophilia/BaseSet/BaseSet2.png" id="3_wga5w"]
+[ext_resource type="AudioStream" uid="uid://bqacj8q17g2as" path="res://Enemies/Acrophilia/SFX/Windup.wav" id="4_7xdt8"]
+[ext_resource type="Texture2D" uid="uid://dc1ftgw0g0soq" path="res://Enemies/Acrophilia/BaseSet/BaseSet14.png" id="4_b08u5"]
+[ext_resource type="Texture2D" uid="uid://sac1rhnapqxf" path="res://Enemies/Acrophilia/BaseSet/BaseSet3.png" id="4_ccsis"]
+[ext_resource type="Texture2D" uid="uid://bt44h8gsxxf33" path="res://Enemies/Acrophilia/BaseSet/BaseSet22.png" id="4_qce6t"]
+[ext_resource type="Texture2D" uid="uid://imv7c8j3sejj" path="res://Enemies/Acrophilia/BaseSet/BaseSet15.png" id="5_je2ei"]
+[ext_resource type="Texture2D" uid="uid://nkf4171x6bl0" path="res://Enemies/Acrophilia/BaseSet/BaseSet4.png" id="5_q88ta"]
+[ext_resource type="Texture2D" uid="uid://csq6wq2k84oa0" path="res://Enemies/Acrophilia/BaseSet/BaseSet23.png" id="5_wwdyi"]
+[ext_resource type="Texture2D" uid="uid://0rxemdyb1fm8" path="res://Enemies/Acrophilia/BaseSet/BaseSet24.png" id="6_4lk71"]
+[ext_resource type="Texture2D" uid="uid://ckrxu8a55msmh" path="res://Enemies/Acrophilia/BaseSet/BaseSet16.png" id="6_tesqh"]
+[ext_resource type="Texture2D" uid="uid://ccmx07datvsnh" path="res://Enemies/Acrophilia/BaseSet/BaseSet5.png" id="6_w1y1q"]
+[ext_resource type="Texture2D" uid="uid://bh2pwxdv0ejy2" path="res://Enemies/Acrophilia/BaseSet/BaseSet25.png" id="7_3hklo"]
+[ext_resource type="Texture2D" uid="uid://c7ghfq6q6hqfi" path="res://Enemies/Acrophilia/BaseSet/BaseSet6.png" id="7_m7b6r"]
+[ext_resource type="Texture2D" uid="uid://cu73xa70l5ejh" path="res://Enemies/Acrophilia/BaseSet/BaseSet17.png" id="7_pmdr1"]
+[ext_resource type="Texture2D" uid="uid://buuocws34nri4" path="res://Enemies/Acrophilia/BaseSet/BaseSet18.png" id="8_ain7v"]
+[ext_resource type="Texture2D" uid="uid://bm7umofebl11w" path="res://Enemies/Acrophilia/BaseSet/BaseSet7.png" id="8_uijgs"]
+[ext_resource type="Texture2D" uid="uid://bp12ugprn07j1" path="res://Enemies/Acrophilia/BaseSet/BaseSet26.png" id="8_y5ykm"]
+[ext_resource type="Texture2D" uid="uid://c38x3jhtmhbf8" path="res://Enemies/Acrophilia/BaseSet/BaseSet8.png" id="9_4om3q"]
+[ext_resource type="Texture2D" uid="uid://wqjpkbyw55ti" path="res://Enemies/Acrophilia/BaseSet/BaseSet19.png" id="9_occwm"]
+[ext_resource type="Texture2D" uid="uid://bfy2xcv2pid60" path="res://Enemies/Acrophilia/BaseSet/BaseSet20.png" id="10_7mvuf"]
+[ext_resource type="Texture2D" uid="uid://dcqitgk5l0eqh" path="res://Enemies/Acrophilia/BaseSet/BaseSet12.png" id="11_0wmht"]
+[ext_resource type="Script" path="res://System/Boxes/HurtBox.gd" id="11_la7un"]
+[ext_resource type="Texture2D" uid="uid://gyidolgkqucv" path="res://Enemies/Acrophilia/BaseSet/BaseSet10.png" id="12_n6vey"]
+[ext_resource type="Texture2D" uid="uid://cb5ujxat4cly2" path="res://Enemies/Acrophilia/BaseSet/BaseSet11.png" id="13_st14x"]
+[ext_resource type="Script" path="res://System/State.gd" id="23_tg8lk"]
+[ext_resource type="Texture2D" uid="uid://dtmd1o4jovbrh" path="res://Enemies/Acrophilia/BaseSet/BaseSet36.png" id="29_3kdlt"]
+[ext_resource type="Texture2D" uid="uid://d68ydm5dpuds" path="res://Enemies/Acrophilia/BaseSet/BaseSet37.png" id="30_rw1mn"]
+[ext_resource type="Script" path="res://Enemies/Acrophilia/States/Firing.gd" id="30_sf8k3"]
+[ext_resource type="Texture2D" uid="uid://cp2ggqn1fk08d" path="res://Enemies/Acrophilia/BaseSet/BaseSet38.png" id="31_5yaka"]
+[ext_resource type="Texture2D" uid="uid://c22j0cupy2wij" path="res://Enemies/Acrophilia/BaseSet/BaseSet39.png" id="32_evefa"]
+[ext_resource type="Script" path="res://System/CharacterState.gd" id="33_ntvki"]
+[ext_resource type="AudioStream" uid="uid://djdvexen8s31d" path="res://Enemies/Acrophilia/SFX/DeepFlutter.wav" id="34_fwboc"]
+[ext_resource type="AudioStream" uid="uid://dxu0kl4uyp4cn" path="res://Enemies/Acrophilia/SFX/Hang.wav" id="38_454m7"]
+[ext_resource type="AudioStream" uid="uid://c75hwf6ut2e3r" path="res://Enemies/Acrophilia/SFX/Tiss.wav" id="41_cromx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv6cg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e0nwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qce6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qce6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wwdyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wwdyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4lk71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3hklo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y5ykm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7mvuf")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ufsqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b08u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_je2ei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tesqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pmdr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ain7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_occwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7mvuf")
+}],
+"loop": true,
+"name": &"Hang",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m2o8y")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_0wmht")
+}],
+"loop": true,
+"name": &"HurtDazed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_n6vey")
+}],
+"loop": true,
+"name": &"HurtGrabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_st14x")
+}],
+"loop": true,
+"name": &"HurtThrown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u6gn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wga5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ccsis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q88ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w1y1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m7b6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uijgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4om3q")
+}],
+"loop": true,
+"name": &"IdleAir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_3kdlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rw1mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5yaka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_evefa")
+}],
+"loop": true,
+"name": &"Unfurl",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Acrophilia" instance=ExtResource("1_srfhu")]
+script = ExtResource("2_7ys61")
+internalName = "Acrophillia"
+difficultyWeight = 1.25
+spawnWeight = 1.0
+spawnHeight = 200.0
+spawnHeightVariation = 100.0
+MaxHP = 1.0
+MaxSP = 60.0
+pickupMoves = "Gungeous
+0.25"
+stateVariables = "facingAngle
+repsTillFireSelf"
+airFrictionCoefficient = Vector2(0.05, 0.05)
+defaultHitspark = ExtResource("3_e625e")
+
+[node name="MovementBox" parent="." index="0"]
+bounds = Vector2(30, 30)
+
+[node name="HurtBox" parent="." index="1"]
+position = Vector2(-10, 1)
+bounds = Vector2(70, 25)
+
+[node name="Windup" type="AudioStreamPlayer" parent="Sounds" index="0"]
+stream = ExtResource("4_7xdt8")
+volume_db = -4.457
+
+[node name="Sprite" parent="." index="3"]
+sprite_frames = SubResource("SpriteFrames_mv6cg")
+animation = &"Unfurl"
+
+[node name="Idle" parent="StateMachine" index="0"]
+OtherIdleState = "Idle"
+useDefaultAirIdleSwitching = false
+animationName = "IdleAir"
+loopAnimation = true
+animationLength = 8
+ticksPerFrame = 5
+duration = 40
+fallbackState = "Idle"
+SFX = ExtResource("34_fwboc")
+SFXVolume = -6.0
+SFXTick = 1
+
+[node name="Default" parent="StateMachine" index="1"]
+animationName = "IdleAir"
+
+[node name="Unfurl" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("33_ntvki")
+canLandCancel = false
+interruptOnExit = true
+animationName = "Unfurl"
+animationLength = 4
+ticksPerFrame = 7
+duration = 28
+fallbackState = "Idle"
+
+[node name="HurtGL" parent="StateMachine" index="3"]
+animationName = "Hurt"
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtGL" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtGrabbed" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtThrown" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtGM" parent="StateMachine" index="6"]
+animationName = "Hurt"
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtGM" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtGH" parent="StateMachine" index="7"]
+animationName = "Hurt"
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtGH" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtA" parent="StateMachine" index="8"]
+animationName = "Hurt"
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtA" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtOTG" parent="StateMachine" index="9"]
+animationName = "Hurt"
+
+[node name="HurtBox2" type="Node2D" parent="StateMachine/HurtOTG" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HurtBox3" type="Node2D" parent="StateMachine/HurtDazed" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="Hang" type="Node" parent="StateMachine" index="11"]
+script = ExtResource("23_tg8lk")
+preservedMomentum = Vector2(0, 0)
+overrideFrictionCoefficient = Vector2(1, 1)
+overrideAirFrictionCoefficient = Vector2(1, 1)
+useFrictionOverrides = true
+animationName = "Hang"
+animationLength = 8
+ticksPerFrame = 5
+duration = 40
+fallbackState = "Fire"
+onEnterSFX = ExtResource("38_454m7")
+enterSFXVolume = -5.0
+
+[node name="HurtBox4" type="Node2D" parent="StateMachine/Hang" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="Fire" type="Node" parent="StateMachine" index="12"]
+script = ExtResource("30_sf8k3")
+preservedMomentum = Vector2(0, 0)
+overrideFrictionCoefficient = Vector2(1, 1)
+overrideAirFrictionCoefficient = Vector2(1, 1)
+useFrictionOverrides = true
+animationName = "Fire"
+animationLength = 9
+ticksPerFrame = 1
+duration = 40
+fallbackState = "Fire"
+SFX = ExtResource("41_cromx")
+SFXVolume = -7.0
+SFXTick = 7
+
+[node name="HurtBox3" type="Node2D" parent="StateMachine/Fire" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="FireSelf" type="Node" parent="StateMachine" index="13"]
+script = ExtResource("30_sf8k3")
+isFireSelfVersion = true
+canLandCancel = false
+preservedMomentum = Vector2(0, 0)
+overrideFrictionCoefficient = Vector2(1, 1)
+overrideAirFrictionCoefficient = Vector2(1, 1)
+useFrictionOverrides = true
+animationName = "Fire"
+animationLength = 9
+ticksPerFrame = 1
+duration = 40
+endless = true
+fallbackState = "Idle"
+
+[node name="HurtBox3" type="Node2D" parent="StateMachine/FireSelf" index="0"]
+visible = false
+z_index = 2
+script = ExtResource("11_la7un")
+bounds = Vector2(30, 35)
+
+[node name="HealthBar" parent="." index="5"]
+offset_top = 34.0
+offset_bottom = 40.0

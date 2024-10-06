@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcgcio87rn5bq"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_ukspm"]
+[ext_resource type="Texture2D" uid="uid://b8bums5hbm7oq" path="res://Particles/DefaultSprites/MiscParticles4.png" id="2_hnpj7"]
+
+[sub_resource type="Gradient" id="Gradient_sod6v"]
+offsets = PackedFloat32Array(0, 0.475694, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_gnkdy"]
+offsets = PackedFloat32Array(0, 0.758621, 1)
+colors = PackedColorArray(0.278588, 0.21713, 0.161875, 0.811765, 0.202183, 0.145342, 0.0999734, 1, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_ukspm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 40
+lifetime = 0.6
+speed_scale = 1.7
+explosiveness = 1.0
+texture = ExtResource("2_hnpj7")
+emission_shape = 3
+emission_rect_extents = Vector2(100, 1)
+direction = Vector2(0, -1)
+spread = 59.09
+gravity = Vector2(0, 0)
+initial_velocity_min = 162.34
+initial_velocity_max = 360.56
+damping_min = 100.0
+damping_max = 100.0
+color_ramp = SubResource("Gradient_sod6v")
+color_initial_ramp = SubResource("Gradient_gnkdy")

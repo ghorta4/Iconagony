@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfklrc2i8b2gq"
+path="res://.godot/imported/Flicker.wav-05b6c5637a48c8ba2268e4002c323169.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Shorts/Flicker.wav"
+dest_files=["res://.godot/imported/Flicker.wav-05b6c5637a48c8ba2268e4002c323169.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

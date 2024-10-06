@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://83xgfodj2nrw"]
+
+[ext_resource type="Script" path="res://Particles/uniqueUIFfx/UIParticle.gd" id="1_0rncq"]
+[ext_resource type="Shader" path="res://ShadersLibrary/AdditiveLightParticle.gdshader" id="2_tx7y8"]
+[ext_resource type="Texture2D" uid="uid://bpr123v8fil84" path="res://Particles/DefaultSprites/Triangle2.png" id="3_b0sin"]
+[ext_resource type="AudioStream" uid="uid://48gsdioi0yr8" path="res://Sound Library/Universal/UI/MoveBreak.wav" id="4_18fd3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_elnce"]
+shader = ExtResource("2_tx7y8")
+
+[sub_resource type="Gradient" id="Gradient_5gppr"]
+offsets = PackedFloat32Array(0, 0.767241, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_ld8m1"]
+offsets = PackedFloat32Array(0, 0.307471, 0.522988, 0.612069, 1)
+colors = PackedColorArray(0.798841, 0.703372, 1, 1, 0.37226, 0.753473, 1, 1, 0, 0.900535, 0.898189, 1, 0.909639, 0.991012, 0.9908, 1, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_0rncq")
+
+[node name="Shards" type="CPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_elnce")
+emitting = false
+amount = 30
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.75
+texture = ExtResource("3_b0sin")
+emission_shape = 3
+emission_rect_extents = Vector2(40, 40)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 393.94
+initial_velocity_max = 681.82
+damping_min = 1000.0
+damping_max = 1000.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.75
+scale_amount_max = 1.25
+color = Color(1, 1, 1, 0.364706)
+color_ramp = SubResource("Gradient_5gppr")
+color_initial_ramp = SubResource("Gradient_ld8m1")
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_18fd3")

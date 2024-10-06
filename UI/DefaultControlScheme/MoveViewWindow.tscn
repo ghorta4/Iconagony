@@ -1,0 +1,318 @@
+[gd_scene load_steps=17 format=3 uid="uid://cqo53u0h7nq3e"]
+
+[ext_resource type="Script" path="res://UI/DefaultControlScheme/MoveView.gd" id="1_51sgi"]
+[ext_resource type="FontFile" uid="uid://bm11a2j5dvvfn" path="res://UI/Fonts/DMSans_18pt-Medium.ttf" id="1_p0wy4"]
+[ext_resource type="FontFile" uid="uid://bck3rbaw6ft7v" path="res://UI/Fonts/DMSans-MediumItalic.ttf" id="2_14puq"]
+[ext_resource type="Shader" path="res://UI/Recolor.gdshader" id="4_s67j5"]
+[ext_resource type="Texture2D" uid="uid://tb581ubn7nwq" path="res://UI/Graphics/MoveButton.png" id="5_tcb8q"]
+[ext_resource type="FontFile" uid="uid://bkawxbab3y72x" path="res://UI/Fonts/DMSans_18pt-ExtraBold.ttf" id="6_lh7iw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n3qao"]
+
+[sub_resource type="FontVariation" id="FontVariation_tefg0"]
+spacing_top = -5
+spacing_bottom = -4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4elq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xc3m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_poqqa"]
+shader = ExtResource("4_s67j5")
+shader_parameter/targetColor1 = Color(1, 1, 1, 1)
+shader_parameter/targetColor2 = Color(0.878431, 0.878431, 0.878431, 1)
+shader_parameter/newColor1 = null
+shader_parameter/newColor2 = Color(0.165656, 0.165656, 0.165656, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rpcq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6juyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4wlhp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0g0c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cfgjm"]
+
+[node name="MoveViewWindow" type="Control"]
+z_index = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_51sgi")
+
+[node name="Container" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="MainDetailBlock" type="VBoxContainer" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Name" type="PanelContainer" parent="Container/MainDetailBlock"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n3qao")
+
+[node name="Back" type="ColorRect" parent="Container/MainDetailBlock/Name"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.099986, 0.099986, 0.099986, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MainDetailBlock/Name"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 12
+
+[node name="Name" type="Label" parent="Container/MainDetailBlock/Name/MarginContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_tefg0")
+theme_override_font_sizes/font_size = 17
+text = "Move Name That Ends Up Being Long"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Description" type="PanelContainer" parent="Container/MainDetailBlock"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o4elq")
+
+[node name="Back2" type="ColorRect" parent="Container/MainDetailBlock/Description"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MainDetailBlock/Description"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 7
+
+[node name="Desc" type="Label" parent="Container/MainDetailBlock/Description/MarginContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("1_p0wy4")
+theme_override_font_sizes/font_size = 15
+text = "Move effect description. This can be a little long."
+autowrap_mode = 2
+
+[node name="Description2" type="PanelContainer" parent="Container/MainDetailBlock"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o4elq")
+
+[node name="Back2" type="ColorRect" parent="Container/MainDetailBlock/Description2"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.0253638, 0.0253638, 0.0253638, 0.819608)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MainDetailBlock/Description2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 3
+
+[node name="Flavor" type="Label" parent="Container/MainDetailBlock/Description2/MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(0.637843, 0.637843, 0.637843, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("2_14puq")
+theme_override_font_sizes/font_size = 14
+text = "Flavor text for the move. This can be even longer, maybe!"
+autowrap_mode = 2
+
+[node name="Tags" type="PanelContainer" parent="Container/MainDetailBlock"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o4elq")
+
+[node name="Back2" type="ColorRect" parent="Container/MainDetailBlock/Tags"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.15, 0.15, 0.15, 0.819608)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MainDetailBlock/Tags"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 7
+
+[node name="Tags" type="Label" parent="Container/MainDetailBlock/Tags/MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(0.517184, 0.517184, 0.517184, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("1_p0wy4")
+theme_override_font_sizes/font_size = 12
+text = "Tags: [Something A], [These are], [manually added], [tags]"
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Container/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7xc3m")
+
+[node name="ColorRect" type="ColorRect" parent="Container/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.0657375, 0.0262878, 0.0348289, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 2
+
+[node name="Level" type="Label" parent="Container/VBoxContainer2/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LV 0"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="Container/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7xc3m")
+
+[node name="ColorRect" type="ColorRect" parent="Container/VBoxContainer2/PanelContainer2"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.0360187, 0.0295565, 0.0877449, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer2/PanelContainer2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 2
+
+[node name="Durability" type="Label" parent="Container/VBoxContainer2/PanelContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "15/15"
+horizontal_alignment = 1
+
+[node name="Tooltip" type="Control" parent="Container/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Level" type="Label" parent="Container/VBoxContainer2/Tooltip"]
+modulate = Color(0.537011, 0.537011, 0.537011, 1)
+layout_mode = 2
+offset_top = -5.0
+offset_right = 96.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_14puq")
+theme_override_font_sizes/font_size = 14
+text = "(tab to toggle)"
+horizontal_alignment = 1
+
+[node name="MementoBox" type="VBoxContainer" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MementoDesc" type="PanelContainer" parent="Container/MementoBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o4elq")
+
+[node name="Back2" type="ColorRect" parent="Container/MementoBox/MementoDesc"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.214837, 0.28959, 0.293822, 0.831373)
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/MementoBox/MementoDesc"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Memento" type="Label" parent="Container/MementoBox/MementoDesc/MarginContainer"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("1_p0wy4")
+theme_override_font_sizes/font_size = 15
+text = "Memento description."
+autowrap_mode = 2
+
+[node name="InHandMove" type="Control" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.811765)
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+
+[node name="Back" type="TextureRect" parent="InHandMove"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_poqqa")
+layout_mode = 0
+offset_right = 253.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("5_tcb8q")
+
+[node name="Text" type="Button" parent="InHandMove"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 39.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_lh7iw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8rpcq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6juyo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4wlhp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e0g0c")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cfgjm")
+text = "<error>"

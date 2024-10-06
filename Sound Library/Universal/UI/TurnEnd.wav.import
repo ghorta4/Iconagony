@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmss5ct8crofb"
+path="res://.godot/imported/TurnEnd.wav-c823c1000ce24518874e9b11aabe8b6b.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/UI/TurnEnd.wav"
+dest_files=["res://.godot/imported/TurnEnd.wav-c823c1000ce24518874e9b11aabe8b6b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

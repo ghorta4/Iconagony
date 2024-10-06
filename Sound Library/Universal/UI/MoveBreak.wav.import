@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://48gsdioi0yr8"
+path="res://.godot/imported/MoveBreak.wav-a65510a52d91ce3eba005df0fce18f3d.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/UI/MoveBreak.wav"
+dest_files=["res://.godot/imported/MoveBreak.wav-a65510a52d91ce3eba005df0fce18f3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

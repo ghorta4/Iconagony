@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1w417o30ocdu"
+path="res://.godot/imported/swing1.ogg-3f43f58fa6ceb7a566967a655b4b7826.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Shorts/swing1.ogg"
+dest_files=["res://.godot/imported/swing1.ogg-3f43f58fa6ceb7a566967a655b4b7826.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

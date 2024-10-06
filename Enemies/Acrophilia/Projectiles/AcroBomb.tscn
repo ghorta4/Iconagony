@@ -1,0 +1,189 @@
+[gd_scene load_steps=18 format=3 uid="uid://cgl5jpc70w0ns"]
+
+[ext_resource type="PackedScene" uid="uid://de43yyxgdi5wh" path="res://System/ObjectTemplates/GameObject.tscn" id="1_uvl7g"]
+[ext_resource type="Script" path="res://Enemies/Acrophilia/Projectiles/AcroBombScript.gd" id="2_5vdfh"]
+[ext_resource type="Texture2D" uid="uid://dytamsb2q61md" path="res://Strife/Sprites/blank.png" id="2_ka30y"]
+[ext_resource type="Texture2D" uid="uid://ckqqjta44aek4" path="res://Enemies/Acrophilia/BaseSet/BaseSet30.png" id="3_pihi3"]
+[ext_resource type="Texture2D" uid="uid://bjwvobf6p1nu6" path="res://Enemies/Acrophilia/BaseSet/BaseSet31.png" id="4_qxyuj"]
+[ext_resource type="Texture2D" uid="uid://ck7pdngbu73kg" path="res://Enemies/Acrophilia/BaseSet/BaseSet32.png" id="5_0ae2f"]
+[ext_resource type="Texture2D" uid="uid://b6622t6jgddjx" path="res://Enemies/Acrophilia/BaseSet/BaseSet33.png" id="6_kjmqk"]
+[ext_resource type="Texture2D" uid="uid://bdcnyu5kpm3wm" path="res://Enemies/Acrophilia/BaseSet/BaseSet34.png" id="7_245qe"]
+[ext_resource type="Texture2D" uid="uid://kjwkot45f8c1" path="res://Enemies/Acrophilia/BaseSet/BaseSet35.png" id="8_qkbsw"]
+[ext_resource type="Texture2D" uid="uid://j6o11cv7qjps" path="res://Enemies/Acrophilia/BaseSet/BaseSet29.png" id="9_5whua"]
+[ext_resource type="Texture2D" uid="uid://7rby64t57gfo" path="res://Enemies/Acrophilia/BaseSet/BaseSet27.png" id="10_e3ay7"]
+[ext_resource type="Texture2D" uid="uid://deqtpdewhfs0j" path="res://Enemies/Acrophilia/BaseSet/BaseSet28.png" id="11_lcmjg"]
+[ext_resource type="Script" path="res://System/State.gd" id="12_so2ln"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/DisableOnEnter.gd" id="13_8fyea"]
+[ext_resource type="AudioStream" uid="uid://c88rtwbxoy0ir" path="res://Enemies/Acrophilia/SFX/RibbonBurst.wav" id="14_3vq63"]
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="14_sfbqd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8l2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ka30y")
+}],
+"loop": true,
+"name": &"blank",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pihi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qxyuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qxyuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ae2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ae2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kjmqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_245qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qkbsw")
+}],
+"loop": true,
+"name": &"blast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5whua")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_e3ay7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lcmjg")
+}],
+"loop": true,
+"name": &"start",
+"speed": 5.0
+}]
+
+[node name="AcroBomb" instance=ExtResource("1_uvl7g")]
+script = ExtResource("2_5vdfh")
+deflectable = true
+intangible = false
+stateVariables = "currentTimeAlive"
+fallSpeed = 0.0
+groundFrictionCoefficient = Vector2(0, 0)
+airFrictionCoefficient = Vector2(0, 0)
+ignoreGrabHitboxes = true
+treatAsProjectile = true
+
+[node name="HurtBox" parent="." index="1"]
+bounds = Vector2(30, 30)
+
+[node name="Sprite" parent="." index="3"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_i8l2r")
+animation = &"loop"
+
+[node name="Default" parent="StateMachine" index="0"]
+animationName = "start"
+animationLength = 2
+ticksPerFrame = 6
+duration = 12
+fallbackState = "loop"
+continueOnWait = false
+
+[node name="loop" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("12_so2ln")
+animationName = "loop"
+loopAnimation = true
+ticksPerFrame = 6
+duration = 12
+endless = true
+fallbackState = "loop"
+
+[node name="end" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("12_so2ln")
+preservedMomentum = Vector2(0, 0)
+overrideFrictionCoefficient = Vector2(1, 1)
+overrideAirFrictionCoefficient = Vector2(1, 1)
+useFrictionOverrides = true
+animationName = "blast"
+animationLength = 8
+duration = 34
+fallbackState = "die"
+SFX = ExtResource("14_3vq63")
+SFXVolume = -4.0
+SFXTick = 2
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/end" index="0"]
+script = ExtResource("14_sfbqd")
+damage = 22
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 110.0
+knockbackAwayFromCenter = true
+inheritAttackersSpeedOnHitPercent = 0.0
+stunTicks = 26
+hitstopTicks = 6
+selfHitstopTicks = 4
+hurtState = "HurtGM"
+startFrame = 5
+duration = 4
+hitcancellable = false
+hitcancelDelay = 4
+bounds = Vector2(61, 25)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/end" index="1"]
+script = ExtResource("14_sfbqd")
+damage = 22
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 110.0
+knockbackAwayFromCenter = true
+inheritAttackersSpeedOnHitPercent = 0.0
+stunTicks = 26
+hitstopTicks = 6
+selfHitstopTicks = 4
+hurtState = "HurtGM"
+startFrame = 5
+duration = 4
+hitcancellable = false
+hitcancelDelay = 4
+bounds = Vector2(25, 61)
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/end" index="2"]
+script = ExtResource("14_sfbqd")
+damage = 22
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 110.0
+knockbackAwayFromCenter = true
+inheritAttackersSpeedOnHitPercent = 0.0
+stunTicks = 26
+hitstopTicks = 6
+selfHitstopTicks = 4
+hurtState = "HurtGM"
+startFrame = 5
+duration = 4
+hitcancellable = false
+hitcancelDelay = 4
+bounds = Vector2(45, 45)
+
+[node name="die" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("13_8fyea")
+preservedMomentum = Vector2(0, 0)
+overrideFrictionCoefficient = Vector2(1, 1)
+overrideAirFrictionCoefficient = Vector2(1, 1)
+useFrictionOverrides = true
+animationName = "blank"
+loopAnimation = true
+endless = true
+fallbackState = "die"

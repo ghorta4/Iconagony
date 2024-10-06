@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c44wr4q3buvhw"
+path="res://.godot/imported/HollowHit.wav-2fceb70c85323f9749ed4a5abe1b6b69.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Shorts/HollowHit.wav"
+dest_files=["res://.godot/imported/HollowHit.wav-2fceb70c85323f9749ed4a5abe1b6b69.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

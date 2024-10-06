@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuw0rqsbiol26"]
+
+[ext_resource type="Script" path="res://Levels/Showhosts/ShowhostAI.gd" id="1_nv2d7"]
+[ext_resource type="PackedScene" uid="uid://b3bxr6syskysx" path="res://Strife/StrifeScene.tscn" id="2_kp0ni"]
+[ext_resource type="PackedScene" uid="uid://blb30fcn746b1" path="res://Stages/Heavy Heart Gate/UnlockingStage.tscn" id="3_xvmmj"]
+[ext_resource type="PackedScene" uid="uid://b25n3t47t7grw" path="res://Enemies/Icon of Conquest/Icon of Conquest.tscn" id="4_fs635"]
+[ext_resource type="PackedScene" uid="uid://ddkkk2ilnuwko" path="res://Enemies/Unlocking Runoff/UnlockingRunoff.tscn" id="5_rqhll"]
+[ext_resource type="PackedScene" uid="uid://ce70i04setjqn" path="res://Enemies/Acrophilia/Acrophilia.tscn" id="6_vwldj"]
+
+[node name="LevelBuilder" type="Node"]
+
+[node name="TrainingLevel" type="Node" parent="."]
+script = ExtResource("1_nv2d7")
+levelName = "Training"
+levelDescription = "Switch out equipped moves, try out different attacks, and change your backpack."
+playerCharacter = ExtResource("2_kp0ni")
+background = ExtResource("3_xvmmj")
+canEditMoveset = true
+forceInfiniteTimer = true
+
+[node name="ShortTrial" type="Node" parent="."]
+script = ExtResource("1_nv2d7")
+levelName = "10 Man Trial"
+levelDescription = "Defeat 10 foes as quickly as you can!"
+ingameShownTitle = "Heart of Unlocking"
+ingameShownSubtitle = "Enemy Rush in Blue"
+playerCharacter = ExtResource("2_kp0ni")
+background = ExtResource("3_xvmmj")
+useDefaultIntro = true
+UsedFoes = Array[PackedScene]([ExtResource("4_fs635"), ExtResource("5_rqhll")])
+enemySpawningEnabled = true
+minDelayBetweenSpawns = 30
+maxDelayBetweenSpawns = 80
+initialSpawnDelay = 0
+maxFoesSpawnedAtOnce = 4
+initialAccruedDifficulty = 2.0
+foeKillsToWin = 10
+
+[node name="LongTrial" type="Node" parent="."]
+script = ExtResource("1_nv2d7")
+levelName = "50 Man Trial"
+levelDescription = "Defeat 50 foes as quickly as you can! This might take a while..."
+ingameShownTitle = "Heart of Unlocking"
+ingameShownSubtitle = "Enemy Overload in Blue"
+playerCharacter = ExtResource("2_kp0ni")
+background = ExtResource("3_xvmmj")
+useDefaultIntro = true
+UsedFoes = Array[PackedScene]([ExtResource("4_fs635"), ExtResource("5_rqhll"), ExtResource("6_vwldj")])
+enemySpawningEnabled = true
+minDelayBetweenSpawns = 30
+maxDelayBetweenSpawns = 80
+initialSpawnDelay = 0
+difficultyIncreaseOverTime = 0.002
+maxFoesSpawnedAtOnce = 5
+initialAccruedDifficulty = 4.0
+foeKillsToWin = 50

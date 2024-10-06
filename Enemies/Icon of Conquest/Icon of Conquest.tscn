@@ -1,0 +1,742 @@
+[gd_scene load_steps=71 format=3 uid="uid://b25n3t47t7grw"]
+
+[ext_resource type="PackedScene" uid="uid://de43yyxgdi5wh" path="res://System/ObjectTemplates/GameObject.tscn" id="1_ui2al"]
+[ext_resource type="Script" path="res://Enemies/Icon of Conquest/IoCAI.gd" id="2_amibc"]
+[ext_resource type="Texture2D" uid="uid://bm16eofsmja1f" path="res://Enemies/Icon of Conquest/Sprites/BaseSet8.png" id="3_4dg5r"]
+[ext_resource type="Texture2D" uid="uid://03ubdxiolftg" path="res://Enemies/Icon of Conquest/Sprites/BaseSet2.png" id="3_hhoub"]
+[ext_resource type="PackedScene" uid="uid://b5in4bg4pehfs" path="res://Particles/GenericFFX/EnemyHitSpark.tscn" id="3_m7qgt"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Idle.gd" id="3_sa0ik"]
+[ext_resource type="Texture2D" uid="uid://dbnw2gblfbqc6" path="res://Enemies/Icon of Conquest/Sprites/BaseSet23.png" id="3_vikh0"]
+[ext_resource type="Texture2D" uid="uid://dufwpf8ilr3j6" path="res://Enemies/Icon of Conquest/Sprites/BaseSet7.png" id="4_2vsti"]
+[ext_resource type="Texture2D" uid="uid://bvb7ntw81qw0j" path="res://Enemies/Icon of Conquest/Sprites/BaseSet24.png" id="4_805sn"]
+[ext_resource type="Script" path="res://System/CharacterState.gd" id="4_bypip"]
+[ext_resource type="Texture2D" uid="uid://rljlkc70aq5k" path="res://Enemies/Icon of Conquest/Sprites/BaseSet3.png" id="4_pfe1t"]
+[ext_resource type="Texture2D" uid="uid://m57ai2ocsldp" path="res://Enemies/Icon of Conquest/Sprites/BaseSet9.png" id="5_1lcds"]
+[ext_resource type="Texture2D" uid="uid://y45u2pns8nts" path="res://Enemies/Icon of Conquest/Sprites/BaseSet25.png" id="5_mwkbf"]
+[ext_resource type="Texture2D" uid="uid://bth3g3chafg1e" path="res://Enemies/Icon of Conquest/Sprites/BaseSet4.png" id="5_n4deo"]
+[ext_resource type="Texture2D" uid="uid://gbueec5xgs16" path="res://Enemies/Icon of Conquest/Sprites/BaseSet13.png" id="6_76vau"]
+[ext_resource type="Texture2D" uid="uid://bvi4n5q4kab4x" path="res://Enemies/Icon of Conquest/Sprites/BaseSet10.png" id="6_08218"]
+[ext_resource type="Texture2D" uid="uid://b4p1dtgbb2qwn" path="res://Enemies/Icon of Conquest/Sprites/BaseSet26.png" id="6_lklc8"]
+[ext_resource type="Texture2D" uid="uid://btltsjeso32hg" path="res://Enemies/Icon of Conquest/Sprites/BaseSet5.png" id="6_rws30"]
+[ext_resource type="Texture2D" uid="uid://c7niugutxuoyv" path="res://Enemies/Icon of Conquest/Sprites/BaseSet11.png" id="7_k0o60"]
+[ext_resource type="Texture2D" uid="uid://b0kxky8ri1iaq" path="res://Enemies/Icon of Conquest/Sprites/BaseSet27.png" id="7_qpa7w"]
+[ext_resource type="Texture2D" uid="uid://cwmkonr7yifwp" path="res://Enemies/Icon of Conquest/Sprites/BaseSet6.png" id="7_qyvvi"]
+[ext_resource type="Texture2D" uid="uid://merpwthaij5l" path="res://Enemies/Icon of Conquest/Sprites/BaseSet12.png" id="8_2ycj6"]
+[ext_resource type="Texture2D" uid="uid://cvdk8yhc3fwbn" path="res://Enemies/Icon of Conquest/Sprites/BaseSet28.png" id="8_5lvsv"]
+[ext_resource type="Texture2D" uid="uid://c06xgmmwmj2ri" path="res://Enemies/Icon of Conquest/Sprites/BaseSet29.png" id="9_0a8lb"]
+[ext_resource type="Texture2D" uid="uid://ckhwy062prps" path="res://Enemies/Icon of Conquest/Sprites/BaseSet30.png" id="10_1kjpi"]
+[ext_resource type="Texture2D" uid="uid://cixgurjenu4ds" path="res://Enemies/Icon of Conquest/Sprites/BaseSet31.png" id="11_kqnho"]
+[ext_resource type="Texture2D" uid="uid://be5ycq5ux7isd" path="res://Enemies/Icon of Conquest/Sprites/BaseSet32.png" id="12_3gefa"]
+[ext_resource type="Texture2D" uid="uid://b3jemupvqimkf" path="res://Enemies/Icon of Conquest/Sprites/BaseSet16.png" id="13_8s5io"]
+[ext_resource type="Texture2D" uid="uid://dklau6txop7s8" path="res://Enemies/Icon of Conquest/Sprites/BaseSet17.png" id="14_6yjdi"]
+[ext_resource type="Texture2D" uid="uid://d0jselfxq4nec" path="res://Enemies/Icon of Conquest/Sprites/BaseSet46.png" id="15_4wlbi"]
+[ext_resource type="Texture2D" uid="uid://bwao01gcxg5hp" path="res://Enemies/Icon of Conquest/Sprites/BaseSet18.png" id="15_xhxyg"]
+[ext_resource type="Texture2D" uid="uid://m7cyd6j8p67p" path="res://Enemies/Icon of Conquest/Sprites/BaseSet19.png" id="15_yfeap"]
+[ext_resource type="Texture2D" uid="uid://bpa28goakvnpi" path="res://Enemies/Icon of Conquest/Sprites/BaseSet20.png" id="16_ldi6r"]
+[ext_resource type="Texture2D" uid="uid://dfyj01phk82bk" path="res://Enemies/Icon of Conquest/Sprites/BaseSet47.png" id="16_x7ot5"]
+[ext_resource type="Texture2D" uid="uid://q85mqhllwwj0" path="res://Enemies/Icon of Conquest/Sprites/BaseSet48.png" id="17_k8f45"]
+[ext_resource type="Texture2D" uid="uid://didb4e2ry8u1r" path="res://Enemies/Icon of Conquest/Sprites/BaseSet21.png" id="17_rb3uy"]
+[ext_resource type="Texture2D" uid="uid://br8iyicolt83h" path="res://Enemies/Icon of Conquest/Sprites/BaseSet22.png" id="18_n418h"]
+[ext_resource type="Texture2D" uid="uid://c7ivddkrlsmyq" path="res://Enemies/Icon of Conquest/Sprites/BaseSet49.png" id="18_xk6by"]
+[ext_resource type="Texture2D" uid="uid://d0vnygxohimqw" path="res://Enemies/Icon of Conquest/Sprites/BaseSet50.png" id="19_olv0v"]
+[ext_resource type="Texture2D" uid="uid://dyfhe6cm07shp" path="res://Enemies/Icon of Conquest/Sprites/BaseSet51.png" id="20_cv52d"]
+[ext_resource type="Texture2D" uid="uid://btu2nurd53r4j" path="res://Enemies/Icon of Conquest/Sprites/BaseSet52.png" id="21_o53u8"]
+[ext_resource type="Texture2D" uid="uid://dc8t0ugqj8yc5" path="res://Enemies/Icon of Conquest/Sprites/BaseSet33.png" id="22_yiulf"]
+[ext_resource type="Texture2D" uid="uid://br36txucg5b3o" path="res://Enemies/Icon of Conquest/Sprites/BaseSet34.png" id="23_70sho"]
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="24_14eyk"]
+[ext_resource type="Texture2D" uid="uid://dv1b1rbf0yj8m" path="res://Enemies/Icon of Conquest/Sprites/BaseSet35.png" id="24_qngbg"]
+[ext_resource type="Texture2D" uid="uid://bjpr0865b2wr6" path="res://Enemies/Icon of Conquest/Sprites/BaseSet36.png" id="25_p4abj"]
+[ext_resource type="AudioStream" uid="uid://d00gvo77o8cd7" path="res://Sound Library/Universal/Shorts/Hit2.wav" id="25_wyjl5"]
+[ext_resource type="Texture2D" uid="uid://c4fnt1r6ei4x3" path="res://Enemies/Icon of Conquest/Sprites/BaseSet37.png" id="26_6o14b"]
+[ext_resource type="Texture2D" uid="uid://budn7k56j0hhf" path="res://Enemies/Icon of Conquest/Sprites/BaseSet38.png" id="27_62h7d"]
+[ext_resource type="Texture2D" uid="uid://cer3gf7mlt04g" path="res://Enemies/Icon of Conquest/Sprites/BaseSet15.png" id="28_dql2v"]
+[ext_resource type="Texture2D" uid="uid://dspr453k12ajh" path="res://Enemies/Icon of Conquest/Sprites/BaseSet39.png" id="28_ne0cx"]
+[ext_resource type="Texture2D" uid="uid://uw8iup3p1dto" path="res://Enemies/Icon of Conquest/Sprites/BaseSet40.png" id="29_vx3lf"]
+[ext_resource type="Texture2D" uid="uid://bqc6sru2th7xr" path="res://Enemies/Icon of Conquest/Sprites/BaseSet41.png" id="30_wta5u"]
+[ext_resource type="Texture2D" uid="uid://dgxyk7hx8870v" path="res://Enemies/Icon of Conquest/Sprites/BaseSet42.png" id="31_8lxlm"]
+[ext_resource type="Texture2D" uid="uid://dlg7w6k7gd63l" path="res://Enemies/Icon of Conquest/Sprites/BaseSet43.png" id="32_05bpr"]
+[ext_resource type="Texture2D" uid="uid://bwq1qqs4ituce" path="res://Enemies/Icon of Conquest/Sprites/BaseSet44.png" id="33_fneo2"]
+[ext_resource type="Texture2D" uid="uid://cu2k34lbu0ioj" path="res://Enemies/Icon of Conquest/Sprites/BaseSet45.png" id="34_wcdfe"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Walk.gd" id="47_yg45g"]
+[ext_resource type="Script" path="res://Enemies/Icon of Conquest/InstaFall.gd" id="54_yakiy"]
+[ext_resource type="AudioStream" uid="uid://dmuta6r2ax76e" path="res://Sound Library/Universal/Shorts/Dash3.wav" id="57_jui1f"]
+[ext_resource type="AudioStream" uid="uid://dxx2k8xlfv86i" path="res://Sound Library/Universal/Shorts/Backstep.wav" id="60_8tbiw"]
+[ext_resource type="AudioStream" uid="uid://cnsareouw2kjw" path="res://Sound Library/Universal/Shorts/ChunkySlash.wav" id="61_pxwsj"]
+[ext_resource type="AudioStream" uid="uid://c1w417o30ocdu" path="res://Sound Library/Universal/Shorts/swing1.ogg" id="61_xekcx"]
+[ext_resource type="AudioStream" uid="uid://cc4rc04nf0e63" path="res://Enemies/Icon of Conquest/SFX/CrunkDash3.wav" id="62_tistu"]
+[ext_resource type="AudioStream" uid="uid://dmr7msjnnuvgk" path="res://Sound Library/Universal/Shorts/HeavySwing.wav" id="63_vcjf3"]
+[ext_resource type="AudioStream" uid="uid://cfprnnlsue8ev" path="res://Sound Library/Universal/Shorts/Damage.wav" id="64_ed5d7"]
+[ext_resource type="AudioStream" uid="uid://ds2sayuonmsvg" path="res://Sound Library/Universal/Shorts/MetalBooster.wav" id="65_3vub5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5jbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vikh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_805sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mwkbf")
+}],
+"loop": true,
+"name": &"Dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lklc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qpa7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5lvsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0a8lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1kjpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1kjpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1kjpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kqnho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kqnho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3gefa")
+}],
+"loop": true,
+"name": &"DashSlash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_8s5io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6yjdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xhxyg")
+}],
+"loop": true,
+"name": &"FallRecover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4dg5r")
+}],
+"loop": true,
+"name": &"HurtGH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2vsti")
+}],
+"loop": true,
+"name": &"HurtGL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1lcds")
+}],
+"loop": true,
+"name": &"HurtGM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_76vau")
+}],
+"loop": true,
+"name": &"HurtGrabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_08218")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k0o60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2ycj6")
+}],
+"loop": true,
+"name": &"HurtOTG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hhoub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hhoub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pfe1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pfe1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n4deo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n4deo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rws30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rws30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rws30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qyvvi")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_dql2v")
+}],
+"loop": true,
+"name": &"InstaFall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_yfeap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ldi6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ldi6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rb3uy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_n418h")
+}],
+"loop": true,
+"name": &"Lunge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_4wlbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4wlbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_x7ot5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_x7ot5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_k8f45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xk6by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_olv0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cv52d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cv52d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_o53u8")
+}],
+"loop": true,
+"name": &"RetreatSlash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_yiulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_70sho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qngbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p4abj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6o14b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6o14b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_62h7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_62h7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ne0cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vx3lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_wta5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8lxlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8lxlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_05bpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_05bpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_fneo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wcdfe")
+}],
+"loop": true,
+"name": &"UpSlash",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jsxs"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m8et"]
+bg_color = Color(0.95, 0.95, 0, 1)
+
+[node name="Conquest" instance=ExtResource("1_ui2al")]
+script = ExtResource("2_amibc")
+internalName = "conquest"
+difficultyWeight = 4.0
+spawnWeight = 0.1
+spawnHeight = 0.0
+spawnHeightVariation = 0.0
+MaxHP = 150.0
+MaxSP = 60.0
+IgnoreYShake = true
+pickupMoves = "LLRR
+0.25
+The Line
+0.15"
+stateVariables = "wasStunnedLastTick
+stockpiledHealth"
+speedLimits = Vector2(10000, 1000)
+defaultHitspark = ExtResource("3_m7qgt")
+
+[node name="MovementBox" parent="." index="0"]
+position = Vector2(0, 5.5)
+bounds = Vector2(40, 30)
+
+[node name="HurtBox" parent="." index="1"]
+position = Vector2(-2, 6)
+bounds = Vector2(38, 28)
+
+[node name="Sprite" parent="." index="3"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_u5jbc")
+animation = &"DashSlash"
+
+[node name="Idle" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("3_sa0ik")
+InterruptabilityInterval = 5
+canLandCancel = false
+animationName = "Idle"
+loopAnimation = true
+animationLength = 10
+ticksPerFrame = 8
+duration = 80
+endless = true
+fallbackState = "Idle"
+
+[node name="IdleAir" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("3_sa0ik")
+OtherIdleState = "Idle"
+InterruptabilityInterval = 5
+canLandCancel = false
+animationName = "InstaFall"
+ticksPerFrame = 1
+duration = 1
+fallbackState = "InstaFall"
+
+[node name="InstaFall" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("54_yakiy")
+canLandCancel = false
+animationName = "InstaFall"
+loopAnimation = true
+ticksPerFrame = 1
+endless = true
+fallbackState = "FallRecover"
+
+[node name="FallRecover" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+animationName = "FallRecover"
+animationLength = 3
+ticksPerFrame = 5
+duration = 15
+fallbackState = "Idle"
+
+[node name="Default" parent="StateMachine" index="4"]
+duration = 0
+fallbackState = "Idle"
+
+[node name="HurtGL" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGL"
+fallbackState = "Idle"
+
+[node name="HurtGrabbed" type="Node" parent="StateMachine" index="6"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+fallbackState = "Idle"
+
+[node name="HurtThrown" type="Node" parent="StateMachine" index="7"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+fallbackState = "Idle"
+
+[node name="HurtGM" type="Node" parent="StateMachine" index="8"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGM"
+fallbackState = "Idle"
+
+[node name="HurtGH" type="Node" parent="StateMachine" index="9"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+animationName = "HurtGH"
+fallbackState = "Idle"
+
+[node name="HurtA" type="Node" parent="StateMachine" index="10"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+animationName = "HurtGrabbed"
+duration = 1
+fallbackState = "InstaFall"
+
+[node name="HurtOTG" type="Node" parent="StateMachine" index="11"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+animationName = "HurtOTG"
+animationLength = 3
+ticksPerFrame = 5
+duration = 15
+fallbackState = "Idle"
+
+[node name="HurtDazed" type="Node" parent="StateMachine" index="12"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+isHurtState = true
+fallbackState = "Idle"
+
+[node name="RetreatSlash" type="Node" parent="StateMachine" index="13"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+interruptOnExit = true
+enterForce = Vector2(-300, 0)
+animationName = "RetreatSlash"
+animationLength = 10
+ticksPerFrame = 3
+duration = 33
+fallbackState = "Idle"
+onEnterSFX = ExtResource("57_jui1f")
+enterSFXVolume = -7.0
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/RetreatSlash" index="0"]
+position = Vector2(18, 7.5)
+script = ExtResource("24_14eyk")
+damage = 25
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 650.0
+stunTicks = 26
+hitstopTicks = 4
+selfHitstopTicks = 4
+startFrame = 19
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("25_wyjl5")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+whiffSound = ExtResource("61_xekcx")
+bounds = Vector2(88, 8)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/RetreatSlash" index="1"]
+position = Vector2(18, 7.5)
+script = ExtResource("24_14eyk")
+damage = 25
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 650.0
+stunTicks = 26
+hitstopTicks = 4
+selfHitstopTicks = 4
+startFrame = 19
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("25_wyjl5")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+whiffSound = ExtResource("61_xekcx")
+bounds = Vector2(62.88, 21.38)
+
+[node name="OverheadSlash" type="Node" parent="StateMachine" index="14"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+interruptOnExit = true
+enterForce = Vector2(150, 0)
+animationName = "UpSlash"
+animationLength = 17
+ticksPerFrame = 3
+duration = 58
+fallbackState = "Idle"
+SFX = ExtResource("63_vcjf3")
+SFXTick = 25
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/OverheadSlash" index="0"]
+position = Vector2(28, -10.105)
+script = ExtResource("24_14eyk")
+damage = 45
+knockbackDirection = Vector2(1, -2)
+knockbackForce = 750.0
+stunTicks = 38
+hitstopTicks = 7
+selfHitstopTicks = 7
+hurtState = "HurtA"
+startFrame = 25
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("61_pxwsj")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+bounds = Vector2(84, 93)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/OverheadSlash" index="1"]
+position = Vector2(20.25, -25)
+script = ExtResource("24_14eyk")
+damage = 45
+knockbackDirection = Vector2(1, -2)
+knockbackForce = 750.0
+stunTicks = 38
+hitstopTicks = 7
+selfHitstopTicks = 7
+hurtState = "HurtA"
+startFrame = 25
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("61_pxwsj")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+bounds = Vector2(66, 93)
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/OverheadSlash" index="2"]
+position = Vector2(-19, -25)
+script = ExtResource("24_14eyk")
+damage = 35
+knockbackDirection = Vector2(-1, -2)
+knockbackForce = 750.0
+stunTicks = 38
+hitstopTicks = 7
+selfHitstopTicks = 7
+hurtState = "HurtA"
+startFrame = 28
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("61_pxwsj")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+bounds = Vector2(66, 93)
+
+[node name="Hitbox4" type="Node2D" parent="StateMachine/OverheadSlash" index="3"]
+position = Vector2(-35, -10)
+script = ExtResource("24_14eyk")
+damage = 35
+knockbackDirection = Vector2(-1, -2)
+knockbackForce = 750.0
+stunTicks = 38
+hitstopTicks = 7
+selfHitstopTicks = 7
+hurtState = "HurtA"
+startFrame = 28
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("61_pxwsj")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+bounds = Vector2(80, 93)
+
+[node name="DashStart" type="Node" parent="StateMachine" index="15"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+enterForce = Vector2(40, 0)
+animationName = "Lunge"
+animationLength = 5
+ticksPerFrame = 3
+duration = 15
+fallbackState = "Dash"
+onEnterSFX = ExtResource("60_8tbiw")
+enterSFXVolume = -9.0
+
+[node name="Dash" type="Node" parent="StateMachine" index="16"]
+script = ExtResource("47_yg45g")
+InterruptabilityInterval = 5
+WalkSpeed = 85.0
+canLandCancel = false
+animationName = "Dash"
+loopAnimation = true
+animationLength = 3
+duration = 12
+endless = true
+fallbackState = "Dash"
+SFX = ExtResource("62_tistu")
+SFXVolume = -9.0
+SFXTick = 1
+
+[node name="DashSlash" type="Node" parent="StateMachine" index="17"]
+script = ExtResource("4_bypip")
+canLandCancel = false
+landCancelLag = 9
+interruptOnExit = true
+enterForce = Vector2(200, 0)
+animationName = "DashSlash"
+animationLength = 10
+ticksPerFrame = 3
+duration = 36
+fallbackState = "Idle"
+onEnterSFX = ExtResource("63_vcjf3")
+enterSFXVolume = -2.0
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/DashSlash" index="0"]
+position = Vector2(28.79, 1.605)
+script = ExtResource("24_14eyk")
+damage = 35
+knockbackDirection = Vector2(1, -0.2)
+knockbackForce = 450.0
+stunTicks = 31
+selfHitstopTicks = 12
+hurtState = "HurtA"
+startFrame = 7
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("64_ed5d7")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+bounds = Vector2(78.1, 25.89)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/DashSlash" index="1"]
+position = Vector2(16.735, 9.27)
+script = ExtResource("24_14eyk")
+damage = 35
+knockbackDirection = Vector2(1, -0.2)
+knockbackForce = 450.0
+stunTicks = 31
+selfHitstopTicks = 12
+hurtState = "HurtA"
+startFrame = 7
+duration = 3
+hitcancellable = false
+hitcancelDelay = 4
+hitSound = ExtResource("64_ed5d7")
+hitSoundVolume = -4.0
+bassSound = ExtResource("65_3vub5")
+bassSoundVolume = -9.0
+bounds = Vector2(128.69, 15.125)
+
+[node name="HealthBar" type="Control" parent="." index="5"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = 51.0
+offset_right = 22.0
+offset_bottom = 57.0
+rotation = -1.11701
+pivot_offset = Vector2(22.5, 3)
+
+[node name="ColorRect" type="ColorRect" parent="HealthBar" index="0"]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 1)
+
+[node name="HPDisplay" type="ProgressBar" parent="HealthBar" index="1"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 5.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0jsxs")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2m8et")
+value = 50.0
+show_percentage = false

@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://grakry17trly"]
+
+[ext_resource type="Script" path="res://Strife/Projectiles/Guns/GunProjectile.gd" id="1_hhvta"]
+[ext_resource type="PackedScene" uid="uid://di187xttw3e1l" path="res://Strife/Particles/GunHitSpark.tscn" id="2_16d1w"]
+[ext_resource type="Script" path="res://System/Boxes/MovementBox.gd" id="2_a8w2b"]
+[ext_resource type="Script" path="res://System/Boxes/HurtBox.gd" id="3_d6u4w"]
+[ext_resource type="Texture2D" uid="uid://dytamsb2q61md" path="res://Strife/Sprites/blank.png" id="4_531pn"]
+[ext_resource type="AudioStream" uid="uid://bygj4ac0iouxu" path="res://Strife/SFX/Bounce.wav" id="4_qo2bl"]
+[ext_resource type="Script" path="res://System/StateMachine.gd" id="5_8wb1a"]
+[ext_resource type="Script" path="res://System/State.gd" id="6_fe1qw"]
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="7_t80av"]
+[ext_resource type="AudioStream" uid="uid://bsc7x7nkyocav" path="res://Strife/SFX/BulletHit.wav" id="9_dr3f6"]
+[ext_resource type="AudioStream" uid="uid://lcmtes2t73oo" path="res://Strife/SFX/Thump.wav" id="10_0n0tu"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/DisableOnEnter.gd" id="10_2r204"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7h317"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_531pn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_hhvta")
+fallSpeed = 0.0
+groundFrictionCoefficient = Vector2(0, 0)
+airFrictionCoefficient = Vector2(0, 0)
+speedLimits = Vector2(100000, 100000)
+ignoreMeleeHitboxes = true
+ignoreProjectileHitboxes = true
+ignoreGrabHitboxes = true
+treatAsProjectile = true
+defaultHitspark = ExtResource("2_16d1w")
+
+[node name="MovementBox" type="Node2D" parent="."]
+script = ExtResource("2_a8w2b")
+
+[node name="HurtBox" type="Node2D" parent="."]
+script = ExtResource("3_d6u4w")
+bounds = Vector2(3, 3)
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Bounce" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("4_qo2bl")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7h317")
+
+[node name="Line2D" type="Line2D" parent="Sprite"]
+texture_filter = 1
+points = PackedVector2Array(0, 0, 100, 0)
+width = 3.0
+default_color = Color(1, 1, 0.0117647, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("5_8wb1a")
+
+[node name="Default" type="Node" parent="StateMachine"]
+script = ExtResource("6_fe1qw")
+animationName = "default"
+duration = 30
+fallbackState = "Dying"
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Default"]
+script = ExtResource("7_t80av")
+damage = 24
+knockbackForce = 0.0
+inheritAttackersSpeedOnHitPercent = 0.0
+hurtState = "HurtGM"
+startFrame = 9999999
+duration = 999999
+hitcancellable = false
+hitSound = ExtResource("9_dr3f6")
+hitSoundVolume = -4.0
+bassSound = ExtResource("10_0n0tu")
+bassSoundVolume = -2.0
+bounds = Vector2(5, 5)
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("10_2r204")
+animationName = "default"
+fallbackState = "Dead"
+
+[node name="Dying" type="Node" parent="StateMachine"]
+script = ExtResource("6_fe1qw")
+animationName = "default"
+duration = 50
+fallbackState = "Dead"

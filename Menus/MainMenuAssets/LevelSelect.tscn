@@ -1,0 +1,172 @@
+[gd_scene load_steps=17 format=3 uid="uid://xl47c7rywuwc"]
+
+[ext_resource type="Texture2D" uid="uid://bkildo2eaewei" path="res://Menus/MainMenuAssets/Sprites/Back.png" id="1_6k0wh"]
+[ext_resource type="PackedScene" uid="uid://dvo5mx5g26ica" path="res://Menus/MainMenuAssets/MenuButton.tscn" id="2_4asi7"]
+[ext_resource type="Texture2D" uid="uid://bkajqdyhwtg7h" path="res://Menus/MainMenuAssets/Sprites/xButton.png" id="3_58rut"]
+[ext_resource type="FontFile" uid="uid://bm11a2j5dvvfn" path="res://UI/Fonts/DMSans_18pt-Medium.ttf" id="4_ea4nr"]
+[ext_resource type="Script" path="res://Menus/MainMenuAssets/MenuButton.gd" id="4_rv151"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eco36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thxl2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86ctq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skl2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0107"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_78126"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qes8k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3e436"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i50u5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go0lw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8flyf"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 63.0
+offset_right = 596.0
+offset_bottom = 223.0
+texture = ExtResource("1_6k0wh")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Back" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 41.0
+offset_right = 193.0
+offset_bottom = 201.0
+texture = ExtResource("1_6k0wh")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Training" parent="." instance=ExtResource("2_4asi7")]
+modulate = Color(1, 1, 1, 1)
+offset_left = 64.0
+offset_top = 54.0
+offset_right = 64.0
+offset_bottom = 54.0
+buttonType = 5
+buttonArgument = "training"
+
+[node name="Back" parent="Training" index="0"]
+offset_right = 150.0
+
+[node name="Text" parent="Training" index="1"]
+offset_right = 150.0
+text = "Practice"
+
+[node name="ShortTrial" parent="." instance=ExtResource("2_4asi7")]
+modulate = Color(1, 1, 1, 1)
+offset_left = 64.0
+offset_top = 102.0
+offset_right = 64.0
+offset_bottom = 102.0
+buttonType = 5
+
+[node name="Back" parent="ShortTrial" index="0"]
+offset_right = 150.0
+
+[node name="Text" parent="ShortTrial" index="1"]
+offset_right = 150.0
+text = "Short Battle
+"
+
+[node name="LongTrial" parent="." instance=ExtResource("2_4asi7")]
+modulate = Color(1, 1, 1, 1)
+offset_left = 64.0
+offset_top = 150.0
+offset_right = 64.0
+offset_bottom = 150.0
+buttonType = 5
+buttonArgument = "LongTrial"
+
+[node name="Back" parent="LongTrial" index="0"]
+offset_right = 150.0
+
+[node name="Text" parent="LongTrial" index="1"]
+offset_right = 150.0
+text = "Long Battle
+"
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 25.0
+offset_right = 69.0
+offset_bottom = 57.0
+theme_override_colors/icon_pressed_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eco36")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_thxl2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_86ctq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_skl2v")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_n0107")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_78126")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qes8k")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3e436")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i50u5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_go0lw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8flyf")
+icon = ExtResource("3_58rut")
+script = ExtResource("4_rv151")
+buttonType = 4
+
+[node name="LevelDescription" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 246.0
+offset_top = 87.0
+offset_right = 568.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("4_ea4nr")
+text = "<== Pick an option... "
+autowrap_mode = 2
+
+[node name="Start" parent="." instance=ExtResource("2_4asi7")]
+modulate = Color(1, 1, 1, 1)
+offset_left = 474.0
+offset_top = 192.0
+offset_right = 474.0
+offset_bottom = 192.0
+buttonType = 1
+
+[node name="Back" parent="Start" index="0"]
+offset_left = 22.0
+offset_right = 142.0
+
+[node name="Text" parent="Start" index="1"]
+offset_left = 22.0
+offset_right = 142.0
+text = "Start
+"
+
+[editable path="Training"]
+[editable path="ShortTrial"]
+[editable path="LongTrial"]
+[editable path="Start"]

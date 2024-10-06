@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://3xomm245tx1c"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_sn2yk"]
+[ext_resource type="Texture2D" uid="uid://crn7waveg1wsr" path="res://Particles/DefaultSprites/ThiccLine.png" id="3_g4m3u"]
+[ext_resource type="Texture2D" uid="uid://bpr123v8fil84" path="res://Particles/DefaultSprites/Triangle2.png" id="3_wmoa5"]
+[ext_resource type="Texture2D" uid="uid://lmwi5556if17" path="res://Particles/DefaultSprites/Glow.png" id="4_hbfpp"]
+[ext_resource type="Texture2D" uid="uid://bp8kqu08exhuj" path="res://Particles/DefaultSprites/MiscParticles9.png" id="5_1gvde"]
+
+[sub_resource type="Curve" id="Curve_2rves"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ppvp5"]
+_data = [Vector2(0.00531915, 0.00564682), 0.0, 0.813807, 0, 0, Vector2(1, 1), 1.29047, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_2hhc8"]
+offsets = PackedFloat32Array(0, 0.689655, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.58, 0.713, 1, 0.686275, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_v8g3m"]
+offsets = PackedFloat32Array(0, 0.712644, 1)
+colors = PackedColorArray(0.754947, 0.837007, 1, 1, 2.79158e-06, 0.876929, 0.636988, 1, 0, 1, 0.55, 1)
+
+[sub_resource type="Gradient" id="Gradient_xoigk"]
+offsets = PackedFloat32Array(0, 0.689655, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.663535, 0.921204, 0.780068, 0.686275, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_bw21c"]
+offsets = PackedFloat32Array(0, 0.436782, 1)
+colors = PackedColorArray(0.365905, 0.562774, 0.999995, 1, 0.692985, 1, 0.862004, 1, 0.807069, 1, 0.859403, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_sn2yk")
+
+[node name="RoundSparks" type="CPUParticles2D" parent="."]
+amount = 16
+lifetime = 0.4
+explosiveness = 1.0
+texture = ExtResource("3_g4m3u")
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 202.01
+initial_velocity_max = 892.9
+damping_min = 59.091
+damping_max = 100.0
+damping_curve = SubResource("Curve_2rves")
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ppvp5")
+color_ramp = SubResource("Gradient_2hhc8")
+color_initial_ramp = SubResource("Gradient_v8g3m")
+
+[node name="RoundSparks2" type="CPUParticles2D" parent="."]
+amount = 16
+lifetime = 0.4
+explosiveness = 1.0
+lifetime_randomness = 0.68
+texture = ExtResource("3_wmoa5")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 202.01
+initial_velocity_max = 892.9
+damping_min = 59.091
+damping_max = 100.0
+damping_curve = SubResource("Curve_2rves")
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ppvp5")
+color_ramp = SubResource("Gradient_2hhc8")
+color_initial_ramp = SubResource("Gradient_v8g3m")
+
+[node name="Spheres" type="CPUParticles2D" parent="."]
+z_index = -10
+amount = 3
+lifetime = 0.4
+explosiveness = 1.0
+lifetime_randomness = 0.68
+texture = ExtResource("4_hbfpp")
+spread = 180.0
+gravity = Vector2(0, 0)
+damping_min = 59.091
+damping_max = 100.0
+damping_curve = SubResource("Curve_2rves")
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ppvp5")
+color = Color(1, 1, 1, 0.882353)
+color_ramp = SubResource("Gradient_xoigk")
+color_initial_ramp = SubResource("Gradient_bw21c")
+
+[node name="Spheres2" type="CPUParticles2D" parent="."]
+z_index = -10
+amount = 3
+lifetime = 0.4
+explosiveness = 1.0
+lifetime_randomness = 0.68
+texture = ExtResource("5_1gvde")
+spread = 180.0
+gravity = Vector2(0, 0)
+damping_min = 59.091
+damping_max = 100.0
+damping_curve = SubResource("Curve_2rves")
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_ppvp5")
+color = Color(1, 1, 1, 0.882353)
+color_ramp = SubResource("Gradient_xoigk")
+color_initial_ramp = SubResource("Gradient_bw21c")

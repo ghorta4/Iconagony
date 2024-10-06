@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4ndnsar8nwlh"]
+
+[ext_resource type="PackedScene" uid="uid://dec02kajrpa0y" path="res://System/ObjectTemplates/CharacterObject.tscn" id="1_vy2gy"]
+[ext_resource type="Script" path="res://System/CharacterState.gd" id="2_71xof"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Jump.gd" id="2_ingdw"]
+[ext_resource type="Script" path="res://System/ObjectTemplates/CommonStates/Idle.gd" id="3_mfbac"]
+
+[node name="GameObject" instance=ExtResource("1_vy2gy")]
+
+[node name="Idle" parent="StateMachine" index="0"]
+canLandCancel = false
+
+[node name="Jump" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("2_ingdw")
+canLandCancel = false
+interruptOnExit = true
+
+[node name="IdleAir" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("3_mfbac")
+endless = true
+fallbackState = "IdleAir"
+
+[node name="Landing" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("2_71xof")
+canLandCancel = false
+fallbackState = "Idle"

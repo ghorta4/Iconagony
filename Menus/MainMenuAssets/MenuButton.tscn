@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvo5mx5g26ica"]
+
+[ext_resource type="Shader" path="res://UI/Recolor.gdshader" id="1_84ntk"]
+[ext_resource type="Script" path="res://Menus/MainMenuAssets/MenuButton.gd" id="1_swmfh"]
+[ext_resource type="Texture2D" uid="uid://tb581ubn7nwq" path="res://UI/Graphics/MoveButton.png" id="2_gx83b"]
+[ext_resource type="FontFile" uid="uid://bkawxbab3y72x" path="res://UI/Fonts/DMSans_18pt-ExtraBold.ttf" id="3_1iuv0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ycpq1"]
+shader = ExtResource("1_84ntk")
+shader_parameter/targetColor1 = Color(1, 1, 1, 1)
+shader_parameter/targetColor2 = Color(0.878431, 0.878431, 0.878431, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0.165656, 0.165656, 0.165656, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uamid"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yytl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tc7jr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3jn4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xp3x"]
+
+[node name="MenuButton" type="Control"]
+modulate = Color(1, 1, 1, 0.811765)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_swmfh")
+
+[node name="Back" type="NinePatchRect" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_ycpq1")
+layout_mode = 0
+offset_right = 253.0
+offset_bottom = 40.0
+texture = ExtResource("2_gx83b")
+region_rect = Rect2(0, 0, 253, 36)
+patch_margin_left = 20
+patch_margin_right = 20
+
+[node name="Text" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 39.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1iuv0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uamid")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4yytl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tc7jr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w3jn4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3xp3x")
+text = "<error>"

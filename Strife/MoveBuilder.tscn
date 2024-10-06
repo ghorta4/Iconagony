@@ -1,0 +1,232 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv1w0m5hl70du"]
+
+[ext_resource type="Script" path="res://System/PlayerMoves/MoveClass.gd" id="1_mwexk"]
+[ext_resource type="PackedScene" uid="uid://c3guuasf5varg" path="res://Strife/ActionUI/JumpPlot.tscn" id="2_p57bc"]
+[ext_resource type="PackedScene" uid="uid://d1m0cceltdyuy" path="res://UI/Slider/Slider.tscn" id="3_bwhoc"]
+[ext_resource type="Script" path="res://Strife/MoveClasses/Grindstone.gd" id="4_3k7u5"]
+[ext_resource type="PackedScene" uid="uid://xqlv7jxvtv50" path="res://Strife/ActionUI/CirclePlot.tscn" id="5_wirba"]
+[ext_resource type="PackedScene" uid="uid://cbt86dctkekc" path="res://Strife/ActionUI/GunAim.tscn" id="6_muand"]
+
+[node name="MoveBuilder" type="Node"]
+
+[node name="BaseSet" type="Node" parent="."]
+
+[node name="Ascend" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "March 10th"
+description = "Jumps upwards. Good vertical movement, but poor horizontal utility."
+flavorDesc = "Good thing you can't break your legs. Or anything, really."
+groundedState = "Jump"
+aerialState = "Jump"
+defaultMaxUses = 7
+pickupMoves = "Bloodstep
+0.2"
+maxMementos = 1
+UIScene = ExtResource("2_p57bc")
+
+[node name="Escapade" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Abscond"
+description = "Move quickly. Nearly instant."
+flavorDesc = "Why does an icon move? No concept is truly immutable- they're shaped by the world around them. To change position is to change your very existence."
+groundedState = "Dash"
+aerialState = "Dash"
+usability = 2
+pickupMoves = "Bloodstep
+0.05
+Abjure
+0.15"
+maxMementos = 2
+UIScene = ExtResource("3_bwhoc")
+
+[node name="Abjure" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Abjure"
+description = "Move backwards. Very fast."
+flavorDesc = "Despite their new existence, the denizens of the afterlife mimick the world of the living as closely as they can."
+groundedState = "BackDash"
+aerialState = "BackDash"
+usability = 2
+pickupMoves = "Bloodstep
+0.2"
+maxMementos = 1
+
+[node name="The Line" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "The Line"
+description = "Basic horizontal strike. Has extremely high durability."
+flavorDesc = "\"I'll say it again: It's not a staff, it's a LINE!\"  \"A line is full of potential, possibilities. It's many things, whatever I wish it to be.\""
+groundedState = "Swipe1G"
+aerialState = "Swipe1A"
+defaultMaxUses = 8
+pickupMoves = "Grindstone
+0.17
+Bloodstep
+0.025
+LLRR
+0.002"
+maxMementos = 3
+
+[node name="Grindstone" type="Node" parent="BaseSet"]
+script = ExtResource("4_3k7u5")
+displayName = "Grindstone"
+description = "Lackluster overhead attack. Boosts the level of the above move by 1, and reduces the level of the below move by 1."
+flavorDesc = "All systems are inherently balanced. But, why do we succeed? It's because we learn to break these systems."
+groundedState = "GrindG"
+aerialState = "GrindA"
+defaultMaxUses = 4
+pickupMoves = "FireSnap
+0.1
+LLRR
+0.005"
+maxMementos = 2
+
+[node name="Divebomb" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Rocking Stone"
+description = "Spinning divekick. Air only."
+flavorDesc = "There exists nothing beneath our world, for waking eyes have never set upon it."
+groundedState = "DiveStart"
+aerialState = "DiveStart"
+defaultMaxUses = 4
+usability = 1
+pickupMoves = "Bloodstep
+0.165
+Grindstone
+0.015
+Abyss
+0.02"
+maxMementos = 2
+UIScene = ExtResource("5_wirba")
+
+[node name="Bloodstep" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Bloodstep"
+description = "A quick dodge. Can be aimed."
+flavorDesc = "Few have ever made a living hunting the icons, even when they were first born. They work outside the normal machinations of time, after all..."
+groundedState = "DodgeG"
+aerialState = "DodgeA"
+defaultMaxUses = 4
+pickupMoves = "FireSnap
+0.15
+Abyss
+0.05"
+maxMementos = 1
+UIScene = ExtResource("5_wirba")
+
+[node name="FireSnap" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "GLOOM"
+description = "A slow, powerful blast."
+flavorDesc = "We live in the realm at the end of all time, home of the dead and origin of the new living. They thought none were left to arrive, but..."
+groundedState = "SnapG1"
+aerialState = "SnapA1"
+defaultMaxUses = 2
+pickupMoves = "DarkAge
+0.2"
+
+[node name="LLRR" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "LLRRLLR"
+description = "Strikes more times the higher the level is."
+flavorDesc = "Upon the breaking of the Seventh Heart Seal, the final verdict must be cast."
+groundedState = "LLRRG"
+aerialState = "LLRRA"
+defaultMaxUses = 2
+pickupMoves = "Abyss
+0.1
+LLRR
+0.05
+FirstFlame
+0.05"
+maxMementos = 1
+
+[node name="Gungeous" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Enter Gungeous"
+description = "Aimable pistol shot."
+flavorDesc = "Firearms were a sacred tool, massive armaments of an age long gone- wielded by beasts far larger than most cognitive."
+groundedState = "GunG"
+aerialState = "GunA"
+defaultMaxUses = 4
+maxMementos = 2
+UIScene = ExtResource("6_muand")
+
+[node name="Abyss" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Tread the Abyss"
+description = "Jumping spinning slash."
+flavorDesc = "In a misguided attempt to create the perfect organism, some fool attempted to cross the cognitive and the dire; Thus was born the creature without body, soul, nor mind- the icon."
+groundedState = "AbyssStart"
+aerialState = "AbyssStart"
+defaultMaxUses = 3
+pickupMoves = "LLRR
+0.02
+The Line
+0.08
+DarkAge
+0.1"
+maxMementos = 2
+UIScene = ExtResource("5_wirba")
+
+[node name="FirstFlame" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "First Flame"
+description = "Forwards swipe. Afterwards, uses the move below at a level 1 higher than the level this was used at."
+flavorDesc = "The genesis of the dire beasts and the cognitive animals was the remnants of human civilization."
+groundedState = "FFlameG"
+aerialState = "FFlameA"
+defaultMaxUses = 6
+pickupMoves = "LLRR
+0.02
+Abyss
+0.05
+KindledFlame
+0.15
+DarkAge
+0.05"
+maxMementos = 1
+
+[node name="KindledFlame" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Kindled Flame"
+description = "Upwards swipe, ground only. Afterwards, uses the move below at a level 1 higher than the level this was used at."
+flavorDesc = "The sacerdotals sought to manifest their true nature and dejected knowledge, taking upon the mantle of were-beasts- then dire beasts."
+groundedState = "KFlame"
+aerialState = "KFlame"
+defaultMaxUses = 3
+usability = 2
+pickupMoves = "FirstFlame
+0.02
+Abyss
+0.05
+DarkAge
+0.13"
+maxMementos = 1
+
+[node name="DarkAge" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Darkest Age"
+description = "Explosion, ground only. Levels affect damage much more than normal."
+flavorDesc = "The cognitive sought to follow in the footsteps of humans, taking on their physique and abandoning their old forms."
+groundedState = "DarkAge"
+aerialState = "DarkAge"
+defaultMaxUses = 2
+usability = 2
+pickupMoves = "FirstFlame
+0.075
+Abyss
+0.075
+KindledFlame
+0.025"
+maxMementos = 3
+
+[node name="Block" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Block"
+description = "Prevents most damage."
+flavorDesc = "An icon can certainly recieve harm, but sans a normal flow of time, injuries may not appear."
+groundedState = "Block"
+aerialState = "Block"
+defaultMaxUses = 6
+maxMementos = 3

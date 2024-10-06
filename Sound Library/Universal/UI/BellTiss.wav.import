@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bj14r8hfg3vyp"
+path="res://.godot/imported/BellTiss.wav-b43c9647174912b16099643a39b98ada.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/UI/BellTiss.wav"
+dest_files=["res://.godot/imported/BellTiss.wav-b43c9647174912b16099643a39b98ada.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

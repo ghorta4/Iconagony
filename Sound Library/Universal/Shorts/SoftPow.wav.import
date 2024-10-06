@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0h1ljao6cykg"
+path="res://.godot/imported/SoftPow.wav-d74c812fa52f3000fc7d963ae3172688.sample"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Shorts/SoftPow.wav"
+dest_files=["res://.godot/imported/SoftPow.wav-d74c812fa52f3000fc7d963ae3172688.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
