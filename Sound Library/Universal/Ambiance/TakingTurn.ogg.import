@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brbcrkil24m2p"
+path="res://.godot/imported/TakingTurn.ogg-de913b24e938537afbbd64490fb08613.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound Library/Universal/Ambiance/TakingTurn.ogg"
+dest_files=["res://.godot/imported/TakingTurn.ogg-de913b24e938537afbbd64490fb08613.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
