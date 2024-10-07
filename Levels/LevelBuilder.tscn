@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuw0rqsbiol26"]
+[gd_scene load_steps=8 format=3 uid="uid://cuw0rqsbiol26"]
 
 [ext_resource type="Script" path="res://Levels/Showhosts/ShowhostAI.gd" id="1_nv2d7"]
 [ext_resource type="PackedScene" uid="uid://b3bxr6syskysx" path="res://Strife/StrifeScene.tscn" id="2_kp0ni"]
 [ext_resource type="PackedScene" uid="uid://blb30fcn746b1" path="res://Stages/Heavy Heart Gate/UnlockingStage.tscn" id="3_xvmmj"]
+[ext_resource type="PackedScene" uid="uid://f1lahrswvi5q" path="res://Stages/Overunderworld/OverunderworldStage.tscn" id="4_4rx21"]
 [ext_resource type="PackedScene" uid="uid://b25n3t47t7grw" path="res://Enemies/Icon of Conquest/Icon of Conquest.tscn" id="4_fs635"]
 [ext_resource type="PackedScene" uid="uid://ddkkk2ilnuwko" path="res://Enemies/Unlocking Runoff/UnlockingRunoff.tscn" id="5_rqhll"]
 [ext_resource type="PackedScene" uid="uid://ce70i04setjqn" path="res://Enemies/Acrophilia/Acrophilia.tscn" id="6_vwldj"]
@@ -25,7 +26,7 @@ levelDescription = "Defeat 10 foes as quickly as you can!"
 ingameShownTitle = "Heart of Unlocking"
 ingameShownSubtitle = "Enemy Rush in Blue"
 playerCharacter = ExtResource("2_kp0ni")
-background = ExtResource("3_xvmmj")
+background = ExtResource("4_4rx21")
 useDefaultIntro = true
 UsedFoes = Array[PackedScene]([ExtResource("4_fs635"), ExtResource("5_rqhll")])
 enemySpawningEnabled = true

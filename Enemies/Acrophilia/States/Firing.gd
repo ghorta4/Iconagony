@@ -75,7 +75,7 @@ func EndImmunity():
 	host.ignoreProjectileHitboxes = false
 
 func Frame1():
-	myBolt = host.SpawnProjectile(preload("res://Enemies/Acrophilia/Projectiles/AcroBomb.tscn"), Vector2.ZERO)
+	myBolt = host.SpawnProjectile(load("res://Enemies/Acrophilia/Projectiles/AcroBomb.tscn"), Vector2.ZERO)
 	myBolt.material = host.material
 	UpdateBoltPosition()
 

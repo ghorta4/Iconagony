@@ -1,0 +1,549 @@
+[gd_scene load_steps=34 format=3 uid="uid://f1lahrswvi5q"]
+
+[ext_resource type="Script" path="res://System/Stages/Stage.gd" id="1_dktv3"]
+[ext_resource type="Texture2D" uid="uid://b303jgly7pddo" path="res://Stages/Overunderworld/Sprites/Black.png" id="2_ep6pa"]
+[ext_resource type="Texture2D" uid="uid://bjwg3w2k82hrv" path="res://Stages/Overunderworld/Sprites/GroundLevelProps2.png" id="3_eesi0"]
+[ext_resource type="Shader" path="res://Stages/Overunderworld/RainbowGround.gdshader" id="3_jyly2"]
+[ext_resource type="Texture2D" uid="uid://dwg4p6pk1c5u0" path="res://Stages/Overunderworld/Sprites/GroundLevelProps1.png" id="3_l1dsl"]
+[ext_resource type="Texture2D" uid="uid://dglow8i5n2c3x" path="res://Stages/Overunderworld/Sprites/GroundStuffs.png" id="3_netov"]
+[ext_resource type="Texture2D" uid="uid://d0ew1jbs0oifi" path="res://Stages/Overunderworld/Sprites/Midground2.png" id="3_w04lm"]
+[ext_resource type="Texture2D" uid="uid://cq6hndf8a0k1a" path="res://Stages/Overunderworld/Sprites/farFarGround.png" id="5_8e01b"]
+[ext_resource type="Texture2D" uid="uid://cde0nsp4mq8ec" path="res://Stages/Overunderworld/Sprites/farmount.png" id="5_g1lby"]
+[ext_resource type="Script" path="res://Stages/Overunderworld/GroundGlow.gd" id="5_kjelo"]
+[ext_resource type="Texture2D" uid="uid://cl72gu34kebfr" path="res://Stages/Overunderworld/Sprites/Midground2m.png" id="5_mg8yo"]
+[ext_resource type="Texture2D" uid="uid://bryf88f0hc1o4" path="res://Stages/Overunderworld/Sprites/Midground1.png" id="5_r34n1"]
+[ext_resource type="Texture2D" uid="uid://bagtilam5j7cp" path="res://Stages/Overunderworld/Sprites/Midground1m.png" id="7_av2ky"]
+[ext_resource type="Script" path="res://Stages/Overunderworld/GroundGlowParticle.gd" id="7_qmffv"]
+[ext_resource type="Texture2D" uid="uid://lmsfbq1hcjlo" path="res://Stages/Overunderworld/Sprites/onetimeprops1.png" id="9_gkbcg"]
+[ext_resource type="Texture2D" uid="uid://lmwi5556if17" path="res://Particles/DefaultSprites/Glow.png" id="10_o2r1b"]
+[ext_resource type="Texture2D" uid="uid://1n6jprvsvgxe" path="res://Stages/Overunderworld/Sprites/nearMid.png" id="13_pwplb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02lxg"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 100.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 10.0
+shader_parameter/glowColor = Color(1.82897e-06, 0.422376, 0.300117, 1)
+shader_parameter/brightness = 6.0
+shader_parameter/brightnessCut = 3.0
+
+[sub_resource type="Shader" id="Shader_yj2ho"]
+code = "shader_type canvas_item;
+
+uniform float gridSize = 64.;
+uniform vec2 overallWorldPos = vec2(0,0);
+uniform float cameraScale = 1.0;
+
+uniform float realTimeScale = 1.0;
+uniform float inGameTime = 0;
+uniform float timeScale = 1.0;
+
+uniform vec3 glowColor : source_color;
+
+uniform float brightness = 0.3;
+uniform float brightnessCut = 0.3;
+
+vec3 VHSRandom(ivec3 position) //returns between 1 and 0;
+	{
+		int hi = position.x;
+	hi += 214748364;
+	hi = hi * hi;
+	hi = hi ^ position.y;
+	hi = hi * hi;
+	hi = hi ^ position.z;
+	hi = hi << 8 ^ hi;
+	hi = hi * hi * hi;
+	hi = hi << 16 ^ hi >> 16;
+	
+	
+	int cast1 = (hi >> 24) & 255;
+	int cast2 = (hi >> 8) & 255;
+	int cast3 = (hi >> 16) & 255;
+	float f1 = float(cast1) / 255.0;
+	float f2 = float(cast2) / 255.0;
+	float f3 = float(cast3) / 255.0;
+	return vec3(f1, f2, f3);
+	}
+
+ivec3 GetQuadrant(vec3 pos, float quadrantSize) 
+	{
+		return ivec3(int(floor(pos.x / quadrantSize)), int(floor(pos.y / quadrantSize)),int(floor(pos.z / quadrantSize)));
+	}
+
+
+vec3 getPerlinNoiseAtPoint(vec3 worldPos, float cs) {
+	ivec3 myQuadrant = GetQuadrant(worldPos, cs);
+	
+	vec3 output = vec3(0,0,0);
+	
+	for(int x = 0; x <= 1; x++) {
+		for(int y = 0; y <= 1; y++) {
+			for(int z = 0; z <= 1; z++) {
+				ivec3 quad = myQuadrant + ivec3(x,y,z);
+				vec3 vhsRand = VHSRandom(ivec3(quad.x, quad.y, quad.z));
+				vec3 difference = vec3(quad) * cs - worldPos;
+				float distFactor = (cs - abs(difference.z)) * (cs - abs(difference.y)) * (cs - abs(difference.x));
+				vec3 toAdd = distFactor / cs / cs / cs * (vhsRand);
+				output += toAdd;
+			}
+		}
+	}
+	
+	return output;
+	}
+
+void fragment() {
+	float T =  (TIME * realTimeScale + inGameTime) * timeScale;
+	
+	vec2 usedNoiseSampleUV = SCREEN_UV / SCREEN_PIXEL_SIZE - overallWorldPos * cameraScale;
+	vec3 noiseSample = getPerlinNoiseAtPoint(vec3(usedNoiseSampleUV.x, sin(usedNoiseSampleUV.y) + usedNoiseSampleUV.y * 0.3 , T), gridSize);
+	usedNoiseSampleUV.x += sin(usedNoiseSampleUV.x / 40.67 + cos(T/ 10.1 + sin(usedNoiseSampleUV.y / 100.0))) * 40.;
+	noiseSample += getPerlinNoiseAtPoint(vec3(usedNoiseSampleUV.x, usedNoiseSampleUV.y , T) * 0.294, gridSize * .42);
+	usedNoiseSampleUV.y += sin(usedNoiseSampleUV.y / 40.24) * 40.;
+	
+	noiseSample += getPerlinNoiseAtPoint(vec3(usedNoiseSampleUV.x, usedNoiseSampleUV.y , T) * 0.94, gridSize * 6.42);
+	
+	noiseSample /= 3.0;
+	noiseSample = vec3(noiseSample.x * glowColor.x, noiseSample.x * glowColor.y, noiseSample.y * glowColor.z) * (noiseSample.z * brightness - brightnessCut);
+	COLOR.rgb += noiseSample;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jug8p"]
+shader = SubResource("Shader_yj2ho")
+shader_parameter/gridSize = 16.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 10.0
+shader_parameter/glowColor = Color(0.304425, 0.821565, 1, 1)
+shader_parameter/brightness = 0.6
+shader_parameter/brightnessCut = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el0n2"]
+shader = SubResource("Shader_yj2ho")
+shader_parameter/gridSize = 16.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 10.0
+shader_parameter/glowColor = Color(0.304425, 0.821565, 1, 1)
+shader_parameter/brightness = 0.6
+shader_parameter/brightnessCut = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3vgs"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 36.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 30.0
+shader_parameter/glowColor = Color(1, 0.81837, 0.707503, 1)
+shader_parameter/brightness = 1.3
+shader_parameter/brightnessCut = 0.0
+
+[sub_resource type="Curve" id="Curve_035qn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.719712), -0.798394, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xu25s"]
+offsets = PackedFloat32Array(0, 0.12069, 0.376437, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qaiik"]
+shader = SubResource("Shader_yj2ho")
+shader_parameter/gridSize = 16.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 10.0
+shader_parameter/glowColor = Color(0.304425, 0.821565, 1, 1)
+shader_parameter/brightness = 0.6
+shader_parameter/brightnessCut = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7flc"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 32.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.236973, 8.85606e-06, 0.994072, 1)
+shader_parameter/brightness = 0.4
+shader_parameter/brightnessCut = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sk4yh"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 32.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.236973, 8.85606e-06, 0.994072, 1)
+shader_parameter/brightness = 0.4
+shader_parameter/brightnessCut = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i8ui"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 32.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.236973, 8.85606e-06, 0.994072, 1)
+shader_parameter/brightness = 0.4
+shader_parameter/brightnessCut = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0eg0"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 32.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.236973, 8.85606e-06, 0.994072, 1)
+shader_parameter/brightness = 0.4
+shader_parameter/brightnessCut = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv257"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 64.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.110577, 0.501609, 0.72099, 1)
+shader_parameter/brightness = 0.69
+shader_parameter/brightnessCut = 0.32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d08om"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 36.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 30.0
+shader_parameter/glowColor = Color(0.526121, 0.819791, 1, 1)
+shader_parameter/brightness = 1.3
+shader_parameter/brightnessCut = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wq4uy"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 32.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.236973, 8.85606e-06, 0.994072, 1)
+shader_parameter/brightness = 0.4
+shader_parameter/brightnessCut = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5pyd"]
+shader = ExtResource("3_jyly2")
+shader_parameter/gridSize = 64.0
+shader_parameter/overallWorldPos = Vector2(0, 0)
+shader_parameter/cameraScale = 1.0
+shader_parameter/realTimeScale = 1.0
+shader_parameter/inGameTime = 0.0
+shader_parameter/timeScale = 25.0
+shader_parameter/glowColor = Color(0.980392, 0.309804, 1, 1)
+shader_parameter/brightness = 1.125
+shader_parameter/brightnessCut = 0.44
+
+[node name="OverworldStage" type="Node2D"]
+script = ExtResource("1_dktv3")
+
+[node name="Scroller" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 363)
+motion_scale = Vector2(0.05, 0.02)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/Sky"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_02lxg")
+position = Vector2(-1, -2689)
+texture = ExtResource("2_ep6pa")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 4096)
+script = ExtResource("5_kjelo")
+
+[node name="propsfarfar2" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 301)
+motion_scale = Vector2(0.08, 0.2)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsfarfar2"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jug8p")
+position = Vector2(-473, 143)
+texture = ExtResource("5_8e01b")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propsfarfar" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 301)
+motion_scale = Vector2(0.1, 0.3)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsfarfar"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_el0n2")
+position = Vector2(-3, 143)
+texture = ExtResource("5_8e01b")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propsfar" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 301)
+motion_scale = Vector2(0.2, 0.5)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Scroller/propsfar"]
+material = SubResource("ShaderMaterial_c3vgs")
+position = Vector2(1372, 163)
+amount = 40
+lifetime = 6.0
+preprocess = 10.0
+local_coords = true
+texture = ExtResource("10_o2r1b")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 1)
+gravity = Vector2(0, -180)
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_035qn")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_xu25s")
+script = ExtResource("7_qmffv")
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsfar"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qaiik")
+position = Vector2(539, -505)
+texture = ExtResource("5_g1lby")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Scroller/propsfar"]
+material = SubResource("ShaderMaterial_c3vgs")
+position = Vector2(1375, 226)
+amount = 80
+lifetime = 6.0
+preprocess = 10.0
+local_coords = true
+texture = ExtResource("10_o2r1b")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+gravity = Vector2(0, -180)
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 1.5
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_035qn")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_xu25s")
+script = ExtResource("7_qmffv")
+
+[node name="propsmid2m" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 363)
+motion_scale = Vector2(0.38, 0.7)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsmid2m"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_r7flc")
+position = Vector2(-1, 0)
+texture = ExtResource("5_mg8yo")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propsmid2" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 363)
+motion_scale = Vector2(0.38, 0.7)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsmid2"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sk4yh")
+position = Vector2(-1, 0)
+texture = ExtResource("3_w04lm")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propsmidm" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 363)
+motion_scale = Vector2(0.537, 0.85)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsmidm"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_0i8ui")
+position = Vector2(-1, -100)
+texture = ExtResource("7_av2ky")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propsmid" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 363)
+motion_scale = Vector2(0.537, 0.85)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsmid"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_t0eg0")
+position = Vector2(-1, -100)
+texture = ExtResource("5_r34n1")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propstop3" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0.8, 1)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propstop3"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lv257")
+position = Vector2(-358, -426.98)
+texture = ExtResource("9_gkbcg")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Scroller/propstop3"]
+material = SubResource("ShaderMaterial_d08om")
+position = Vector2(683, -746.98)
+amount = 30
+local_coords = true
+texture = ExtResource("10_o2r1b")
+emission_shape = 1
+emission_sphere_radius = 33.97
+gravity = Vector2(0, -980)
+damping_min = 100.0
+damping_max = 100.0
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_xu25s")
+script = ExtResource("7_qmffv")
+
+[node name="propsnearmid" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(3, 363)
+motion_scale = Vector2(0.86, 1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propsnearmid"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wq4uy")
+position = Vector2(0, -13)
+texture = ExtResource("13_pwplb")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propstop2" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(0, 499.98)
+motion_scale = Vector2(0.97, 1)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propstop2"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lv257")
+position = Vector2(195, -255.98)
+texture = ExtResource("3_eesi0")
+centered = false
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="propstop" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(0, 499.98)
+motion_mirroring = Vector2(2210, 0)
+
+[node name="tex" type="Sprite2D" parent="Scroller/propstop"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lv257")
+position = Vector2(0, -255.98)
+texture = ExtResource("3_l1dsl")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")
+
+[node name="Front" type="ParallaxLayer" parent="Scroller"]
+z_index = 1005
+position = Vector2(0, 499.98)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="tex2" type="Sprite2D" parent="Scroller/Front"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c5pyd")
+scale = Vector2(1, 100)
+texture = ExtResource("2_ep6pa")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+
+[node name="tex" type="Sprite2D" parent="Scroller/Front"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c5pyd")
+texture = ExtResource("3_netov")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3096, 256)
+script = ExtResource("5_kjelo")

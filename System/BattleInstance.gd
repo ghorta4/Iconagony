@@ -154,7 +154,7 @@ func UpdateQueuedActions():
 
 func Setup():
 	if not isGhost:
-		focusedPlayer = SpawnObject(preload("res://Strife/StrifeScene.tscn"))
+		focusedPlayer = SpawnObject(load("res://Strife/StrifeScene.tscn"))
 		#MoveManager.LoadMovesetFromNames(focusedPlayer.instancedMoves, ["The Line"], ["Ascend", "Escapade"])
 		MoveManager.LoadMovesetFromNames(focusedPlayer.instancedMoves, [], [])
 		MoveManager.AdjustMoveLevels(focusedPlayer.instancedMoves)

@@ -1,5 +1,7 @@
 extends Node2D
 class_name Stage
+
+var main : Main
 var usedCamera : Camera2D
 
 var AllAssets : Array[StageAsset] = []

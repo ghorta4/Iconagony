@@ -15,7 +15,7 @@ const greyHealthDecay = 0.2
 var greyHealthWaitBeforeDecay = 0
 const greyHealthDefaultWait = 45
 #Below are turn timer related variables
-var timeLeftThisTurn = 30.0 #in seconds
+var timeLeftThisTurn = 60.0 #in seconds
 var infiniteTime = false
 var ignoreMoveGeneration = false
 
@@ -51,7 +51,7 @@ func Tick():
 	if stateInterruptable && (canPollMoves || not isGhost): #Do move stuff here
 		RefreshPickupMoves()
 		canPollMoves = false
-		timeLeftThisTurn = 30.0 #awooga
+		timeLeftThisTurn = 60.0 #awooga
 	
 	
 	if stunTicks > 0:

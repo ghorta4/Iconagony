@@ -67,18 +67,18 @@ func CopyTo(new):
 		new[variableName] = self[variableName]
 
 #Nuke this in the web build
-#func DrawMe():
-	#if Engine.is_editor_hint():
-		#var list = NodeSelection.SelectedNodes
-		#if (self in list):
-			#super()
-		#return
-	#
-	#if not active:
-		#return
-	#var color = GetDrawColor()
-	#var origin = GetOrigin()
-	#draw_rect(Rect2(origin - bounds * 0.5, bounds), color, true)
+func DrawMe():
+	if Engine.is_editor_hint():
+		var list = NodeSelection.SelectedNodes
+		if (self in list):
+			super()
+		return
+	
+	if not active:
+		return
+	var color = GetDrawColor()
+	var origin = GetOrigin()
+	draw_rect(Rect2(origin - bounds * 0.5, bounds), color, true)
 
 func GetOrigin():
 	var origin = player.global_position + position * Vector2(2 * player.GetFacingInt() - 1, 1)

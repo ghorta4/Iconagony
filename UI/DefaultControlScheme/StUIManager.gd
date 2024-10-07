@@ -615,8 +615,8 @@ func RunTimerSounds():
 func UpdateTimerDisplay():
 	var timeLeft = followedPlayer.timeLeftThisTurn
 	timer.visible = not battleInstance.readFromReplay && not followedPlayer.infiniteTime
-	timer.text = "- %02d:%02d:%02d.%02d" % [0, 0, floor(timeLeft), floor(fmod(timeLeft, 1.) * 100)]
-	subtimer.text = "%02d:%02d.%02d" % [0, floor(timeLeft), floor(fmod(timeLeft, 1.) * 100)]
+	timer.text = "- %02d:%02d:%02d.%02d" % [0, floor(timeLeft / 60.0), floor(fmod(timeLeft, 60)), floor(fmod(timeLeft, 1.) * 100)]
+	subtimer.text = "%02d:%02d.%02d" % [floor(timeLeft / 60.0), floor(fmod(timeLeft, 60)), floor(fmod(timeLeft, 1.) * 100)]
 
 func PushToEditingMode():
 	MovesetEditor.visible = true

@@ -36,7 +36,8 @@ var paused = false
 
 func _ready():
 	ReplayManager.StartNewFile()
-	stageBackground = preload("res://Stages/Heavy Heart Gate/UnlockingStage.tscn").instantiate()
+	stageBackground =  LevelManager.QueuedShowhost.background.instantiate()
+	stageBackground.main = self
 	add_child(stageBackground)
 	Setup()
 	remove_child(stageBackground)

@@ -392,7 +392,6 @@ stream = ExtResource("3_4mh36")
 volume_db = -2.476
 
 [node name="DecorAndDisplay" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 pivot_offset = Vector2(400, 250)
 
@@ -509,11 +508,11 @@ text = "00:00:00.00"
 [node name="BackAndGrey" type="TextureProgressBar" parent="DecorAndDisplay"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 46.0
-offset_top = 473.0
-offset_right = 302.0
-offset_bottom = 513.0
-rotation = -0.261799
+offset_left = 16.0
+offset_top = 403.0
+offset_right = 272.0
+offset_bottom = 443.0
+rotation = 0.261799
 max_value = 1.0
 step = 0.001
 value = 0.75
