@@ -73,7 +73,6 @@ func DrawMe():
 		if (self in list):
 			super()
 		return
-	
 	if not active:
 		return
 	var color = GetDrawColor()
