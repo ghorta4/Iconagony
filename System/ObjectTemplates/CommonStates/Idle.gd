@@ -1,5 +1,5 @@
 extends CharacterState
-
+class_name IdleState
 @export var OtherIdleState : String = "IdleAir"
 @export var InterruptabilityInterval : int = 15
 @export var useDefaultAirIdleSwitching : bool = true

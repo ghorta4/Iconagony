@@ -348,7 +348,7 @@ bg_color = Color(0.95, 0.95, 0, 1)
 [node name="Conquest" instance=ExtResource("1_ui2al")]
 script = ExtResource("2_amibc")
 internalName = "conquest"
-difficultyWeight = 4.0
+difficultyWeight = 400.0
 spawnWeight = 0.1
 spawnHeight = 0.0
 spawnHeightVariation = 0.0

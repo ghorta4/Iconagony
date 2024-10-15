@@ -1,4 +1,4 @@
-[gd_scene load_steps=265 format=3 uid="uid://b3bxr6syskysx"]
+[gd_scene load_steps=276 format=3 uid="uid://b3bxr6syskysx"]
 
 [ext_resource type="PackedScene" uid="uid://c4ndnsar8nwlh" path="res://System/ObjectTemplates/PlayerObject.tscn" id="1_lb1vs"]
 [ext_resource type="Texture2D" uid="uid://da5gev3oo7bat" path="res://Strife/Sprites/BaseSet/idleAndRef2.png" id="2_gqiqr"]
@@ -225,11 +225,17 @@
 [ext_resource type="AudioStream" uid="uid://hknfj8x1rn5n" path="res://Strife/SFX/Hit1.wav" id="174_1a4ne"]
 [ext_resource type="AudioStream" uid="uid://c40chvdusfwjw" path="res://Strife/SFX/WhiffEcho.wav" id="174_75dki"]
 [ext_resource type="AudioStream" uid="uid://bgy6njxkxjtna" path="res://Strife/SFX/Hit2.wav" id="174_gqrxf"]
+[ext_resource type="Texture2D" uid="uid://drv4pw1kre2xj" path="res://Strife/Sprites/Attacks3/setb1.png" id="175_5oflg"]
+[ext_resource type="Texture2D" uid="uid://cfnrq2vs58kd8" path="res://Strife/Sprites/Attacks3/setb2.png" id="176_l4vun"]
 [ext_resource type="AudioStream" uid="uid://bn4ekjp2mv2nk" path="res://Strife/SFX/Whiff1Fast.wav" id="176_lxw1u"]
 [ext_resource type="AudioStream" uid="uid://be07k84dpoyyt" path="res://Strife/SFX/Whiff1.wav" id="176_ojhki"]
 [ext_resource type="PackedScene" uid="uid://d4cyfcsav4po5" path="res://Strife/Particles/DarkestFlameBack.tscn" id="176_rq5m4"]
+[ext_resource type="Texture2D" uid="uid://d3l6p4022xk4l" path="res://Strife/Sprites/Attacks3/setb3.png" id="177_utdk1"]
+[ext_resource type="Texture2D" uid="uid://b5djaealkx5wb" path="res://Strife/Sprites/Attacks3/setb4.png" id="178_e8j22"]
 [ext_resource type="AudioStream" uid="uid://c5h4acjew2w2l" path="res://Strife/SFX/generator.wav" id="178_tgufx"]
+[ext_resource type="Texture2D" uid="uid://cofyse6n1snr2" path="res://Strife/Sprites/Attacks3/setb5.png" id="179_6cbyd"]
 [ext_resource type="AudioStream" uid="uid://cijthgywfytw0" path="res://Strife/SFX/generator2.wav" id="180_3j6ku"]
+[ext_resource type="Texture2D" uid="uid://bx4q4kco0048x" path="res://Strife/Sprites/Attacks3/setb6.png" id="180_kupbc"]
 [ext_resource type="AudioStream" uid="uid://c8oiivlloo73c" path="res://Strife/SFX/Hit1Echo.wav" id="181_3mnru"]
 [ext_resource type="AudioStream" uid="uid://b7oo77kf3suqq" path="res://Strife/SFX/CrashLand.wav" id="181_csoi5"]
 [ext_resource type="Script" path="res://Strife/States/Block.gd" id="181_pagom"]
@@ -262,6 +268,11 @@
 [ext_resource type="Script" path="res://Strife/States/DarkAge.gd" id="218_d72ub"]
 [ext_resource type="AudioStream" uid="uid://cbkdicer3ggt7" path="res://Strife/SFX/BigBoom.wav" id="220_ixdqs"]
 [ext_resource type="AudioStream" uid="uid://cfprnnlsue8ev" path="res://Sound Library/Universal/Shorts/Damage.wav" id="241_5v4e0"]
+[ext_resource type="Script" path="res://Strife/States/RiskyRain.gd" id="269_qp5yl"]
+[ext_resource type="AudioStream" uid="uid://bj4xwetv2xlkf" path="res://Strife/SFX/MehHitReverse.wav" id="270_dygwr"]
+[ext_resource type="PackedScene" uid="uid://b5dgvd162khlh" path="res://Strife/Particles/RiskyRainTP.tscn" id="270_u37ef"]
+[ext_resource type="AudioStream" uid="uid://co3qcs3cunwp6" path="res://Strife/SFX/ScratchStrike.wav" id="271_vx7rm"]
+[ext_resource type="AudioStream" uid="uid://k6p67yqbuigq" path="res://Strife/SFX/RRain2.wav" id="272_rxvfl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ehwu"]
 shader = ExtResource("2_lpybg")
@@ -1132,6 +1143,53 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("175_5oflg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_5oflg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_l4vun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_l4vun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_l4vun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_utdk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_utdk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_e8j22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_6cbyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_6cbyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_6cbyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_6cbyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_6cbyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_kupbc")
+}],
+"loop": true,
+"name": &"RRain",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("50_dtmn0")
 }, {
 "duration": 1.0,
@@ -1372,7 +1430,8 @@ stream = ExtResource("8_rwbe3")
 
 [node name="Sprite" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_ilb7w")
-animation = &"AbyssEnd"
+animation = &"RRain"
+frame = 6
 
 [node name="GungeousArm" type="Sprite2D" parent="Sprite" index="0"]
 visible = false
@@ -1574,6 +1633,24 @@ bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
 bounds = Vector2(33.91, 40.79)
 
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Swipe1A" index="2"]
+position = Vector2(2, 4)
+script = ExtResource("27_4fx2p")
+damage = 35
+knockbackDirection = Vector2(1, 0.4)
+knockbackForce = 240.0
+stunTicks = 14
+hitstopTicks = 3
+hurtState = "HurtGM"
+startFrame = 13
+duration = 4
+hitcancelDelay = 4
+hitSound = ExtResource("34_633iw")
+hitSoundVolume = -4.0
+bassSound = ExtResource("35_i7i5p")
+bassSoundVolume = -9.0
+bounds = Vector2(33.91, 40.79)
+
 [node name="Swipe1G" type="Node" parent="StateMachine" index="19"]
 script = ExtResource("26_tdom3")
 canLandCancel = false
@@ -1588,7 +1665,25 @@ SFX = ExtResource("33_bigmm")
 SFXVolume = 1.0
 SFXTick = 6
 
-[node name="Hitbox" type="Node2D" parent="StateMachine/Swipe1G" index="0"]
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Swipe1G" index="0"]
+position = Vector2(0, 5)
+script = ExtResource("27_4fx2p")
+damage = 35
+knockbackDirection = Vector2(1, 0.4)
+knockbackForce = 300.0
+stunTicks = 14
+hitstopTicks = 3
+hurtState = "HurtGM"
+startFrame = 13
+duration = 4
+hitcancelDelay = 6
+hitSound = ExtResource("34_633iw")
+hitSoundVolume = -4.0
+bassSound = ExtResource("35_i7i5p")
+bassSoundVolume = -9.0
+bounds = Vector2(46.88, 43.255)
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Swipe1G" index="1"]
 position = Vector2(13.75, 0)
 script = ExtResource("27_4fx2p")
 damage = 35
@@ -1606,7 +1701,7 @@ bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
 bounds = Vector2(30.65, 43.255)
 
-[node name="Hitbox2" type="Node2D" parent="StateMachine/Swipe1G" index="1"]
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Swipe1G" index="2"]
 position = Vector2(22.045, 0)
 script = ExtResource("27_4fx2p")
 damage = 35
@@ -1946,6 +2041,30 @@ hitSoundVolume = -5.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
 bounds = Vector2(86.025, 69.15)
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/LLRRG" index="2"]
+position = Vector2(-17, -4)
+script = ExtResource("27_4fx2p")
+damage = 30
+useDefaultDamagePowerScaling = false
+damageIncreasePerLevel = 0.1
+damageReductionFactor = 0.9
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 80.0
+stunTicks = 43
+hitstopTicks = 4
+selfHitstopTicks = 4
+hurtState = "HurtGM"
+startFrame = 25
+duration = 3
+hitcancelDelay = 10
+loopHitbox = true
+ticksPerLoop = 30
+hitSound = ExtResource("241_5v4e0")
+hitSoundVolume = -5.0
+bassSound = ExtResource("198_b1ldt")
+bassSoundVolume = -3.0
+bounds = Vector2(40, 50)
 
 [node name="LLRRA" type="Node" parent="StateMachine" index="30"]
 script = ExtResource("122_dswqc")
@@ -2439,6 +2558,49 @@ ticksPerFrame = 3
 duration = 25
 fallbackState = "Idle"
 continueOnWait = false
+
+[node name="RiskyRain" type="Node" parent="StateMachine" index="41"]
+script = ExtResource("269_qp5yl")
+canLandCancel = false
+landCancelLag = 1
+interruptOnExit = true
+preservedMomentum = Vector2(0, 0)
+overrideFallSpeed = true
+animationName = "RRain"
+animationLength = 13
+ticksPerFrame = 3
+duration = 46
+fallbackState = "Idle"
+continueOnWait = false
+particleEffect = ExtResource("270_u37ef")
+particleTick = 18
+onEnterSFX = ExtResource("270_dygwr")
+enterSFXVolume = -8.0
+SFX = ExtResource("272_rxvfl")
+SFXVolume = 7.0
+SFXTick = 18
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/RiskyRain" index="0"]
+position = Vector2(12.82, 2.21)
+script = ExtResource("27_4fx2p")
+damage = 25
+knockbackDirection = Vector2(1, 0.1)
+knockbackForce = 200.0
+inheritAttackersSpeedOnHitPercent = 0.1
+stunTicks = 34
+hitstopTicks = 20
+hurtState = "HurtGM"
+startFrame = 19
+duration = 5
+hitcancellable = false
+hitcancelDelay = 4
+loopHitbox = true
+ticksPerLoop = 99
+hitSound = ExtResource("271_vx7rm")
+hitSoundVolume = -2.0
+bassSound = ExtResource("181_csoi5")
+bassSoundVolume = -4.0
+bounds = Vector2(121.56, 19.33)
 
 [node name="HealthBar" parent="." index="5"]
 visible = false

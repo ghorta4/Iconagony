@@ -155,8 +155,8 @@ func UpdateQueuedActions():
 func Setup():
 	if not isGhost:
 		focusedPlayer = SpawnObject(load("res://Strife/StrifeScene.tscn"))
-		#MoveManager.LoadMovesetFromNames(focusedPlayer.instancedMoves, ["The Line"], ["Ascend", "Escapade"])
-		MoveManager.LoadMovesetFromNames(focusedPlayer.instancedMoves, [], [])
+		MoveManager.LoadMovesetFromNames(focusedPlayer.instancedMoves, ["The Line"], ["Ascend", "Escapade"])
+		#MoveManager.LoadMovesetFromNames(focusedPlayer.instancedMoves, [], [])
 		MoveManager.AdjustMoveLevels(focusedPlayer.instancedMoves)
 		for move in focusedPlayer.instancedMoves:
 			move.remainingUses = move.maxUses
@@ -346,11 +346,16 @@ func SpawnObject(scene, recyclable : bool = false):
 		else:
 			created = scene.duplicate()
 	
+	created.id = nextAvailableObjectID
+	nextAvailableObjectID += 1
+	
+	for object in allObjects:
+		if object.id == created.id:
+			print("spawn ID issue")
+	
 	allObjects.append(created)
 	add_child(created)
 	
-	created.id = nextAvailableObjectID
-	nextAvailableObjectID += 1
 	created.battleInstance = self
 	RefreshCaches()
 	created.isGhost = isGhost

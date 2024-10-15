@@ -221,7 +221,7 @@ func _physics_process(delta):
 	
 	#Decor
 	FlairLayer.visible = not battleInstance.readFromReplay
-	var decorZoom = 1 - timeLeft / 30.0
+	var decorZoom = 1 - timeLeft / 120.0
 	FlairLayer.rotation_degrees = -35 * decorZoom
 	FlairLayer.scale = Vector2.ONE * (1 + decorZoom * 0.4)
 	

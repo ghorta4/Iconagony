@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://crhdbh736bdo7" path="res://Sound Library/Universal/UI/DrumKick.wav" id="2_n5vri"]
 [ext_resource type="AudioStream" uid="uid://bfsevq3xgg05t" path="res://Sound Library/Universal/UI/Timer.wav" id="2_suy30"]
 [ext_resource type="FontFile" uid="uid://c5q7vk3ic26pv" path="res://UI/Fonts/DMSans_18pt-Regular.ttf" id="3_0h81h"]
-[ext_resource type="AudioStream" uid="uid://bl1lrc3bm282s" path="res://Sound Library/Universal/Ambiance/TakingTurn.wav" id="3_4mh36"]
 [ext_resource type="AudioStream" uid="uid://dw5kynoohnreo" path="res://Sound Library/Universal/UI/Bells.wav" id="3_6qqrr"]
 [ext_resource type="AudioStream" uid="uid://jg5wb05xp8px" path="res://Sound Library/Universal/UI/ClickCronch.wav" id="3_fbovl"]
 [ext_resource type="AudioStream" uid="uid://bnwkw52ylhwqx" path="res://Sound Library/Universal/UI/Thump.wav" id="3_h36ba"]
@@ -26,6 +25,7 @@
 [ext_resource type="Script" path="res://UI/DefaultControlScheme/WaitButton.gd" id="7_1anxr"]
 [ext_resource type="AudioStream" uid="uid://c5pjsx0cy5i8d" path="res://Sound Library/Universal/UI/StageWin.ogg" id="7_kma6o"]
 [ext_resource type="AudioStream" uid="uid://bj14r8hfg3vyp" path="res://Sound Library/Universal/UI/BellTiss.wav" id="8_e3w54"]
+[ext_resource type="AudioStream" uid="uid://brbcrkil24m2p" path="res://Sound Library/Universal/Ambiance/TakingTurn.ogg" id="17_ij65g"]
 [ext_resource type="Texture2D" uid="uid://bkildo2eaewei" path="res://Menus/MainMenuAssets/Sprites/Back.png" id="19_hqo75"]
 [ext_resource type="Texture2D" uid="uid://by7dvdo2ronxj" path="res://UI/Graphics/L.png" id="20_b8l15"]
 [ext_resource type="Texture2D" uid="uid://cr1qtg2xluwa1" path="res://UI/Graphics/MoveEditor1.png" id="21_fw8bw"]
@@ -388,7 +388,7 @@ pitch_scale = 0.88
 
 [node name="WaitAmbiance" type="AudioStreamPlayer" parent="SFX"]
 unique_name_in_owner = true
-stream = ExtResource("3_4mh36")
+stream = ExtResource("17_ij65g")
 volume_db = -2.476
 
 [node name="DecorAndDisplay" type="Control" parent="."]

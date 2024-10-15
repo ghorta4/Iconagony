@@ -210,7 +210,7 @@ func PostHurtboxUpdate():
 		dueHurtstate = null
 		stateInterruptable = false
 
-func GetEnemiesSortedByDistance():
+func GetEnemiesSortedByDistance(basePosition = null):
 	var enemies = battleInstance.allCharacters.duplicate()
 	var toRemove = []
 	for enemy in enemies:
@@ -223,7 +223,11 @@ func GetEnemiesSortedByDistance():
 	if enemies.size() <= 0:
 		return []
 	
-	enemies.sort_custom(func(a,b): return (a.position - position).length() < (b.position - position).length())
+	var targetPos = position
+	if basePosition != null:
+		targetPos = basePosition
+	
+	enemies.sort_custom(func(a,b): return (a.position - targetPos).length() < (b.position - targetPos).length())
 	return enemies
 
 func GetStressPercent() -> float:

@@ -348,8 +348,10 @@ bg_color = Color(0.95, 0.95, 0, 1)
 [node name="Unlocking" instance=ExtResource("1_uj7yp")]
 script = ExtResource("2_bqvnl")
 internalName = "unlocking"
-difficultyWeight = 1.0
+difficultyWeight = 100.0
 spawnWeight = 1.0
+spawnHeight = 0.0
+spawnHeightVariation = 0.0
 MaxHP = 75.0
 MaxSP = 100.0
 IgnoreYShake = false
@@ -371,7 +373,7 @@ bounds = Vector2(40, 40)
 [node name="Sprite" parent="." index="3"]
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_jya6l")
-animation = &"HurtOTG"
+animation = &"HurtGrabbed"
 
 [node name="Idle" type="Node" parent="StateMachine" index="0"]
 script = ExtResource("52_8842q")

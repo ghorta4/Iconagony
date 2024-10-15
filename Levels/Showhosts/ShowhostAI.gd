@@ -18,6 +18,7 @@ class_name  Showhost
 @export var canEditMoveset : bool
 @export var forceInfiniteTimer : bool
 @export var useDefaultIntro : bool
+@export var spawnFoesClose : bool
 @export_group("Battle Info")
 
 @export var UsedFoes : Array[PackedScene] 
@@ -181,8 +182,12 @@ func TickFoeSpawning():
 		foe.team = 1
 		foe.material = battleInstance.teamMaterials[foe.team]
 		
-		foe.position.x += GetRandom()
-		foe.position.x += 500 * spawnSide + battleInstance.focusedPlayer.position.x
+		var spawnCloseMult = 1
+		if spawnFoesClose:
+			spawnCloseMult = 0.1
+		
+		foe.position.x += GetRandom() * spawnCloseMult
+		foe.position.x += 500 * spawnSide * spawnCloseMult + battleInstance.focusedPlayer.position.x
 		
 		foe.position.y -= foe.spawnHeight
 		foe.position.y += GetRandom() * foe.spawnHeightVariation / 100.0

@@ -192,7 +192,7 @@ animations = [{
 [node name="Acrophilia" instance=ExtResource("1_srfhu")]
 script = ExtResource("2_7ys61")
 internalName = "Acrophillia"
-difficultyWeight = 1.25
+difficultyWeight = 125.0
 spawnWeight = 1.0
 spawnHeight = 200.0
 spawnHeightVariation = 100.0

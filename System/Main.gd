@@ -146,7 +146,7 @@ func Setup(transferedUI = null):
 	
 	var loadSuccess = OwnedMovesManager.LoadMoveset(mainScene.focusedPlayer, GameLoader.TestSavePath + "Moveset.cd")
 	if not loadSuccess:
-		MoveManager.LoadMovesetFromNames(mainScene.focusedPlayer.instancedMoves,["The Line"],["Ascend", "Escapade"])
+		MoveManager.LoadMovesetFromNames(mainScene.focusedPlayer.instancedMoves,["The Line", "RiskRain", "RiskRain", "RiskRain", "RiskRain", "RiskRain"],["Ascend", "Escapade"])
 	OwnedMovesManager.CountAvailableMovesBasedOnMoveset(mainScene.focusedPlayer.instancedMoves)
 	mainScene.loadedUI.RegenerateMoveObjects()
 

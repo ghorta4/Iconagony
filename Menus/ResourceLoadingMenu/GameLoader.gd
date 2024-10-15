@@ -38,8 +38,8 @@ func Init():
 	
 	
 	
-	get_tree().change_scene_to_file("res://Menus/MainMenuAssets/MainMenu.tscn")
+	#get_tree().change_scene_to_file("res://Menus/MainMenuAssets/MainMenu.tscn")
 	
 	
-	#LevelManager.QueuedShowhost = LevelManager.AvailableLevelPacks["Main"]["ShortTrial"]
-	#get_tree().change_scene_to_file("res://System/Scenes/MainScene.tscn")
+	LevelManager.QueuedShowhost = LevelManager.AvailableLevelPacks["Main"]["LongTrial"]
+	get_tree().change_scene_to_file("res://System/Scenes/MainScene.tscn")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5dgvd162khlh"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_eees8"]
+[ext_resource type="Texture2D" uid="uid://crn7waveg1wsr" path="res://Particles/DefaultSprites/ThiccLine.png" id="2_k6khm"]
+[ext_resource type="Texture2D" uid="uid://68f6u8nepwny" path="res://Particles/DefaultSprites/Line3.png" id="3_ifltd"]
+[ext_resource type="Texture2D" uid="uid://dxmc0l25g086g" path="res://Particles/DefaultSprites/ExtraParticles1.png" id="4_6t0fs"]
+
+[sub_resource type="Gradient" id="Gradient_f1k00"]
+offsets = PackedFloat32Array(0, 0.229885, 0.390805, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_u8g06"]
+offsets = PackedFloat32Array(0, 0.408046, 0.663793, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.45013, 0.723175, 0.993877, 1, 0.108998, 0.375361, 1, 1, 4.81307e-07, 0.75028, 0.692334, 1)
+
+[sub_resource type="Gradient" id="Gradient_sg8fx"]
+offsets = PackedFloat32Array(0, 0.0890805, 0.235632, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_ctejd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nemnf"]
+offsets = PackedFloat32Array(0, 0.393678, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_awfwd"]
+offsets = PackedFloat32Array(0, 0.318966, 0.956897, 1)
+colors = PackedColorArray(0.495725, 0.662943, 0.9832, 1, 0.498039, 0.270588, 1, 0.478431, 0.537255, 0.933333, 1, 0.752941, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_eees8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 7
+position = Vector2(-393, 0)
+amount = 10
+lifetime = 0.7
+speed_scale = 1.6
+explosiveness = 1.0
+lifetime_randomness = 0.69
+texture = ExtResource("2_k6khm")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 70)
+particle_flag_align_y = true
+spread = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 2000.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_f1k00")
+color_initial_ramp = SubResource("Gradient_u8g06")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 7
+position = Vector2(-159, 0)
+amount = 5
+lifetime = 0.3
+explosiveness = 1.0
+lifetime_randomness = 0.61
+texture = ExtResource("3_ifltd")
+emission_shape = 3
+emission_rect_extents = Vector2(50, 30)
+particle_flag_align_y = true
+spread = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 3000.0
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_sg8fx")
+color_initial_ramp = SubResource("Gradient_u8g06")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+amount = 12
+lifetime = 0.2
+explosiveness = 1.0
+lifetime_randomness = 0.51
+texture = ExtResource("4_6t0fs")
+emission_shape = 1
+emission_sphere_radius = 13.28
+gravity = Vector2(0, 0)
+scale_amount_min = 0.2
+scale_amount_curve = SubResource("Curve_ctejd")
+color_ramp = SubResource("Gradient_nemnf")
+color_initial_ramp = SubResource("Gradient_awfwd")

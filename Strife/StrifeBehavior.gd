@@ -15,9 +15,11 @@ const greyHealthDecay = 0.2
 var greyHealthWaitBeforeDecay = 0
 const greyHealthDefaultWait = 45
 #Below are turn timer related variables
-var timeLeftThisTurn = 60.0 #in seconds
+var timeLeftThisTurn = defaultTurnTime #in seconds
 var infiniteTime = false
 var ignoreMoveGeneration = false
+
+const defaultTurnTime = 90.0
 
 func Initialize():
 	super()
@@ -51,7 +53,7 @@ func Tick():
 	if stateInterruptable && (canPollMoves || not isGhost): #Do move stuff here
 		RefreshPickupMoves()
 		canPollMoves = false
-		timeLeftThisTurn = 60.0 #awooga
+		timeLeftThisTurn = defaultTurnTime #awooga
 	
 	
 	if stunTicks > 0:
@@ -90,7 +92,7 @@ func HitBy(hitbox : HitboxData):
 			myState.animationName = "BlockM"
 		
 		myState.IASA = max(1, myState.IASA - myState.powerModifier - 1)
-		HP -= hitbox.damage * pow(0.5, myState.powerModifier + 1)
+		HP -= hitbox.damage * pow(0.5, myState.powerModifier + 2)
 		velocity.x +=  hitbox.player.GetFacingInt() * hitbox.knockbackForce * 0.3
 		flipX = hitbox.player.position.x > position.x
 		SpawnParticle(preload("res://Strife/Particles/BlockSpark.tscn"), (position + hitbox.player.position + hitbox.position * Vector2(hitbox.player.GetFacingInt(), 1)) / 2.0, Vector2.RIGHT)

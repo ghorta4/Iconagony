@@ -1,0 +1,426 @@
+[gd_scene load_steps=57 format=3 uid="uid://cl4tg6qn7wkps"]
+
+[ext_resource type="PackedScene" uid="uid://dec02kajrpa0y" path="res://System/ObjectTemplates/CharacterObject.tscn" id="1_blxfc"]
+[ext_resource type="Texture2D" uid="uid://dytamsb2q61md" path="res://Strife/Sprites/blank.png" id="2_plf46"]
+[ext_resource type="Script" path="res://Enemies/ShyCal/ShyAI.gd" id="2_rg8no"]
+[ext_resource type="Texture2D" uid="uid://dl8uqsds6njmb" path="res://Enemies/ShyCal/Sprites/BaseSet6.png" id="3_3sfpm"]
+[ext_resource type="AudioStream" uid="uid://dpvsa0kipcl4b" path="res://Enemies/ShyCal/Sounds/Move1.wav" id="3_07scj"]
+[ext_resource type="Texture2D" uid="uid://dxbykafwncjb5" path="res://Enemies/ShyCal/Sprites/BaseSet17.png" id="3_gsnht"]
+[ext_resource type="Texture2D" uid="uid://bwux1g7plw7tu" path="res://Enemies/ShyCal/Sprites/BaseSet1.png" id="3_ilb1l"]
+[ext_resource type="Texture2D" uid="uid://cmo1s87vh5b3s" path="res://Enemies/ShyCal/Sprites/BaseSet23.png" id="4_5y212"]
+[ext_resource type="Texture2D" uid="uid://chtq2kp4280li" path="res://Enemies/ShyCal/Sprites/BaseSet2.png" id="4_a0gev"]
+[ext_resource type="Texture2D" uid="uid://dyxsrnmm476ql" path="res://Enemies/ShyCal/Sprites/BaseSet7.png" id="4_hjfq8"]
+[ext_resource type="AudioStream" uid="uid://baspvstyinebd" path="res://Enemies/ShyCal/Sounds/Move2.wav" id="4_iotp7"]
+[ext_resource type="Texture2D" uid="uid://dj40ewx1o68cj" path="res://Enemies/ShyCal/Sprites/BaseSet15.png" id="4_kks6w"]
+[ext_resource type="Texture2D" uid="uid://uuwn36udtnbg" path="res://Enemies/ShyCal/Sprites/BaseSet3.png" id="5_7dklx"]
+[ext_resource type="Texture2D" uid="uid://bdcos68eil3du" path="res://Enemies/ShyCal/Sprites/BaseSet24.png" id="5_em12r"]
+[ext_resource type="Texture2D" uid="uid://cigoiok4xvrjc" path="res://Enemies/ShyCal/Sprites/BaseSet14.png" id="5_vlkyr"]
+[ext_resource type="Texture2D" uid="uid://cu13pupw3vp5h" path="res://Enemies/ShyCal/Sprites/BaseSet8.png" id="5_w5usc"]
+[ext_resource type="Texture2D" uid="uid://dp51kwf7lqshd" path="res://Enemies/ShyCal/Sprites/BaseSet16.png" id="6_77afp"]
+[ext_resource type="Texture2D" uid="uid://bcbwo43sb08ow" path="res://Enemies/ShyCal/Sprites/BaseSet9.png" id="6_mewrx"]
+[ext_resource type="Texture2D" uid="uid://c1wrxypih7cae" path="res://Enemies/ShyCal/Sprites/BaseSet4.png" id="6_vgr12"]
+[ext_resource type="Texture2D" uid="uid://dsxkf1nx6877l" path="res://Enemies/ShyCal/Sprites/BaseSet25.png" id="6_w8yn0"]
+[ext_resource type="Texture2D" uid="uid://ci6gxjawha41t" path="res://Enemies/ShyCal/Sprites/BaseSet10.png" id="7_4suq4"]
+[ext_resource type="Texture2D" uid="uid://1ad7v0330ae5" path="res://Enemies/ShyCal/Sprites/BaseSet18.png" id="7_5fo3g"]
+[ext_resource type="Texture2D" uid="uid://chd6uqdhkswbg" path="res://Enemies/ShyCal/Sprites/BaseSet26.png" id="7_aq3oc"]
+[ext_resource type="Texture2D" uid="uid://cniy3o523rqqg" path="res://Enemies/ShyCal/Sprites/BaseSet5.png" id="7_kosei"]
+[ext_resource type="Texture2D" uid="uid://d2j2ogwyus17s" path="res://Enemies/ShyCal/Sprites/BaseSet27.png" id="8_6e5ey"]
+[ext_resource type="Texture2D" uid="uid://1bwsboof6xf2" path="res://Enemies/ShyCal/Sprites/BaseSet41.png" id="8_31qih"]
+[ext_resource type="Texture2D" uid="uid://yyekxfqjmnkb" path="res://Enemies/ShyCal/Sprites/BaseSet11.png" id="8_aypq1"]
+[ext_resource type="Script" path="res://Enemies/ShyCal/States/ShyMovement.gd" id="8_fr7k5"]
+[ext_resource type="Texture2D" uid="uid://k1xo7xvnf4sp" path="res://Enemies/ShyCal/Sprites/BaseSet19.png" id="8_wjlye"]
+[ext_resource type="Texture2D" uid="uid://diaifk2ucl0ry" path="res://Enemies/ShyCal/Sprites/BaseSet12.png" id="9_4oayf"]
+[ext_resource type="Texture2D" uid="uid://usy44qq1jocl" path="res://Enemies/ShyCal/Sprites/BaseSet38.png" id="9_72573"]
+[ext_resource type="Texture2D" uid="uid://c3ea8ot6o8qhc" path="res://Enemies/ShyCal/Sprites/BaseSet28.png" id="9_ieu4j"]
+[ext_resource type="Texture2D" uid="uid://dg6yrqfdvthp4" path="res://Enemies/ShyCal/Sprites/BaseSet20.png" id="9_py8md"]
+[ext_resource type="Texture2D" uid="uid://l8aceiq65kui" path="res://Enemies/ShyCal/Sprites/BaseSet13.png" id="10_6f1hs"]
+[ext_resource type="Texture2D" uid="uid://dr3esxfoom11s" path="res://Enemies/ShyCal/Sprites/BaseSet39.png" id="10_6lyn6"]
+[ext_resource type="Texture2D" uid="uid://cxsvkkpx4sleu" path="res://Enemies/ShyCal/Sprites/BaseSet21.png" id="10_8tp5i"]
+[ext_resource type="Texture2D" uid="uid://boa5abi8dh5fm" path="res://Enemies/ShyCal/Sprites/BaseSet29.png" id="10_bm413"]
+[ext_resource type="Texture2D" uid="uid://c05rsqxipnvgq" path="res://Enemies/ShyCal/Sprites/BaseSet22.png" id="11_byffr"]
+[ext_resource type="Texture2D" uid="uid://cy5nnw1ex8ibd" path="res://Enemies/ShyCal/Sprites/BaseSet40.png" id="11_eogm0"]
+[ext_resource type="Texture2D" uid="uid://tasc3aa2rfkk" path="res://Enemies/ShyCal/Sprites/BaseSet30.png" id="11_vs7vs"]
+[ext_resource type="Texture2D" uid="uid://bvlaykxif2mcx" path="res://Enemies/ShyCal/Sprites/BaseSet42.png" id="12_0vwkt"]
+[ext_resource type="Texture2D" uid="uid://bsyw7aabgg05e" path="res://Enemies/ShyCal/Sprites/BaseSet31.png" id="12_4o2he"]
+[ext_resource type="Texture2D" uid="uid://2isg13ptf4nt" path="res://Enemies/ShyCal/Sprites/BaseSet32.png" id="13_g8n8b"]
+[ext_resource type="Script" path="res://Enemies/ShyCal/States/ShyTurn.gd" id="13_hhjv3"]
+[ext_resource type="Texture2D" uid="uid://dlafa03da5iqk" path="res://Enemies/ShyCal/Sprites/BaseSet33.png" id="14_wxbqw"]
+[ext_resource type="Texture2D" uid="uid://r0nwjbkqjm2k" path="res://Enemies/ShyCal/Sprites/BaseSet34.png" id="15_2i0s4"]
+[ext_resource type="Texture2D" uid="uid://etbhbapa85cc" path="res://Enemies/ShyCal/Sprites/BaseSet35.png" id="16_7d6ob"]
+[ext_resource type="Texture2D" uid="uid://stfltt2xfj3v" path="res://Enemies/ShyCal/Sprites/BaseSet36.png" id="17_wnrb6"]
+[ext_resource type="Texture2D" uid="uid://prk3w3wscqv6" path="res://Enemies/ShyCal/Sprites/BaseSet37.png" id="18_fttag"]
+[ext_resource type="Script" path="res://System/CharacterState.gd" id="21_kobk0"]
+[ext_resource type="AudioStream" uid="uid://bgd8ajw875je3" path="res://Enemies/ShyCal/Sounds/whooshecho.wav" id="44_ls6ng"]
+[ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="44_ssjob"]
+[ext_resource type="AudioStream" uid="uid://1ylrjo73mcol" path="res://Sound Library/Universal/Shorts/WeirdHit.wav" id="45_3anoh"]
+[ext_resource type="AudioStream" uid="uid://uoov3voehb63" path="res://Sound Library/Universal/Shorts/Thwack.wav" id="46_vcsjj"]
+[ext_resource type="Script" path="res://Enemies/ShyCal/States/Atk2.gd" id="55_nf17b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvarh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_em12r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w8yn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w8yn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w8yn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aq3oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6e5ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ieu4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bm413")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vs7vs")
+}],
+"loop": true,
+"name": &"Atk1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4o2he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g8n8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g8n8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g8n8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wxbqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2i0s4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7d6ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wnrb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fttag")
+}],
+"loop": true,
+"name": &"Atk2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gsnht")
+}],
+"loop": true,
+"name": &"HurtA",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5y212")
+}],
+"loop": true,
+"name": &"HurtDazed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kks6w")
+}],
+"loop": true,
+"name": &"HurtGH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vlkyr")
+}],
+"loop": true,
+"name": &"HurtGL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_77afp")
+}],
+"loop": true,
+"name": &"HurtGM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_31qih")
+}],
+"loop": true,
+"name": &"HurtGrabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5fo3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wjlye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_py8md")
+}],
+"loop": true,
+"name": &"HurtOTG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_0vwkt")
+}],
+"loop": true,
+"name": &"HurtThrown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8tp5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_byffr")
+}],
+"loop": true,
+"name": &"Landing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3sfpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hjfq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w5usc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mewrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4suq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aypq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4oayf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6f1hs")
+}],
+"loop": true,
+"name": &"air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_plf46")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ilb1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a0gev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7dklx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vgr12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kosei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vgr12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7dklx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a0gev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ilb1l")
+}],
+"loop": true,
+"name": &"schmoover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_72573")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6lyn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eogm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6lyn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_72573")
+}],
+"loop": true,
+"name": &"turn",
+"speed": 5.0
+}]
+
+[node name="ShyCal" instance=ExtResource("1_blxfc")]
+script = ExtResource("2_rg8no")
+internalName = "ShyCal"
+difficultyWeight = 50.0
+spawnWeight = 5.0
+spawnHeight = 0.0
+spawnHeightVariation = 0.0
+MaxHP = 40.0
+MaxSP = 200.0
+fallSpeed = 200.0
+speedLimits = Vector2(1000, 700)
+
+[node name="MovementBox" parent="." index="0"]
+position = Vector2(0, 3)
+bounds = Vector2(30, 40)
+
+[node name="Move1" type="AudioStreamPlayer" parent="Sounds" index="0"]
+stream = ExtResource("3_07scj")
+volume_db = -28.724
+
+[node name="Move2" type="AudioStreamPlayer" parent="Sounds" index="1"]
+stream = ExtResource("4_iotp7")
+volume_db = -28.724
+
+[node name="Sprite" parent="." index="3"]
+sprite_frames = SubResource("SpriteFrames_dvarh")
+animation = &"Atk2"
+frame = 4
+
+[node name="Idle" parent="StateMachine" index="0"]
+script = ExtResource("8_fr7k5")
+InterruptabilityInterval = 9999
+animationName = "schmoover"
+loopAnimation = true
+animationLength = 9
+ticksPerFrame = 2
+duration = 18
+
+[node name="IdleAir" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("21_kobk0")
+landCancelLag = 1
+animationName = "air"
+loopAnimation = true
+animationLength = 8
+duration = 32
+endless = true
+
+[node name="Turn" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("13_hhjv3")
+animationName = "turn"
+animationLength = 5
+duration = 20
+fallbackState = "Idle"
+
+[node name="Landing" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("21_kobk0")
+canLandCancel = false
+interruptOnExit = true
+animationName = "Landing"
+animationLength = 2
+ticksPerFrame = 3
+duration = 6
+fallbackState = "Idle"
+
+[node name="Atk1" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("21_kobk0")
+canLandCancel = false
+interruptOnExit = true
+animationName = "Atk1"
+animationLength = 9
+duration = 40
+fallbackState = "Idle"
+SFX = ExtResource("44_ls6ng")
+SFXVolume = -12.0
+SFXTick = 13
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Atk1" index="0"]
+position = Vector2(0, 2)
+script = ExtResource("44_ssjob")
+damage = 5
+knockbackDirection = Vector2(1, 0)
+hitstopTicks = 4
+selfHitstopTicks = 1
+hurtState = "HurtGM"
+startFrame = 19
+duration = 8
+hitcancellable = false
+loopHitbox = true
+ticksPerLoop = 2
+hitSound = ExtResource("45_3anoh")
+hitSoundVolume = -7.0
+bassSound = ExtResource("46_vcsjj")
+bassSoundVolume = -2.0
+whiffSoundVolume = 2.0
+bounds = Vector2(61.9, 13.295)
+
+[node name="Atk2" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("55_nf17b")
+canLandCancel = false
+interruptOnExit = true
+animationName = "Atk2"
+animationLength = 9
+duration = 40
+fallbackState = "Idle"
+SFX = ExtResource("44_ls6ng")
+SFXVolume = -12.0
+SFXTick = 13
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Atk2" index="0"]
+position = Vector2(0, -1.485)
+script = ExtResource("44_ssjob")
+damage = 5
+knockbackDirection = Vector2(1, 0)
+hitstopTicks = 4
+selfHitstopTicks = 1
+hurtState = "HurtGM"
+startFrame = 19
+duration = 8
+hitcancellable = false
+loopHitbox = true
+ticksPerLoop = 2
+hitSound = ExtResource("45_3anoh")
+hitSoundVolume = -7.0
+bassSound = ExtResource("46_vcsjj")
+bassSoundVolume = -2.0
+whiffSoundVolume = 2.0
+bounds = Vector2(61.9, 13.295)
+
+[node name="HealthBar" parent="." index="5"]
+offset_top = 53.0
+offset_bottom = 59.0
