@@ -1,22 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgkvl6jeyt5ut"]
+[gd_scene load_steps=4 format=3 uid="uid://dgkvl6jeyt5ut"]
 
-[sub_resource type="Gradient" id="Gradient_uwswo"]
+[ext_resource type="Texture2D" uid="uid://7bu1mksp3xfh" path="res://PixelTextureGrid_256.png" id="1_hvrsi"]
+[ext_resource type="Shader" path="res://ShadersLibrary/Flashbang.gdshader" id="2_pdql3"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_si70v"]
-gradient = SubResource("Gradient_uwswo")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlym4"]
+shader = ExtResource("2_pdql3")
+shader_parameter/AreaShape = Vector2(1, 1)
+shader_parameter/FinalIntensityMultiplier = 1.0
+shader_parameter/DivisorIntensityReducer = 3.49
+shader_parameter/DropoffFactor = 0.25
+shader_parameter/LateDropoffDistance = 0.2
+shader_parameter/LateDropoffFactor = 0.14
+shader_parameter/cameraZoom = Vector2(1, 1)
+shader_parameter/Brightness = 4.0
 
-[node name="Sandbox" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sandbox" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 253.0
-offset_top = 213.0
-offset_right = 509.0
-offset_bottom = 253.0
-texture = SubResource("GradientTexture1D_si70v")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(346, 224)
+texture = ExtResource("1_hvrsi")
+
+[node name="PixelTextureGrid256" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dlym4")
+position = Vector2(354, 215)
+texture = ExtResource("1_hvrsi")

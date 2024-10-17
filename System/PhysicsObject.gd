@@ -2,6 +2,9 @@ extends Node2D
 
 class_name GameObject
 
+#testing
+var objectOrigin = "unset"
+
 @export_group("Simulation")
 @export_multiline var stateVariables : String = ""
 var stateVariablesList = ["fallSpeed", "groundFrictionCoefficient", "airFrictionCoefficient", "flipX", "velocity", "position", "team", "id", "speedLimits", "ignoreMeleeHitboxes",
@@ -58,6 +61,7 @@ var battleInstance : BattleInstance
 #Simulation
 #----------------------
 func CopyTo(new):
+	
 	for varName in stateVariablesList:
 		if get(varName) is Vector2:
 			var old = self[varName]

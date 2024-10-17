@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt167o2usdhbh"]
+
+[ext_resource type="Script" path="res://Strife/Particles/Death45Particle.gd" id="1_pmb65"]
+[ext_resource type="Shader" path="res://ShadersLibrary/Flashbang.gdshader" id="2_u4adi"]
+[ext_resource type="Texture2D" uid="uid://7bu1mksp3xfh" path="res://PixelTextureGrid_256.png" id="4_0mjkd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnds0"]
+shader = ExtResource("2_u4adi")
+shader_parameter/AreaShape = Vector2(1, 1)
+shader_parameter/FinalIntensityMultiplier = 1.0
+shader_parameter/DivisorIntensityReducer = 3.46
+shader_parameter/DropoffFactor = 0.25
+shader_parameter/LateDropoffDistance = 0.2
+shader_parameter/LateDropoffFactor = 0.14
+shader_parameter/cameraZoom = Vector2(1, 1)
+shader_parameter/Brightness = 2.0
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_pmb65")
+maxLifetime = 0.8
+oneShot = false
+
+[node name="Glow" type="Sprite2D" parent="."]
+z_index = 300
+material = SubResource("ShaderMaterial_tnds0")
+scale = Vector2(4, 2.8)
+texture = ExtResource("4_0mjkd")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Glow"]
+copy_mode = 2

@@ -208,11 +208,9 @@ func RefreshCaches():
 		if object.disabled:
 			toRemove.append(object)
 	
-	if not isGhost:
-		for object in toRemove:
-			allObjects.erase(object)
-			RecycleObject(object)
-			#object.queue_free()
+	for object in toRemove:
+		allObjects.erase(object)
+		RecycleObject(object)
 	
 	allCharacters = []
 	for object in allObjects:
@@ -220,6 +218,9 @@ func RefreshCaches():
 			continue
 		if object is CharacterObject:
 			allCharacters.append(object)
+	
+	if showHost != null:
+		showHost.RefreshCaches()
 
 func TickGame():
 	if universalHitstop > 0:
@@ -339,19 +340,18 @@ func SpawnObject(scene, recyclable : bool = false):
 	
 	if scene is PackedScene:
 		created = scene.instantiate()
+		created.objectOrigin = "packedScene"
 	else:
 		if main.recycledFoesCache.has(scene.internalName) && main.recycledFoesCache[scene.internalName].size() > 0:
 			created = main.recycledFoesCache[scene.internalName].pop_back()
 			showHost.InstancedTemplateFoes[scene.internalName].CopyTo(created)
+			created.objectOrigin = "recycled"
 		else:
 			created = scene.duplicate()
+			created.objectOrigin = "scene"
 	
 	created.id = nextAvailableObjectID
 	nextAvailableObjectID += 1
-	
-	for object in allObjects:
-		if object.id == created.id:
-			print("spawn ID issue")
 	
 	allObjects.append(created)
 	add_child(created)
@@ -368,7 +368,7 @@ func RestartPreview():
 	if copiedGame == null:
 		push_warning("No game to use for preview.")
 		return
-	
+
 	tempTimer = 0
 	gameWonTimer = 0
 	main = copiedGame.main
@@ -399,31 +399,29 @@ func RestartPreview():
 	showHost.battleInstance = self
 	add_child(showHost)
 	
-	copiedGame.showHost.CopyTo(showHost)
-	showHost.Initialize()
-	
 	ignorePlayerInputs = copiedGame.ignorePlayerInputs
 	runRealtime = copiedGame.runRealtime
 	gameSpeed = copiedGame.gameSpeed
+	
+	RefreshCaches()
 	
 	#Generating objects is the slowest part of restarting a replay. As such, if we can, recycle old objects from the game instead of deleting and respawning them.
 	var objectsToFree = allObjects.duplicate()
 	var objectsToDuplicate = copiedGame.allObjects.duplicate()
 	var recyclingPairs = {}
 	for toFree in objectsToFree:
+		break #--------------------------------------------------------------
 		for possiblePair in copiedGame.allObjects:
 			if possiblePair.id == toFree.id:
 				recyclingPairs[toFree] = possiblePair
 				objectsToDuplicate.erase(possiblePair)
 				break
 	
-	
 	#I COULD just delete everything and make it from scratch. But this below code is SO much faster.
 	for key in recyclingPairs.keys():
 		objectsToFree.erase(key)
 	
 	for object in objectsToFree:
-		#object.queue_free()
 		RecycleObject(object)
 		allObjects.erase(object)
 	
@@ -456,6 +454,9 @@ func RestartPreview():
 	
 	RefreshCaches()
 	
+	copiedGame.showHost.CopyTo(showHost)
+	showHost.Initialize()
+	
 	copiedGame.loadedUI.followedPreviewPlayer = focusedPlayer
 	
 	if not copiedGame.readFromReplay:
@@ -484,6 +485,8 @@ func SpawnParticle(particle : PackedScene, pposition : Vector2, direction : Vect
 	return newParticle
 
 func RecycleObject(target):
+	target.id = -1
+	
 	if not "recyclable" in target || not target.recyclable:
 		target.queue_free()
 		return

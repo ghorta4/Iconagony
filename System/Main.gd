@@ -146,7 +146,7 @@ func Setup(transferedUI = null):
 	
 	var loadSuccess = OwnedMovesManager.LoadMoveset(mainScene.focusedPlayer, GameLoader.TestSavePath + "Moveset.cd")
 	if not loadSuccess:
-		MoveManager.LoadMovesetFromNames(mainScene.focusedPlayer.instancedMoves,["The Line", "RiskRain", "RiskRain", "RiskRain", "RiskRain", "RiskRain"],["Ascend", "Escapade"])
+		MoveManager.LoadMovesetFromNames(mainScene.focusedPlayer.instancedMoves,["The Line", "RiskRain", "Death44", "Death44", "Death44", "Death44"],["Ascend", "Escapade"])
 	OwnedMovesManager.CountAvailableMovesBasedOnMoveset(mainScene.focusedPlayer.instancedMoves)
 	mainScene.loadedUI.RegenerateMoveObjects()
 
@@ -246,7 +246,10 @@ func GetDesiredCameraZoom(delta : float) -> float:
 	var zoomMote = GetCameraZoomMote()
 	
 	if zoomMote != null:
-		value = lerp(value, zoomMote.desiredZoom, zoomMote.zoomLerpSpeed * delta)
+		if zoomMote.instantSnapToZoom:
+			value = zoomMote.desiredZoom
+		else:
+			value = lerp(value, zoomMote.desiredZoom, zoomMote.zoomLerpSpeed * delta)
 	else:
 		value = lerp(value, 1.0, 3 * delta)
 	return value

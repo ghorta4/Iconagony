@@ -249,4 +249,16 @@ flavorDesc = "... And our music was electric."
 groundedState = "RiskyRain"
 aerialState = "RiskyRain"
 defaultMaxUses = 3
-maxMementos = 3
+maxMementos = 2
+
+[node name="Death44" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Death 4/4"
+description = "Has a small chance to deal massive damage. Higher levels increase this chance."
+flavorDesc = "Falling from the skies, newly arrived souls cross the boundary of death."
+groundedState = "Death44"
+aerialState = "Death44"
+defaultMaxUses = 4
+usability = 2
+maxMementos = 4
+UIScene = ExtResource("3_bwhoc")

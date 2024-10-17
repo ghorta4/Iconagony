@@ -202,6 +202,7 @@ pickupMoves = "Gungeous
 0.25"
 stateVariables = "facingAngle
 repsTillFireSelf"
+fallSpeed = 0.0
 airFrictionCoefficient = Vector2(0.05, 0.05)
 defaultHitspark = ExtResource("3_e625e")
 

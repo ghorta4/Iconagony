@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=3 uid="uid://b3bxr6syskysx"]
+[gd_scene load_steps=315 format=3 uid="uid://b3bxr6syskysx"]
 
 [ext_resource type="PackedScene" uid="uid://c4ndnsar8nwlh" path="res://System/ObjectTemplates/PlayerObject.tscn" id="1_lb1vs"]
 [ext_resource type="Texture2D" uid="uid://da5gev3oo7bat" path="res://Strife/Sprites/BaseSet/idleAndRef2.png" id="2_gqiqr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dfp2p8g7l637k" path="res://Strife/Sprites/Attacks2/attacks27.png" id="4_qb760"]
 [ext_resource type="Texture2D" uid="uid://b88uwbtfhher2" path="res://Strife/Sprites/BaseSet/idleAndRef23.png" id="4_uo8re"]
 [ext_resource type="PackedScene" uid="uid://t5pik6yo07ta" path="res://Particles/GenericFFX/HitSpark.tscn" id="4_xueth"]
+[ext_resource type="Script" path="res://Strife/DrawHelper.gd" id="5_1wvvy"]
 [ext_resource type="Texture2D" uid="uid://celbks37l0lkn" path="res://Strife/Sprites/BaseSet/idleAndRef24.png" id="5_boqe5"]
 [ext_resource type="Texture2D" uid="uid://dibafm68i1i1j" path="res://Strife/Sprites/Attacks2/attacks28.png" id="5_pdnpg"]
 [ext_resource type="AudioStream" uid="uid://nky2710mtj8v" path="res://Strife/SFX/50cal.wav" id="5_qpeeh"]
@@ -100,14 +101,25 @@
 [ext_resource type="Script" path="res://System/CharacterState.gd" id="26_tdom3"]
 [ext_resource type="Texture2D" uid="uid://crbftvpkadkp6" path="res://Strife/Sprites/BaseSet/idleAndRef48.png" id="27_2j8ba"]
 [ext_resource type="Script" path="res://System/Boxes/Hitbox.gd" id="27_4fx2p"]
+[ext_resource type="Texture2D" uid="uid://nuox4ndjuq0c" path="res://Strife/Sprites/Attacks3/setb7.png" id="29_3tx4h"]
 [ext_resource type="PackedScene" uid="uid://0j26m4lqlmo2" path="res://Particles/GenericFFX/JumpDust.tscn" id="29_qxmsx"]
 [ext_resource type="AudioStream" uid="uid://dmuta6r2ax76e" path="res://Sound Library/Universal/Shorts/Dash3.wav" id="30_0t846"]
+[ext_resource type="Texture2D" uid="uid://1ub5jqm02u31" path="res://Strife/Sprites/Attacks3/setb8.png" id="30_7hw06"]
+[ext_resource type="Texture2D" uid="uid://ye12xkjj708m" path="res://Strife/Sprites/Attacks3/setb9.png" id="31_efc8j"]
 [ext_resource type="PackedScene" uid="uid://dm558q03q0b24" path="res://Particles/GenericFFX/DashDust.tscn" id="32_g77c5"]
+[ext_resource type="Texture2D" uid="uid://by8qgxstu5u42" path="res://Strife/Sprites/Attacks3/setb10.png" id="32_wsqrq"]
 [ext_resource type="AudioStream" uid="uid://fl6yxstncfag" path="res://Sound Library/Universal/Shorts/whoosh.ogg" id="33_bigmm"]
+[ext_resource type="Texture2D" uid="uid://dx8o2csdc0snj" path="res://Strife/Sprites/Attacks3/setb11.png" id="33_k0xny"]
 [ext_resource type="AudioStream" uid="uid://d00gvo77o8cd7" path="res://Sound Library/Universal/Shorts/Hit2.wav" id="34_633iw"]
+[ext_resource type="Texture2D" uid="uid://x66q3mu6q0wn" path="res://Strife/Sprites/Attacks3/setb12.png" id="34_uxlji"]
 [ext_resource type="AudioStream" uid="uid://b43e3bv22xqqu" path="res://Sound Library/Universal/Shorts/BassBooster.wav" id="35_i7i5p"]
+[ext_resource type="Texture2D" uid="uid://dd2e7s8pqs6u5" path="res://Strife/Sprites/Attacks3/setb13.png" id="35_ndv1i"]
+[ext_resource type="Texture2D" uid="uid://0hw46tetk62h" path="res://Strife/Sprites/Attacks3/setb14.png" id="36_ipyjs"]
 [ext_resource type="PackedScene" uid="uid://bg3ngxu8ysld1" path="res://Particles/GenericFFX/LandingDust.tscn" id="36_lgc0n"]
+[ext_resource type="Texture2D" uid="uid://du2yotdpb1mv0" path="res://Strife/Sprites/Attacks3/setb15.png" id="37_fmf4e"]
 [ext_resource type="AudioStream" uid="uid://drm2mdvxy00k8" path="res://Sound Library/Universal/Shorts/Land.wav" id="37_yxymx"]
+[ext_resource type="Texture2D" uid="uid://cwojeedtau10u" path="res://Strife/Sprites/Attacks3/setb16.png" id="38_khmab"]
+[ext_resource type="Texture2D" uid="uid://dj1qu3qvdigkw" path="res://Strife/Sprites/Attacks3/setb17.png" id="39_kka80"]
 [ext_resource type="Texture2D" uid="uid://ccv5xbye43u35" path="res://Strife/Sprites/Attacks2/attacks49.png" id="40_ih3uu"]
 [ext_resource type="Texture2D" uid="uid://bjer0320d5wga" path="res://Strife/Sprites/Attacks2/attacks44.png" id="40_v0irj"]
 [ext_resource type="Texture2D" uid="uid://c0xrdssilnvr2" path="res://Strife/Sprites/Attacks2/attacks45.png" id="41_ivrqs"]
@@ -246,19 +258,36 @@
 [ext_resource type="AudioStream" uid="uid://dqhsw2fjgvk7e" path="res://Strife/SFX/Whoosh.wav" id="189_po0m5"]
 [ext_resource type="AudioStream" uid="uid://bch4xr11xk0k" path="res://Strife/SFX/Flicker.wav" id="190_6j2ky"]
 [ext_resource type="AudioStream" uid="uid://b2175ult6kgcs" path="res://Strife/SFX/MysticSnap.wav" id="190_jyg6v"]
+[ext_resource type="Texture2D" uid="uid://chiidr2k3nqn1" path="res://Strife/Sprites/Attacks3/seta1.png" id="192_4h8or"]
+[ext_resource type="Texture2D" uid="uid://b3204oujoinu2" path="res://Strife/Sprites/Attacks3/seta2.png" id="193_f5sc0"]
+[ext_resource type="Texture2D" uid="uid://5i0ftm60e6a2" path="res://Strife/Sprites/Attacks3/seta3.png" id="194_52dtk"]
+[ext_resource type="Texture2D" uid="uid://tfnohy00xp2h" path="res://Strife/Sprites/Attacks3/seta4.png" id="195_xaw43"]
 [ext_resource type="AudioStream" uid="uid://cxaalbfmfaac1" path="res://Strife/SFX/FlickUp.wav" id="196_1xxnr"]
+[ext_resource type="Texture2D" uid="uid://ban5ft625y8mg" path="res://Strife/Sprites/Attacks3/seta5.png" id="196_ruqge"]
+[ext_resource type="Texture2D" uid="uid://gnejb6rk7ktk" path="res://Strife/Sprites/Attacks3/seta6.png" id="197_yycq4"]
 [ext_resource type="AudioStream" uid="uid://cnsareouw2kjw" path="res://Sound Library/Universal/Shorts/ChunkySlash.wav" id="198_b1ldt"]
+[ext_resource type="Texture2D" uid="uid://2q8o4n1eirc5" path="res://Strife/Sprites/Attacks3/seta7.png" id="198_km2ll"]
 [ext_resource type="AudioStream" uid="uid://ds2sayuonmsvg" path="res://Sound Library/Universal/Shorts/MetalBooster.wav" id="199_ku5y1"]
+[ext_resource type="Texture2D" uid="uid://bi2ada85sc11j" path="res://Strife/Sprites/Attacks3/seta8.png" id="199_ta2h6"]
 [ext_resource type="Script" path="res://System/State.gd" id="200_43ssd"]
+[ext_resource type="Texture2D" uid="uid://fn8jrm1tyqtm" path="res://Strife/Sprites/Attacks3/seta9.png" id="200_61aoe"]
+[ext_resource type="Texture2D" uid="uid://dhnoqi3wqorpt" path="res://Strife/Sprites/Attacks3/seta10.png" id="201_dasft"]
 [ext_resource type="PackedScene" uid="uid://4i2lxb6ty02s" path="res://Strife/Particles/IntroSpark.tscn" id="201_ef0ff"]
 [ext_resource type="AudioStream" uid="uid://dysu02xni577j" path="res://Strife/SFX/Windup2.wav" id="201_hckbe"]
 [ext_resource type="AudioStream" uid="uid://dmr7msjnnuvgk" path="res://Sound Library/Universal/Shorts/HeavySwing.wav" id="202_1m780"]
 [ext_resource type="AudioStream" uid="uid://uc06lbgaavrq" path="res://Strife/SFX/IntroSFX1.wav" id="202_iplll"]
+[ext_resource type="Texture2D" uid="uid://twhjv47iasdj" path="res://Strife/Sprites/Attacks3/seta11.png" id="202_tbji4"]
 [ext_resource type="AudioStream" uid="uid://c2oxsu50p5rfr" path="res://Strife/SFX/IntroSwing.wav" id="203_gv3ux"]
+[ext_resource type="Texture2D" uid="uid://cd5cvbcdgvevm" path="res://Strife/Sprites/Attacks3/seta12.png" id="203_mjrnn"]
 [ext_resource type="AudioStream" uid="uid://owvec87hcc8e" path="res://Sound Library/Universal/UI/StageLose.wav" id="204_ccd8d"]
+[ext_resource type="Texture2D" uid="uid://def2hxy0ofgme" path="res://Strife/Sprites/Attacks3/seta13.png" id="204_k4fjk"]
 [ext_resource type="AudioStream" uid="uid://b6njqyuwnf3od" path="res://Strife/SFX/GunCock.wav" id="204_udk67"]
 [ext_resource type="AudioStream" uid="uid://cwrb06x1kf0hd" path="res://Strife/SFX/BulletFire.wav" id="205_n041y"]
+[ext_resource type="Texture2D" uid="uid://f3ulb060ejkg" path="res://Strife/Sprites/Attacks3/seta14.png" id="205_ptxup"]
 [ext_resource type="PackedScene" uid="uid://dcgcio87rn5bq" path="res://Strife/Particles/AbyssLandingDust.tscn" id="205_wuoyh"]
+[ext_resource type="Texture2D" uid="uid://inajylimfs0u" path="res://Strife/Sprites/Attacks3/seta15.png" id="206_8h8ag"]
+[ext_resource type="Texture2D" uid="uid://p8gacn3r4o64" path="res://Strife/Sprites/Attacks3/seta16.png" id="207_exq5j"]
+[ext_resource type="Texture2D" uid="uid://bpaypdd7j42dr" path="res://Strife/Sprites/Attacks3/seta17.png" id="208_korbv"]
 [ext_resource type="Script" path="res://Strife/States/AbyssEnd.gd" id="209_u8how"]
 [ext_resource type="AudioStream" uid="uid://dxx2k8xlfv86i" path="res://Sound Library/Universal/Shorts/Backstep.wav" id="212_3q8f4"]
 [ext_resource type="AudioStream" uid="uid://c1w417o30ocdu" path="res://Sound Library/Universal/Shorts/swing1.ogg" id="213_dnv7p"]
@@ -273,6 +302,16 @@
 [ext_resource type="PackedScene" uid="uid://b5dgvd162khlh" path="res://Strife/Particles/RiskyRainTP.tscn" id="270_u37ef"]
 [ext_resource type="AudioStream" uid="uid://co3qcs3cunwp6" path="res://Strife/SFX/ScratchStrike.wav" id="271_vx7rm"]
 [ext_resource type="AudioStream" uid="uid://k6p67yqbuigq" path="res://Strife/SFX/RRain2.wav" id="272_rxvfl"]
+[ext_resource type="Script" path="res://Strife/States/BoD.gd" id="285_0si4g"]
+[ext_resource type="AudioStream" uid="uid://bfvj3ac8ww5fs" path="res://Strife/SFX/44Windup.wav" id="286_f6db8"]
+[ext_resource type="PackedScene" uid="uid://b358cai6hfbbh" path="res://Strife/Particles/Death44Spark.tscn" id="286_q0y4s"]
+[ext_resource type="AudioStream" uid="uid://cpb8udk6ypa0o" path="res://Strife/SFX/Slashy.wav" id="287_d4csv"]
+[ext_resource type="PackedScene" uid="uid://bt167o2usdhbh" path="res://Strife/Particles/Death45Glow.tscn" id="288_fa44u"]
+[ext_resource type="AudioStream" uid="uid://ctvddnw57pbu3" path="res://Strife/SFX/SlashReverb.wav" id="288_o40ra"]
+[ext_resource type="AudioStream" uid="uid://bad6xlk3wtotm" path="res://Strife/SFX/SlashyReverb.wav" id="289_o2q0g"]
+[ext_resource type="PackedScene" uid="uid://b2af2hotuxd2d" path="res://Strife/Particles/Death45Spark.tscn" id="290_pefth"]
+[ext_resource type="AudioStream" uid="uid://chfmtug1kp73h" path="res://Strife/SFX/KnifeSharpen.wav" id="291_2tx11"]
+[ext_resource type="Script" path="res://System/GrabState.gd" id="311_x8hgj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ehwu"]
 shader = ExtResource("2_lpybg")
@@ -399,6 +438,58 @@ animations = [{
 }],
 "loop": true,
 "name": &"BlockM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_3tx4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3tx4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7hw06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7hw06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_efc8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_efc8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wsqrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_k0xny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_uxlji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ndv1i")
+}],
+"loop": true,
+"name": &"BoD1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_ipyjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_fmf4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_khmab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_kka80")
+}],
+"loop": true,
+"name": &"BoD2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1190,6 +1281,145 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("192_4h8or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_4h8or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_f5sc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_4h8or")
+}],
+"loop": true,
+"name": &"RainDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("194_52dtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_52dtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_xaw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_xaw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_xaw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_ruqge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_yycq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_yycq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_52dtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_xaw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_km2ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_km2ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_ta2h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_ta2h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_ta2h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_61aoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_dasft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_tbji4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_tbji4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_mjrnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_mjrnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_k4fjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_k4fjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_k4fjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_k4fjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_ptxup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_8h8ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_exq5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_exq5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_exq5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_korbv")
+}],
+"loop": true,
+"name": &"RainDownExecute",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("50_dtmn0")
 }, {
 "duration": 1.0,
@@ -1409,7 +1639,10 @@ z_index = 0
 position = Vector2(0, 3.715)
 bounds = Vector2(25.18, 38.585)
 
-[node name="Sounds" parent="." index="2"]
+[node name="DrawingHelper" type="Node2D" parent="." index="2"]
+script = ExtResource("5_1wvvy")
+
+[node name="Sounds" parent="." index="3"]
 unique_name_in_owner = false
 
 [node name="50Cal" type="AudioStreamPlayer" parent="Sounds" index="0"]
@@ -1428,10 +1661,9 @@ pitch_scale = 0.89
 [node name="MoveBreak" type="AudioStreamPlayer" parent="Sounds" index="3"]
 stream = ExtResource("8_rwbe3")
 
-[node name="Sprite" parent="." index="3"]
+[node name="Sprite" parent="." index="4"]
 sprite_frames = SubResource("SpriteFrames_ilb7w")
-animation = &"RRain"
-frame = 6
+animation = &"RainDown"
 
 [node name="GungeousArm" type="Sprite2D" parent="Sprite" index="0"]
 visible = false
@@ -2602,7 +2834,93 @@ bassSound = ExtResource("181_csoi5")
 bassSoundVolume = -4.0
 bounds = Vector2(121.56, 19.33)
 
-[node name="HealthBar" parent="." index="5"]
+[node name="Death44" type="Node" parent="StateMachine" index="42"]
+script = ExtResource("285_0si4g")
+canLandCancel = false
+landCancelLag = 1
+interruptOnExit = true
+animationName = "BoD1"
+animationLength = 9
+duration = 46
+fallbackState = "Idle"
+continueOnWait = false
+particleEffect = ExtResource("286_q0y4s")
+particleTick = 29
+onEnterSFX = ExtResource("286_f6db8")
+enterSFXVolume = -7.0
+SFX = ExtResource("287_d4csv")
+SFXVolume = -4.0
+SFXTick = 29
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Death44" index="0"]
+position = Vector2(23, -5)
+script = ExtResource("27_4fx2p")
+damage = 12
+knockbackDirection = Vector2(1, 0.3)
+knockbackForce = 10.0
+inheritAttackersSpeedOnHitPercent = 0.3
+stunTicks = 6
+hitstopTicks = 1
+selfHitstopTicks = 3
+hurtState = "HurtGH"
+startFrame = 29
+duration = 4
+hitSound = ExtResource("271_vx7rm")
+hitSoundVolume = 1.0
+bassSound = ExtResource("181_sshvi")
+bassSoundVolume = -2.0
+bounds = Vector2(121.56, 19.33)
+
+[node name="Death45" type="Node" parent="StateMachine" index="43"]
+script = ExtResource("26_tdom3")
+canLandCancel = false
+landCancelLag = 1
+interruptOnExit = true
+animationName = "BoD2"
+animationLength = 4
+duration = 28
+fallbackState = "Idle"
+continueOnWait = false
+onEnterParticles = ExtResource("288_fa44u")
+particleEffect = ExtResource("290_pefth")
+particleTick = 1
+onEnterSFX = ExtResource("288_o40ra")
+SFX = ExtResource("289_o2q0g")
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Death45" index="0"]
+position = Vector2(23, -5)
+script = ExtResource("27_4fx2p")
+damage = 156
+knockbackDirection = Vector2(1, 0.3)
+knockbackForce = 44.0
+inheritAttackersSpeedOnHitPercent = 0.3
+stunTicks = 44
+hitstopTicks = 16
+hurtState = "HurtGH"
+duration = 4
+hitcancellable = false
+hitSound = ExtResource("291_2tx11")
+hitSoundVolume = 3.0
+bassSound = ExtResource("181_csoi5")
+bassSoundVolume = 6.0
+bounds = Vector2(121.56, 19.33)
+
+[node name="RainDownGrab" type="Node" parent="StateMachine" index="44"]
+script = ExtResource("311_x8hgj")
+grabLocations = {
+ExtResource("192_4h8or"): Vector2(3.165, 0)
+}
+canLandCancel = false
+landCancelLag = 1
+interruptOnExit = true
+animationName = "BoD2"
+animationLength = 4
+duration = 28
+fallbackState = "Idle"
+continueOnWait = false
+particleTick = 1
+
+[node name="HealthBar" parent="." index="6"]
 visible = false
 rotation = 0.0
 pivot_offset = Vector2(0, 0)

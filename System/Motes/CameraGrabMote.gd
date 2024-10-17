@@ -1,12 +1,13 @@
 extends BattleInstanceMote
 class_name CameraZoomMote
 var desiredZoom : float = 1.0
-var zoomLerpSpeed : float = 0.5 #How fast to move to the new zoom. 0 is not at all, 1 is max.
+var zoomLerpSpeed : float = 0.5 #How fast to move to the new zoom. 0 is not at all, 1 is delta as a fraction, 2 is 2 * delta, etc
 var targetedObject : GameObject = null #Will change to centering the camera on an object if not null.
 var targetObjectOffset : Vector2 = Vector2.ZERO #Changes where the camera is positioned, based on targeted object.
 
 var priority = 0 #Highest priority overrides other nodes
 
+var instantSnapToZoom = false
 #Unlike other motes, this one is handled by the main class instead of functiality in here, since only one should be active at a time.
 
 func MyClass():

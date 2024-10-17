@@ -11,6 +11,9 @@ var myBolt : GameObject = null
 
 const fireSelfWindup : int = 15
 
+
+var boltID = -1 #=------------------------------
+
 func CopyTo(new):
 	super(new)
 	
@@ -19,11 +22,12 @@ func CopyTo(new):
 	else:
 		new.target = null
 	
-	
 	if myBolt != null:
 		new.myBolt = new.host.battleInstance.FindObjectOfID(myBolt.id)
+		new.boltID = myBolt.id
 	else:
 		new.myBolt = null
+		new.boltID = -2
 
 func Tick():
 	super()
@@ -48,6 +52,8 @@ func Tick():
 		if isFireSelfVersion:
 			host.sprite.modulate.a = float(fireTick - currentTick) / fireTick
 	elif currentTick == fireTick:
+		if myBolt == null:
+			return
 		myBolt.velocity = Vector2(cos(newAngle + PI/2), sin(newAngle + PI/2)) * 210
 		if isFireSelfVersion:
 			host.sprite.modulate.a = 0
@@ -75,9 +81,10 @@ func EndImmunity():
 	host.ignoreProjectileHitboxes = false
 
 func Frame1():
-	myBolt = host.SpawnProjectile(load("res://Enemies/Acrophilia/Projectiles/AcroBomb.tscn"), Vector2.ZERO)
+	myBolt = host.SpawnProjectile(preload("res://Enemies/Acrophilia/Projectiles/AcroBomb.tscn"), Vector2.ZERO)
 	myBolt.material = host.material
 	UpdateBoltPosition()
+	
 
 func UpdateBoltPosition():
 	myBolt.position = host.position
@@ -97,6 +104,7 @@ func OnExit():
 	EndImmunity()
 
 func OnEnter():
+	myBolt = null
 	if isFireSelfVersion:
 		holdFrames = fireSelfWindup
 		host.PlaySound("Windup")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2af2hotuxd2d"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_tajjh"]
+[ext_resource type="Texture2D" uid="uid://crn7waveg1wsr" path="res://Particles/DefaultSprites/ThiccLine.png" id="2_ie8js"]
+[ext_resource type="Texture2D" uid="uid://68f6u8nepwny" path="res://Particles/DefaultSprites/Line3.png" id="3_wkiqg"]
+
+[sub_resource type="Curve" id="Curve_bxxya"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_i10ry"]
+offsets = PackedFloat32Array(0.00277778, 0.221264, 0.520115, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_ytnjs"]
+colors = PackedColorArray(0.321728, 0.321728, 0.321728, 1, 1, 1, 1, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_tajjh")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 7
+position = Vector2(-396, 0)
+amount = 16
+lifetime = 1.2
+speed_scale = 2.0
+explosiveness = 1.0
+lifetime_randomness = 0.44
+texture = ExtResource("2_ie8js")
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+particle_flag_align_y = true
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 2000.0
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_bxxya")
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_i10ry")
+color_initial_ramp = SubResource("Gradient_ytnjs")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 7
+position = Vector2(-617, 0)
+amount = 40
+lifetime = 1.2
+speed_scale = 2.0
+explosiveness = 1.0
+lifetime_randomness = 0.44
+texture = ExtResource("3_wkiqg")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 5)
+particle_flag_align_y = true
+spread = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 3000.0
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_bxxya")
+scale_amount_min = 0.5
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_i10ry")
+color_initial_ramp = SubResource("Gradient_ytnjs")

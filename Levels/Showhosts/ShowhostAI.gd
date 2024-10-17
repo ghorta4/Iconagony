@@ -70,6 +70,13 @@ func Tick():
 	while  stowedRandomFloats.size() < 500:
 		stowedRandomFloats.append(battleInstance.GetRandom(-100.0, 100.0))
 	
+	RefreshCaches()
+	
+	TickFoeSpawning()
+	
+
+
+func RefreshCaches():
 	var foesToErase = []
 	for foe in instantiatedFoes:
 		if foe == null or not is_instance_valid(foe) || foe.disabled:
@@ -77,10 +84,6 @@ func Tick():
 	
 	for foe in foesToErase:
 		instantiatedFoes.erase(foe)
-	
-	TickFoeSpawning()
-	
-
 
 func CopyTo(new : Showhost):
 	for varName in stateVariablesList:
@@ -95,10 +98,15 @@ func CopyTo(new : Showhost):
 	
 	new.InstancedTemplateFoes = InstancedTemplateFoes
 	
+#	new.instantiatedFoes.clear()
 	for foe in instantiatedFoes:
-		new.instantiatedFoes.append(battleInstance.FindObjectOfID(foe.id))
+		new.instantiatedFoes.append(new.battleInstance.FindObjectOfID(foe.id))
 	
-	new.stowedRandomFloats = stowedRandomFloats.duplicate()
+	new.RefreshCaches()
+	
+	new.stowedRandomFloats.clear()
+	for f in stowedRandomFloats:
+		new.stowedRandomFloats.append(f)
 
 func Initialize():
 	var allNewVariables = stateVariables.split("\n")
@@ -152,7 +160,6 @@ func TickFoeSpawning():
 	var totalSpawnWeight = GetTotalSpawnWeight()
 	
 	var spawnSide = sign(GetRandom())
-	
 	while true:
 		if enemiesSpawned >= maxFoesSpawnedAtOnce:
 			break
@@ -213,6 +220,7 @@ func GetTotalSpawnWeight() -> float:
 
 
 func GetRandom():
+	
 	if stowedRandomFloats.size() > 0:
 		var grabbed = stowedRandomFloats[0]
 		stowedRandomFloats.remove_at(0)
