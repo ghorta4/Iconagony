@@ -309,6 +309,9 @@ speedLimits = Vector2(1000, 700)
 position = Vector2(0, 3)
 bounds = Vector2(30, 40)
 
+[node name="HurtBox" parent="." index="1"]
+bounds = Vector2(40, 40)
+
 [node name="Move1" type="AudioStreamPlayer" parent="Sounds" index="0"]
 stream = ExtResource("3_07scj")
 volume_db = -28.724
@@ -319,8 +322,7 @@ volume_db = -28.724
 
 [node name="Sprite" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_dvarh")
-animation = &"Atk2"
-frame = 4
+animation = &"HurtA"
 
 [node name="Idle" parent="StateMachine" index="0"]
 script = ExtResource("8_fr7k5")
@@ -420,6 +422,9 @@ bassSound = ExtResource("46_vcsjj")
 bassSoundVolume = -2.0
 whiffSoundVolume = 2.0
 bounds = Vector2(61.9, 13.295)
+
+[node name="HurtA" parent="StateMachine" index="12"]
+animationName = "HurtA"
 
 [node name="HealthBar" parent="." index="5"]
 offset_top = 53.0

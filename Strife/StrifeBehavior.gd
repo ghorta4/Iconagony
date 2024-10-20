@@ -21,6 +21,14 @@ var ignoreMoveGeneration = false
 
 const defaultTurnTime = 90.0
 
+#Move Related
+var scenematicGlobalPauseMove = false
+
+var taleFromDownUnderTicks = 0
+var taleFromDownUnderExhaustion = 0
+var taleFromDownUnderLevel = 0
+const maxTaleFromDownUnderExaustion = 240
+
 func Initialize():
 	super()
 	gungeousArm.visible = false
@@ -48,6 +56,11 @@ func _physics_process(delta: float):
 	timeLeftThisTurn = max(timeLeftThisTurn, 0)
 
 func Tick():
+	TFDUMacro()
+	
+	taleFromDownUnderExhaustion = max(0, taleFromDownUnderExhaustion - 1)
+	taleFromDownUnderTicks = max(0, taleFromDownUnderTicks - 1)
+	
 	UpdateGreyHealth()
 	MoveManager.AdjustMoveLevels(instancedMoves)
 	if stateInterruptable && (canPollMoves || not isGhost): #Do move stuff here
@@ -119,7 +132,6 @@ func UpdateHealthBar():
 
 func GetIdealStowedRandomSize() -> int:
 	return 100
-
 
 func RefreshPickupMoves(): #Has awkward isGhost checks to prevent desyncing from the real game drawing random numbers.
 	if battleInstance.runRealtime:
@@ -267,11 +279,46 @@ func ApplyMoveRandomization(targetMove : MoveInstance):
 		targetMove.visualAlterations[subArray] = variationsArray[selectedAltLocation][0] #stores the name to make it resilient to additions to the array later on
 	pass
 
+
+func TFDUMacro():
+	var myState = CurrentState()
+	if taleFromDownUnderTicks > 0 && (not "isHurtState" in myState || not myState.isHurtState):
+		taleFromDownUnderTicks = 0
+	
+	if taleFromDownUnderTicks > 0 && taleFromDownUnderExhaustion < maxTaleFromDownUnderExaustion / 2 && HP <= 0:
+		ignoreMeleeHitboxes = true
+		ignoreGrabHitboxes = true
+		ignoreProjectileHitboxes = true
+		var exhaustDegrade = (taleFromDownUnderExhaustion - maxTaleFromDownUnderExaustion/2) / maxTaleFromDownUnderExaustion * 2
+		HP = MaxHP * pow(1.5, taleFromDownUnderLevel) * 0.2
+		taleFromDownUnderTicks = 0
+		taleFromDownUnderExhaustion = maxTaleFromDownUnderExaustion
+		ChangeState("TFDU2")
+		return true
+	return false
+
+
+func DramaticFreezeFrameTick():
+	super()
+	if scenematicGlobalPauseMove:
+		stateMachine.Tick()
+		NonTimeSensitiveTick()
+
+func ReleaseGrabbee():
+	grabbee.sprite.rotation_degrees = 0
+	super()
+
 func Die():
+	if TFDUMacro():
+		return
+	
 	if levelEnded:
 		return
 	#var myState = CurrentState()
-	ChangeState("Death")
+	if taleFromDownUnderTicks > 0:
+		ChangeState("DeathUT")
+	else:
+		ChangeState("Death")
 	levelEnded = true
 	battleInstance.showHost.LoseLevel()
 

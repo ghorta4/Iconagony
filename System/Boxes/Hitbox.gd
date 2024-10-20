@@ -54,13 +54,18 @@ var whiffSoundPlayer : AudioStreamPlayer
 @export var particleEffect : PackedScene
 @export var particleOffset : Vector2
 
+@export_group("Grabbing")
+@export var isGrabBox : bool = false
+@export var isGrabHit : bool = false
+
 var active = false #set my other scripts to determine whether or not to draw this, and when to include it in used hitboxes
 var player # A slight misnomer. This is a player for players' hitboxes, but is a projectile if the hitbox is on a projectile!
 var host
 
 var stateVariables = ["damage", "useDefaultDamagePowerScaling", "damageIncreasePerLevel", "damageReductionFactor", "hitGroup", "hitPriority", "startFrame", "duration",
 "hitcancellable", "hitcancelDelay", "active", "bounds", "position", "knockbackDirection", "knockbackForce", "stunTicks", "hurtState", "hitstopTicks", "selfHitstopTicks", "hurtStateAir",
-"loopHitbox", "ticksPerLoop", "inheritAttackersSpeedOnHitPercent", "knockbackAwayFromCenter", "allowFallbackParticles", "autoAdjustParticleAngle", "particleOffset", "particleEffect"]
+"loopHitbox", "ticksPerLoop", "inheritAttackersSpeedOnHitPercent", "knockbackAwayFromCenter", "allowFallbackParticles", "autoAdjustParticleAngle", "particleOffset", "particleEffect",
+"isGrabBox", "isGrabHit"]
 
 func CopyTo(new):
 	for variableName in stateVariables:
@@ -84,6 +89,11 @@ func GetOrigin():
 	return origin 
 
 func GetDrawColor():
+	if isGrabBox:
+		return Color(0.75, 0.4, 0.1, 0.4)
+	if isGrabHit:
+		return Color(0.66, 0.04, 0.04, 0.4)
+	
 	return Color(0.96, 0.1, 0.1, 0.4)
 
 func GetData() -> HitboxData:

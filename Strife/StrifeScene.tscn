@@ -1,4 +1,4 @@
-[gd_scene load_steps=315 format=3 uid="uid://b3bxr6syskysx"]
+[gd_scene load_steps=352 format=3 uid="uid://b3bxr6syskysx"]
 
 [ext_resource type="PackedScene" uid="uid://c4ndnsar8nwlh" path="res://System/ObjectTemplates/PlayerObject.tscn" id="1_lb1vs"]
 [ext_resource type="Texture2D" uid="uid://da5gev3oo7bat" path="res://Strife/Sprites/BaseSet/idleAndRef2.png" id="2_gqiqr"]
@@ -191,11 +191,21 @@
 [ext_resource type="Script" path="res://Strife/States/Dodge.gd" id="121_v1xic"]
 [ext_resource type="Script" path="res://Strife/States/LLRR.gd" id="122_dswqc"]
 [ext_resource type="Texture2D" uid="uid://dyvoite4g80pn" path="res://Strife/Sprites/Attacks2/attacks31.png" id="125_obr36"]
+[ext_resource type="Texture2D" uid="uid://wu2o1xayxhdn" path="res://Strife/Sprites/Attacks3/seta23.png" id="133_g26ki"]
+[ext_resource type="Texture2D" uid="uid://cwgb3bdr1nd6y" path="res://Strife/Sprites/Attacks3/seta24.png" id="134_o01es"]
+[ext_resource type="Texture2D" uid="uid://cqdce7vnwlsyd" path="res://Strife/Sprites/Attacks3/seta25.png" id="135_qdv2g"]
+[ext_resource type="Texture2D" uid="uid://cte3wmlka36e1" path="res://Strife/Sprites/Attacks3/seta26.png" id="136_xcdb3"]
+[ext_resource type="Texture2D" uid="uid://bti3ucbubjkfn" path="res://Strife/Sprites/Attacks3/seta27.png" id="137_1orf7"]
+[ext_resource type="Texture2D" uid="uid://c45e4o58okrf2" path="res://Strife/Sprites/Attacks3/seta18.png" id="138_5ojvy"]
 [ext_resource type="Script" path="res://Strife/States/AbyssStart.gd" id="138_7w6xr"]
 [ext_resource type="Script" path="res://Strife/States/AbyssLoop.gd" id="139_8chx2"]
 [ext_resource type="Texture2D" uid="uid://bw13ivfm1sajd" path="res://Strife/Sprites/WinLose/WinLose23.png" id="139_fprbj"]
+[ext_resource type="Texture2D" uid="uid://bib57ybktkcqg" path="res://Strife/Sprites/Attacks3/seta19.png" id="139_xtbn8"]
+[ext_resource type="Texture2D" uid="uid://brhmp1qwg2l7" path="res://Strife/Sprites/Attacks3/seta20.png" id="140_h4ym1"]
 [ext_resource type="Texture2D" uid="uid://d1r2ojpr1fku7" path="res://Strife/Sprites/WinLose/WinLose24.png" id="140_l1k6b"]
+[ext_resource type="Texture2D" uid="uid://co75s57e2d1vb" path="res://Strife/Sprites/Attacks3/seta21.png" id="141_g14ax"]
 [ext_resource type="Texture2D" uid="uid://bsi8qe4yc2ybo" path="res://Strife/Sprites/WinLose/WinLose25.png" id="141_pymbp"]
+[ext_resource type="Texture2D" uid="uid://dhmyqed5h6xmq" path="res://Strife/Sprites/Attacks3/seta22.png" id="142_ayqtb"]
 [ext_resource type="Texture2D" uid="uid://drehe4esi6ha1" path="res://Strife/Sprites/WinLose/WinLose26.png" id="142_jr0l5"]
 [ext_resource type="Texture2D" uid="uid://dj6g50gxkryux" path="res://Strife/Sprites/WinLose/WinLose27.png" id="143_3rxru"]
 [ext_resource type="Texture2D" uid="uid://k7wteyh0iy7e" path="res://Strife/Sprites/WinLose/WinLose28.png" id="144_kmup5"]
@@ -297,6 +307,21 @@
 [ext_resource type="Script" path="res://Strife/States/DarkAge.gd" id="218_d72ub"]
 [ext_resource type="AudioStream" uid="uid://cbkdicer3ggt7" path="res://Strife/SFX/BigBoom.wav" id="220_ixdqs"]
 [ext_resource type="AudioStream" uid="uid://cfprnnlsue8ev" path="res://Sound Library/Universal/Shorts/Damage.wav" id="241_5v4e0"]
+[ext_resource type="Texture2D" uid="uid://ditqjvc8i27se" path="res://Strife/Sprites/Attacks3/seta28.png" id="244_sygr3"]
+[ext_resource type="Texture2D" uid="uid://b43jad4spaya2" path="res://Strife/Sprites/Attacks3/seta29.png" id="245_oc1wc"]
+[ext_resource type="Texture2D" uid="uid://d0w2viu6qqmr1" path="res://Strife/Sprites/Attacks3/seta30.png" id="246_jfumt"]
+[ext_resource type="Texture2D" uid="uid://emfp8k3w42po" path="res://Strife/Sprites/Attacks3/seta31.png" id="247_usllk"]
+[ext_resource type="Texture2D" uid="uid://dt2qxhoym1ojb" path="res://Strife/Sprites/Attacks3/seta32.png" id="248_oljrf"]
+[ext_resource type="Texture2D" uid="uid://8jwjpkqfdcg" path="res://Strife/Sprites/Attacks3/seta33.png" id="249_o3yo0"]
+[ext_resource type="Texture2D" uid="uid://bk5m4ciaffkbo" path="res://Strife/Sprites/Attacks3/seta34.png" id="250_0o6gh"]
+[ext_resource type="Texture2D" uid="uid://kfffbwugog7" path="res://Strife/Sprites/Attacks3/seta35.png" id="251_n3pwi"]
+[ext_resource type="Texture2D" uid="uid://dw26km3vuo3yj" path="res://Strife/Sprites/Attacks3/seta36.png" id="252_o6rmh"]
+[ext_resource type="Texture2D" uid="uid://bh76x44dpjtbc" path="res://Strife/Sprites/Attacks3/seta37.png" id="253_cac0e"]
+[ext_resource type="Texture2D" uid="uid://cowrxi21tkakg" path="res://Strife/Sprites/Attacks3/seta38.png" id="254_5db2w"]
+[ext_resource type="Texture2D" uid="uid://bif7fwwadw45t" path="res://Strife/Sprites/Misc/heartSprite1.png" id="255_5u3td"]
+[ext_resource type="Texture2D" uid="uid://vifhns8ck7cf" path="res://Strife/Sprites/Misc/heartSprite2.png" id="256_ptk1y"]
+[ext_resource type="Script" path="res://Strife/States/StrifeDeath.gd" id="262_y5rg3"]
+[ext_resource type="PackedScene" uid="uid://dyw4urxhqarfo" path="res://Strife/Particles/UTDeath.tscn" id="263_ivn0a"]
 [ext_resource type="Script" path="res://Strife/States/RiskyRain.gd" id="269_qp5yl"]
 [ext_resource type="AudioStream" uid="uid://bj4xwetv2xlkf" path="res://Strife/SFX/MehHitReverse.wav" id="270_dygwr"]
 [ext_resource type="PackedScene" uid="uid://b5dgvd162khlh" path="res://Strife/Particles/RiskyRainTP.tscn" id="270_u37ef"]
@@ -312,6 +337,18 @@
 [ext_resource type="PackedScene" uid="uid://b2af2hotuxd2d" path="res://Strife/Particles/Death45Spark.tscn" id="290_pefth"]
 [ext_resource type="AudioStream" uid="uid://chfmtug1kp73h" path="res://Strife/SFX/KnifeSharpen.wav" id="291_2tx11"]
 [ext_resource type="Script" path="res://System/GrabState.gd" id="311_x8hgj"]
+[ext_resource type="Script" path="res://Strife/States/RainDownExecute.gd" id="313_uyyws"]
+[ext_resource type="AudioStream" uid="uid://bep4t6j04xths" path="res://Strife/SFX/AThump1.wav" id="314_51s0h"]
+[ext_resource type="AudioStream" uid="uid://biurdwxhkdlws" path="res://Strife/SFX/AThump2.wav" id="315_2idgu"]
+[ext_resource type="AudioStream" uid="uid://d04qg2g073o2n" path="res://Sound Library/Universal/Shorts/Slash.wav" id="316_s2plw"]
+[ext_resource type="AudioStream" uid="uid://dv4hule5dcuu1" path="res://Sound Library/Universal/Shorts/Hit1.wav" id="327_2ih24"]
+[ext_resource type="Script" path="res://Strife/States/TFDU1.gd" id="339_d84o8"]
+[ext_resource type="AudioStream" uid="uid://bpfgrpyseeuta" path="res://Strife/SFX/TFDUStart.wav" id="340_bqqi5"]
+[ext_resource type="Script" path="res://Strife/States/TFDU2.gd" id="340_m0g1m"]
+[ext_resource type="PackedScene" uid="uid://s36ky3eoc4ml" path="res://Strife/Particles/TFDUSpark.tscn" id="342_8k3y3"]
+[ext_resource type="AudioStream" uid="uid://dusidnv122vml" path="res://Strife/SFX/Windup2Fast.wav" id="342_23llw"]
+[ext_resource type="AudioStream" uid="uid://dsuni3oggfc0k" path="res://Strife/SFX/UTesque.wav" id="343_0gfil"]
+[ext_resource type="AudioStream" uid="uid://ddi3oovamw6hi" path="res://Strife/SFX/Refused2.wav" id="343_wwndf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ehwu"]
 shader = ExtResource("2_lpybg")
@@ -1008,6 +1045,52 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("133_g26ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_o01es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_o01es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_qdv2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_xcdb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_1orf7")
+}],
+"loop": true,
+"name": &"KnapA",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("138_5ojvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_xtbn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_xtbn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_h4ym1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_g14ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_ayqtb")
+}],
+"loop": true,
+"name": &"KnapG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("62_pl37d")
 }, {
 "duration": 1.0,
@@ -1355,12 +1438,6 @@ animations = [{
 "texture": ExtResource("198_km2ll")
 }, {
 "duration": 1.0,
-"texture": ExtResource("198_km2ll")
-}, {
-"duration": 1.0,
-"texture": ExtResource("199_ta2h6")
-}, {
-"duration": 1.0,
 "texture": ExtResource("199_ta2h6")
 }, {
 "duration": 1.0,
@@ -1593,6 +1670,99 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("244_sygr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_oc1wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_jfumt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_usllk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_oc1wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_jfumt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_usllk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_oc1wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_sygr3")
+}],
+"loop": true,
+"name": &"TFDU1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("248_oljrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_o3yo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_0o6gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_0o6gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_n3pwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_o6rmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_cac0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_cac0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_cac0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_cac0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_5db2w")
+}],
+"loop": true,
+"name": &"TFDU2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("255_5u3td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_ptk1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_ptk1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_ptk1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_ptk1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_471i3")
+}],
+"loop": true,
+"name": &"UTDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("152_471i3")
 }],
 "loop": true,
@@ -1621,7 +1791,11 @@ stateVariables = "lastQueuedMoveLocation
 lastQueuedMoveSlot
 greyHealth
 greyHealthWaitBeforeDecay
-levelEnded"
+levelEnded
+taleFromDownUnderTicks
+taleFromDownUnderExhaustion
+taleFromDownUnderLevel
+scenematicGlobalPauseMove"
 groundFrictionCoefficient = Vector2(0.09, 0.01)
 airFrictionCoefficient = Vector2(0.003, 0.01)
 speedLimits = Vector2(1500, 1500)
@@ -1640,6 +1814,7 @@ position = Vector2(0, 3.715)
 bounds = Vector2(25.18, 38.585)
 
 [node name="DrawingHelper" type="Node2D" parent="." index="2"]
+z_index = 4096
 script = ExtResource("5_1wvvy")
 
 [node name="Sounds" parent="." index="3"]
@@ -1663,7 +1838,7 @@ stream = ExtResource("8_rwbe3")
 
 [node name="Sprite" parent="." index="4"]
 sprite_frames = SubResource("SpriteFrames_ilb7w")
-animation = &"RainDown"
+animation = &"UTDeath"
 
 [node name="GungeousArm" type="Sprite2D" parent="Sprite" index="0"]
 visible = false
@@ -1704,7 +1879,7 @@ SFX = ExtResource("203_gv3ux")
 SFXTick = 40
 
 [node name="Death" type="Node" parent="StateMachine" index="4"]
-script = ExtResource("200_43ssd")
+script = ExtResource("262_y5rg3")
 overrideFallSpeed = true
 overrideFrictionCoefficient = Vector2(0.99, 0.99)
 overrideAirFrictionCoefficient = Vector2(0.99, 0.99)
@@ -1715,12 +1890,30 @@ ticksPerFrame = 3
 duration = 14
 endless = true
 onEnterSFX = ExtResource("204_ccd8d")
-enterSFXVolume = 6.0
 SFX = ExtResource("5_qpeeh")
-SFXVolume = 4.0
+SFXVolume = -2.0
 SFXTick = 22
 
-[node name="Jump" parent="StateMachine" index="5"]
+[node name="DeathUT" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("262_y5rg3")
+overrideFallSpeed = true
+overrideFrictionCoefficient = Vector2(0.99, 0.99)
+overrideAirFrictionCoefficient = Vector2(0.99, 0.99)
+useFrictionOverrides = true
+animationName = "UTDeath"
+animationLength = 6
+ticksPerFrame = 5
+duration = 90
+endless = true
+particleEffect = ExtResource("263_ivn0a")
+particleTick = 25
+onEnterSFX = ExtResource("327_2ih24")
+enterSFXVolume = 4.0
+SFX = ExtResource("5_qpeeh")
+SFXVolume = -2.0
+SFXTick = 25
+
+[node name="Jump" parent="StateMachine" index="6"]
 jumpTick = 10
 jumpForce = 400.0
 preservedMomentum = Vector2(1, 0.3)
@@ -1736,7 +1929,7 @@ SFX = ExtResource("160_523oq")
 SFXVolume = -8.0
 SFXTick = 10
 
-[node name="IdleAir" parent="StateMachine" index="6"]
+[node name="IdleAir" parent="StateMachine" index="7"]
 OtherIdleState = "Landing"
 InterruptabilityInterval = 20
 animationName = "IdleAir"
@@ -1745,7 +1938,7 @@ animationLength = 4
 ticksPerFrame = 3
 duration = 20
 
-[node name="Landing" parent="StateMachine" index="7"]
+[node name="Landing" parent="StateMachine" index="8"]
 interruptOnExit = true
 animationName = "Landing"
 animationLength = 3
@@ -1754,7 +1947,7 @@ particleOffset = Vector2(0, 20)
 onEnterSFX = ExtResource("37_yxymx")
 enterSFXVolume = -4.0
 
-[node name="Dash" type="Node" parent="StateMachine" index="8"]
+[node name="Dash" type="Node" parent="StateMachine" index="9"]
 script = ExtResource("20_vo1ly")
 speed = 12.0
 startMovingAt = 7
@@ -1774,7 +1967,7 @@ SFX = ExtResource("30_0t846")
 SFXVolume = -7.0
 SFXTick = 7
 
-[node name="BackDash" type="Node" parent="StateMachine" index="9"]
+[node name="BackDash" type="Node" parent="StateMachine" index="10"]
 script = ExtResource("164_ciet5")
 speed = 12.0
 startMovingAt = 5
@@ -1793,16 +1986,16 @@ SFX = ExtResource("167_seoux")
 SFXVolume = -7.0
 SFXTick = 3
 
-[node name="HurtGrabbed" parent="StateMachine" index="11"]
+[node name="HurtGrabbed" parent="StateMachine" index="12"]
 animationName = ""
 
-[node name="HurtThrown" parent="StateMachine" index="12"]
+[node name="HurtThrown" parent="StateMachine" index="13"]
 animationName = ""
 
-[node name="HurtA" parent="StateMachine" index="15"]
+[node name="HurtA" parent="StateMachine" index="16"]
 animationName = "HurtA"
 
-[node name="HurtOTG" parent="StateMachine" index="16"]
+[node name="HurtOTG" parent="StateMachine" index="17"]
 script = ExtResource("95_iqowg")
 interruptOnExit = true
 isHurtState = true
@@ -1811,11 +2004,11 @@ animationLength = 3
 ticksPerFrame = 5
 duration = 15
 
-[node name="HurtDazed" parent="StateMachine" index="17"]
+[node name="HurtDazed" parent="StateMachine" index="18"]
 isHurtState = false
 animationName = ""
 
-[node name="Swipe1A" type="Node" parent="StateMachine" index="18"]
+[node name="Swipe1A" type="Node" parent="StateMachine" index="19"]
 script = ExtResource("26_tdom3")
 landCancelLag = 8
 interruptOnExit = true
@@ -1845,6 +2038,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(30.65, 54.08)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/Swipe1A" index="1"]
@@ -1863,6 +2058,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(33.91, 40.79)
 
 [node name="Hitbox3" type="Node2D" parent="StateMachine/Swipe1A" index="2"]
@@ -1881,9 +2078,11 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(33.91, 40.79)
 
-[node name="Swipe1G" type="Node" parent="StateMachine" index="19"]
+[node name="Swipe1G" type="Node" parent="StateMachine" index="20"]
 script = ExtResource("26_tdom3")
 canLandCancel = false
 interruptOnExit = true
@@ -1913,6 +2112,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(46.88, 43.255)
 
 [node name="Hitbox" type="Node2D" parent="StateMachine/Swipe1G" index="1"]
@@ -1931,6 +2132,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(30.65, 43.255)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/Swipe1G" index="2"]
@@ -1949,9 +2152,11 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(33.91, 30.645)
 
-[node name="GrindG" type="Node" parent="StateMachine" index="20"]
+[node name="GrindG" type="Node" parent="StateMachine" index="21"]
 script = ExtResource("26_tdom3")
 canLandCancel = false
 interruptOnExit = true
@@ -1983,6 +2188,8 @@ hitSoundVolume = -21.0
 bassSound = ExtResource("174_1a4ne")
 bassSoundVolume = -10.0
 whiffSoundVolume = -8.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(47.82, 70.225)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/GrindG" index="1"]
@@ -2002,9 +2209,11 @@ hitSound = ExtResource("174_gqrxf")
 hitSoundVolume = -21.0
 bassSound = ExtResource("174_1a4ne")
 bassSoundVolume = -10.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(62.695, 51.765)
 
-[node name="GrindA" type="Node" parent="StateMachine" index="21"]
+[node name="GrindA" type="Node" parent="StateMachine" index="22"]
 script = ExtResource("26_tdom3")
 landCancelLag = 14
 interruptOnExit = true
@@ -2037,6 +2246,8 @@ hitSoundVolume = -21.0
 bassSound = ExtResource("174_1a4ne")
 bassSoundVolume = -10.0
 whiffSoundVolume = -8.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(44.25, 66.345)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/GrindA" index="1"]
@@ -2056,9 +2267,11 @@ hitSound = ExtResource("174_gqrxf")
 hitSoundVolume = -21.0
 bassSound = ExtResource("174_1a4ne")
 bassSoundVolume = -10.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(67.345, 51.765)
 
-[node name="DiveStart" type="Node" parent="StateMachine" index="22"]
+[node name="DiveStart" type="Node" parent="StateMachine" index="23"]
 script = ExtResource("118_v4bd7")
 landCancelLag = 8
 enterForce = Vector2(-60, -80)
@@ -2073,7 +2286,7 @@ continueOnWait = false
 onEnterSFX = ExtResource("180_3j6ku")
 enterSFXVolume = -5.0
 
-[node name="Dive" type="Node" parent="StateMachine" index="23"]
+[node name="Dive" type="Node" parent="StateMachine" index="24"]
 script = ExtResource("74_qoaij")
 landingState = "DiveEnd"
 canLandCancel = false
@@ -2113,9 +2326,11 @@ whiffSoundVolume = -8.0
 allowFallbackParticles = false
 autoAdjustParticleAngle = false
 particleEffect = ExtResource("184_56hp4")
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(26.63, 34.56)
 
-[node name="DiveEnd" type="Node" parent="StateMachine" index="24"]
+[node name="DiveEnd" type="Node" parent="StateMachine" index="25"]
 script = ExtResource("26_tdom3")
 canLandCancel = false
 landCancelLag = 8
@@ -2136,7 +2351,7 @@ screenShakeTick = 0
 screenShakeDuration = 8
 screenShakeStrength = 6.0
 
-[node name="SnapG1" type="Node" parent="StateMachine" index="25"]
+[node name="SnapG1" type="Node" parent="StateMachine" index="26"]
 script = ExtResource("120_j6u3i")
 projectileOffset = Vector2(200, -35)
 canLandCancel = false
@@ -2155,7 +2370,7 @@ screenShakeTick = 40
 screenShakeDuration = 24
 screenShakeStrength = 6.0
 
-[node name="SnapA1" type="Node" parent="StateMachine" index="26"]
+[node name="SnapA1" type="Node" parent="StateMachine" index="27"]
 script = ExtResource("120_j6u3i")
 projectileOffset = Vector2(190, -15)
 airVersion = true
@@ -2175,7 +2390,7 @@ screenShakeTick = 40
 screenShakeDuration = 24
 screenShakeStrength = 6.0
 
-[node name="DodgeG" type="Node" parent="StateMachine" index="27"]
+[node name="DodgeG" type="Node" parent="StateMachine" index="28"]
 script = ExtResource("121_v1xic")
 canLandCancel = false
 landCancelLag = 12
@@ -2192,7 +2407,7 @@ SFX = ExtResource("190_6j2ky")
 SFXVolume = -7.0
 SFXTick = 1
 
-[node name="DodgeA" type="Node" parent="StateMachine" index="28"]
+[node name="DodgeA" type="Node" parent="StateMachine" index="29"]
 script = ExtResource("121_v1xic")
 canLandCancel = false
 landCancelLag = 12
@@ -2209,7 +2424,7 @@ SFX = ExtResource("190_6j2ky")
 SFXVolume = -7.0
 SFXTick = 1
 
-[node name="LLRRG" type="Node" parent="StateMachine" index="29"]
+[node name="LLRRG" type="Node" parent="StateMachine" index="30"]
 script = ExtResource("122_dswqc")
 canLandCancel = false
 interruptOnExit = true
@@ -2248,6 +2463,8 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -5.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(103.425, 29.71)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/LLRRG" index="1"]
@@ -2272,6 +2489,8 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -5.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(86.025, 69.15)
 
 [node name="Hitbox3" type="Node2D" parent="StateMachine/LLRRG" index="2"]
@@ -2296,9 +2515,11 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -5.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(40, 50)
 
-[node name="LLRRA" type="Node" parent="StateMachine" index="30"]
+[node name="LLRRA" type="Node" parent="StateMachine" index="31"]
 script = ExtResource("122_dswqc")
 canLandCancel = false
 interruptOnExit = true
@@ -2338,6 +2559,8 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -5.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(13.655, 43.435)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/LLRRA" index="1"]
@@ -2362,9 +2585,11 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -5.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(77.41, 69.15)
 
-[node name="AbyssStart" type="Node" parent="StateMachine" index="31"]
+[node name="AbyssStart" type="Node" parent="StateMachine" index="32"]
 script = ExtResource("138_7w6xr")
 canLandCancel = false
 landCancelLag = 8
@@ -2381,7 +2606,7 @@ SFX = ExtResource("189_po0m5")
 SFXVolume = 2.0
 SFXTick = 14
 
-[node name="Abyss" type="Node" parent="StateMachine" index="32"]
+[node name="Abyss" type="Node" parent="StateMachine" index="33"]
 script = ExtResource("139_8chx2")
 landingState = "AbyssEnd"
 canLandCancel = false
@@ -2415,6 +2640,8 @@ hitcancellable = false
 hitSound = ExtResource("198_b1ldt")
 hitSoundVolume = -4.0
 bassSound = ExtResource("199_ku5y1")
+isGrabBox = null
+isGrabHit = null
 
 [node name="Hitbox3" type="Node2D" parent="StateMachine/Abyss" index="1"]
 position = Vector2(-1, -3)
@@ -2433,6 +2660,8 @@ hitSound = ExtResource("214_u1v8i")
 hitSoundVolume = -4.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(126.94, 122.625)
 
 [node name="Hitbox4" type="Node2D" parent="StateMachine/Abyss" index="2"]
@@ -2452,6 +2681,8 @@ hitSound = ExtResource("214_u1v8i")
 hitSoundVolume = -6.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -1.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(150.43, 94.09)
 
 [node name="Hitbox5" type="Node2D" parent="StateMachine/Abyss" index="3"]
@@ -2471,9 +2702,11 @@ hitSound = ExtResource("214_u1v8i")
 hitSoundVolume = -6.0
 bassSound = ExtResource("198_b1ldt")
 bassSoundVolume = -3.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(97.89, 139.72)
 
-[node name="AbyssEnd" type="Node" parent="StateMachine" index="33"]
+[node name="AbyssEnd" type="Node" parent="StateMachine" index="34"]
 script = ExtResource("209_u8how")
 canLandCancel = false
 landCancelLag = 8
@@ -2510,9 +2743,11 @@ hitcancellable = false
 hitSound = ExtResource("198_b1ldt")
 hitSoundVolume = -4.0
 bassSound = ExtResource("199_ku5y1")
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(200, 10)
 
-[node name="GunG" type="Node" parent="StateMachine" index="34"]
+[node name="GunG" type="Node" parent="StateMachine" index="35"]
 script = ExtResource("146_tdmjy")
 IASA = 30
 canLandCancel = false
@@ -2530,7 +2765,7 @@ SFX = ExtResource("205_n041y")
 SFXVolume = -7.0
 SFXTick = 19
 
-[node name="GunA" type="Node" parent="StateMachine" index="35"]
+[node name="GunA" type="Node" parent="StateMachine" index="36"]
 script = ExtResource("146_tdmjy")
 projectileOffset = Vector2(5, 5)
 airVersion = true
@@ -2547,7 +2782,7 @@ SFX = ExtResource("205_n041y")
 SFXVolume = -7.0
 SFXTick = 19
 
-[node name="FFlameG" type="Node" parent="StateMachine" index="36"]
+[node name="FFlameG" type="Node" parent="StateMachine" index="37"]
 script = ExtResource("159_cj6e4")
 canLandCancel = false
 enterForce = Vector2(360, 0)
@@ -2583,9 +2818,11 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -2.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(55.91, 24.75)
 
-[node name="FFlameA" type="Node" parent="StateMachine" index="37"]
+[node name="FFlameA" type="Node" parent="StateMachine" index="38"]
 script = ExtResource("159_cj6e4")
 canLandCancel = false
 enterForce = Vector2(240, 0)
@@ -2621,9 +2858,11 @@ hitSound = ExtResource("241_5v4e0")
 hitSoundVolume = -4.0
 bassSound = ExtResource("35_i7i5p")
 bassSoundVolume = -2.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(103.515, 28.025)
 
-[node name="KFlame" type="Node" parent="StateMachine" index="38"]
+[node name="KFlame" type="Node" parent="StateMachine" index="39"]
 script = ExtResource("159_cj6e4")
 canLandCancel = false
 enterForce = Vector2(-200, 0)
@@ -2655,6 +2894,8 @@ hitSound = ExtResource("214_u1v8i")
 hitSoundVolume = -4.0
 bassSound = ExtResource("199_ku5y1")
 bassSoundVolume = -5.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(110.805, 24.75)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/KFlame" index="1"]
@@ -2674,9 +2915,11 @@ hitSound = ExtResource("214_u1v8i")
 hitSoundVolume = -4.0
 bassSound = ExtResource("199_ku5y1")
 bassSoundVolume = -5.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(110.805, 84.17)
 
-[node name="DarkAge" type="Node" parent="StateMachine" index="39"]
+[node name="DarkAge" type="Node" parent="StateMachine" index="40"]
 script = ExtResource("218_d72ub")
 canLandCancel = false
 enterForce = Vector2(70, 0)
@@ -2712,6 +2955,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("181_3mnru")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(250, 250)
 
 [node name="Crit" type="Node2D" parent="StateMachine/DarkAge" index="1"]
@@ -2735,6 +2980,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("181_3mnru")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(25, 25)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/DarkAge" index="2"]
@@ -2756,6 +3003,8 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("181_3mnru")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(150, 320)
 
 [node name="Hitbox3" type="Node2D" parent="StateMachine/DarkAge" index="3"]
@@ -2777,9 +3026,11 @@ hitSound = ExtResource("34_633iw")
 hitSoundVolume = -4.0
 bassSound = ExtResource("181_3mnru")
 bassSoundVolume = -9.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(320, 150)
 
-[node name="Block" type="Node" parent="StateMachine" index="40"]
+[node name="Block" type="Node" parent="StateMachine" index="41"]
 script = ExtResource("181_pagom")
 IASA = 20
 canLandCancel = false
@@ -2791,7 +3042,7 @@ duration = 25
 fallbackState = "Idle"
 continueOnWait = false
 
-[node name="RiskyRain" type="Node" parent="StateMachine" index="41"]
+[node name="RiskyRain" type="Node" parent="StateMachine" index="42"]
 script = ExtResource("269_qp5yl")
 canLandCancel = false
 landCancelLag = 1
@@ -2816,7 +3067,7 @@ SFXTick = 18
 position = Vector2(12.82, 2.21)
 script = ExtResource("27_4fx2p")
 damage = 25
-knockbackDirection = Vector2(1, 0.1)
+knockbackDirection = Vector2(1, -0.1)
 knockbackForce = 200.0
 inheritAttackersSpeedOnHitPercent = 0.1
 stunTicks = 34
@@ -2832,9 +3083,11 @@ hitSound = ExtResource("271_vx7rm")
 hitSoundVolume = -2.0
 bassSound = ExtResource("181_csoi5")
 bassSoundVolume = -4.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(121.56, 19.33)
 
-[node name="Death44" type="Node" parent="StateMachine" index="42"]
+[node name="Death44" type="Node" parent="StateMachine" index="43"]
 script = ExtResource("285_0si4g")
 canLandCancel = false
 landCancelLag = 1
@@ -2856,7 +3109,7 @@ SFXTick = 29
 position = Vector2(23, -5)
 script = ExtResource("27_4fx2p")
 damage = 12
-knockbackDirection = Vector2(1, 0.3)
+knockbackDirection = Vector2(1, -0.3)
 knockbackForce = 10.0
 inheritAttackersSpeedOnHitPercent = 0.3
 stunTicks = 6
@@ -2869,9 +3122,11 @@ hitSound = ExtResource("271_vx7rm")
 hitSoundVolume = 1.0
 bassSound = ExtResource("181_sshvi")
 bassSoundVolume = -2.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(121.56, 19.33)
 
-[node name="Death45" type="Node" parent="StateMachine" index="43"]
+[node name="Death45" type="Node" parent="StateMachine" index="44"]
 script = ExtResource("26_tdom3")
 canLandCancel = false
 landCancelLag = 1
@@ -2891,7 +3146,7 @@ SFX = ExtResource("289_o2q0g")
 position = Vector2(23, -5)
 script = ExtResource("27_4fx2p")
 damage = 156
-knockbackDirection = Vector2(1, 0.3)
+knockbackDirection = Vector2(1, -0.3)
 knockbackForce = 44.0
 inheritAttackersSpeedOnHitPercent = 0.3
 stunTicks = 44
@@ -2903,22 +3158,332 @@ hitSound = ExtResource("291_2tx11")
 hitSoundVolume = 3.0
 bassSound = ExtResource("181_csoi5")
 bassSoundVolume = 6.0
+isGrabBox = null
+isGrabHit = null
 bounds = Vector2(121.56, 19.33)
 
-[node name="RainDownGrab" type="Node" parent="StateMachine" index="44"]
+[node name="RainDownGrab" type="Node" parent="StateMachine" index="45"]
 script = ExtResource("311_x8hgj")
 grabLocations = {
-ExtResource("192_4h8or"): Vector2(3.165, 0)
+ExtResource("192_4h8or"): Vector2(25.05, -1.545),
+ExtResource("193_f5sc0"): Vector2(27.235, -6.69)
 }
+desiredFollowupFrame = 30
+desiredFollowupState = "RainDownThrow"
 canLandCancel = false
 landCancelLag = 1
 interruptOnExit = true
-animationName = "BoD2"
-animationLength = 4
-duration = 28
+appliedForce = Vector2(600, 0)
+appliedForceTick = 5
+animationName = "RainDown"
+animationLength = 12
+duration = 55
 fallbackState = "Idle"
 continueOnWait = false
-particleTick = 1
+
+[node name="Grab" type="Node2D" parent="StateMachine/RainDownGrab" index="0"]
+position = Vector2(8.49, 1.96)
+script = ExtResource("27_4fx2p")
+damage = 0
+useDefaultDamagePowerScaling = false
+hurtState = "HurtGrabbed"
+hurtStateAir = "HurtGrabbed"
+startFrame = 4
+duration = 24
+hitcancellable = false
+hitSound = ExtResource("291_2tx11")
+bassSound = ExtResource("181_csoi5")
+bassSoundVolume = -6.0
+isGrabBox = true
+bounds = Vector2(28.85, 42.84)
+
+[node name="RainDownThrow" type="Node" parent="StateMachine" index="46"]
+script = ExtResource("313_uyyws")
+grabLocations = {
+ExtResource("194_52dtk"): Vector2(17, 25),
+ExtResource("195_xaw43"): Vector2(17, 25),
+ExtResource("196_ruqge"): Vector2(17, 25),
+ExtResource("197_yycq4"): Vector2(17, 25),
+ExtResource("198_km2ll"): Vector2(17, 25),
+ExtResource("199_ta2h6"): Vector2(17, 25),
+ExtResource("200_61aoe"): Vector2(17, 25),
+ExtResource("201_dasft"): Vector2(17, 25),
+ExtResource("202_tbji4"): Vector2(17, 25),
+ExtResource("203_mjrnn"): Vector2(17, 25),
+ExtResource("204_k4fjk"): Vector2(17, 25),
+ExtResource("205_ptxup"): Vector2(26.695, 7.155)
+}
+desiredFollowupFrame = -1
+canLandCancel = false
+landCancelLag = 1
+interruptOnExit = true
+animationName = "RainDownExecute"
+animationLength = 29
+duration = 124
+fallbackState = "Idle"
+continueOnWait = false
+onEnterSFX = ExtResource("215_cm72t")
+
+[node name="GrabHit" type="Node2D" parent="StateMachine/RainDownThrow" index="0"]
+z_index = 3
+position = Vector2(9, 13)
+script = ExtResource("27_4fx2p")
+damage = 45
+hitPriority = 1
+hitstopTicks = 6
+selfHitstopTicks = 6
+hurtState = "HurtGM"
+hurtStateAir = "HurtGM"
+startFrame = 21
+duration = 1
+hitcancellable = false
+hitSound = ExtResource("34_633iw")
+hitSoundVolume = -7.0
+bassSound = ExtResource("314_51s0h")
+bassSoundVolume = 2.0
+isGrabHit = true
+bounds = Vector2(30, 30)
+
+[node name="GrabAOE" type="Node2D" parent="StateMachine/RainDownThrow" index="1"]
+z_index = 3
+position = Vector2(9, 13)
+script = ExtResource("27_4fx2p")
+damage = 45
+knockbackForce = 5.0
+hitstopTicks = 15
+selfHitstopTicks = 6
+startFrame = 21
+duration = 4
+hitcancellable = false
+bounds = Vector2(70, 20)
+
+[node name="GrabHit2" type="Node2D" parent="StateMachine/RainDownThrow" index="2"]
+z_index = 3
+position = Vector2(9, 13)
+script = ExtResource("27_4fx2p")
+damage = 60
+hitGroup = 1
+hitPriority = 1
+stunTicks = 14
+hitstopTicks = 12
+selfHitstopTicks = 5
+hurtState = "HurtGrabbed"
+hurtStateAir = "HurtGrabbed"
+startFrame = 53
+duration = 1
+hitcancellable = false
+hitSound = ExtResource("34_633iw")
+hitSoundVolume = -7.0
+bassSound = ExtResource("315_2idgu")
+bassSoundVolume = 2.0
+isGrabHit = true
+bounds = Vector2(30, 30)
+
+[node name="GrabAOE2" type="Node2D" parent="StateMachine/RainDownThrow" index="3"]
+z_index = 3
+position = Vector2(9, 13)
+script = ExtResource("27_4fx2p")
+damage = 60
+hitGroup = 1
+knockbackForce = 5.0
+stunTicks = 14
+hitstopTicks = 20
+selfHitstopTicks = 5
+startFrame = 53
+duration = 4
+hitcancellable = false
+bounds = Vector2(80, 20)
+
+[node name="GrabHit3" type="Node2D" parent="StateMachine/RainDownThrow" index="4"]
+z_index = 3
+position = Vector2(9, 13)
+script = ExtResource("27_4fx2p")
+damage = 26
+hitGroup = 2
+knockbackDirection = Vector2(1, -0.5)
+knockbackForce = 500.0
+stunTicks = 49
+selfHitstopTicks = 3
+hurtState = "HurtA"
+startFrame = 94
+duration = 1
+hitcancellable = false
+hitSound = ExtResource("316_s2plw")
+hitSoundVolume = -2.0
+bassSound = ExtResource("241_5v4e0")
+isGrabHit = true
+bounds = Vector2(30, 30)
+
+[node name="KnapG" type="Node" parent="StateMachine" index="47"]
+script = ExtResource("26_tdom3")
+landCancelLag = 4
+interruptOnExit = true
+enterForce = Vector2(40, 0)
+appliedForce = Vector2(160, 0)
+appliedForceTick = 8
+animationName = "KnapG"
+animationLength = 6
+duration = 24
+fallbackState = "Idle"
+continueOnWait = false
+SFX = ExtResource("176_lxw1u")
+SFXVolume = -6.0
+SFXTick = 11
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/KnapG" index="0"]
+position = Vector2(9.525, 0.7)
+script = ExtResource("27_4fx2p")
+damage = 24
+knockbackDirection = Vector2(1, 0.3)
+knockbackForce = 210.0
+inheritAttackersSpeedOnHitPercent = 0.4
+stunTicks = 21
+selfHitstopTicks = 1
+hurtState = "HurtGH"
+startFrame = 14
+duration = 3
+hitcancelDelay = 5
+hitSound = ExtResource("327_2ih24")
+hitSoundVolume = -4.0
+bassSound = ExtResource("271_vx7rm")
+bassSoundVolume = -6.0
+bounds = Vector2(57.44, 32.695)
+
+[node name="KnapA" type="Node" parent="StateMachine" index="48"]
+script = ExtResource("26_tdom3")
+landCancelLag = 4
+interruptOnExit = true
+enterForce = Vector2(-40, 0)
+appliedForce = Vector2(160, 0)
+appliedForceTick = 8
+animationName = "KnapA"
+animationLength = 6
+duration = 24
+fallbackState = "IdleAir"
+continueOnWait = false
+SFX = ExtResource("176_lxw1u")
+SFXVolume = -6.0
+SFXTick = 11
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/KnapA" index="0"]
+position = Vector2(8.185, -0.85)
+script = ExtResource("27_4fx2p")
+damage = 24
+knockbackDirection = Vector2(1, 0.3)
+knockbackForce = 210.0
+inheritAttackersSpeedOnHitPercent = 0.4
+stunTicks = 21
+selfHitstopTicks = 1
+hurtState = "HurtGH"
+startFrame = 14
+duration = 3
+hitcancelDelay = 5
+hitSound = ExtResource("327_2ih24")
+hitSoundVolume = -4.0
+bassSound = ExtResource("271_vx7rm")
+bassSoundVolume = -6.0
+bounds = Vector2(57.44, 46.865)
+
+[node name="TFDU1" type="Node" parent="StateMachine" index="49"]
+script = ExtResource("339_d84o8")
+canLandCancel = false
+landCancelLag = 4
+preservedMomentum = Vector2(0.3, 0.3)
+overrideFallSpeed = true
+overrideFrictionCoefficient = Vector2(0.001, 0.001)
+overrideAirFrictionCoefficient = Vector2(0.001, 0.001)
+useFrictionOverrides = true
+animationName = "TFDU1"
+animationLength = 9
+ticksPerFrame = 5
+duration = 45
+fallbackState = "Idle"
+continueOnWait = false
+onEnterSFX = ExtResource("340_bqqi5")
+enterSFXVolume = -5.0
+
+[node name="TFDU2" type="Node" parent="StateMachine" index="50"]
+script = ExtResource("340_m0g1m")
+canLandCancel = false
+interruptOnExit = true
+preservedMomentum = Vector2(-0.4, -0.4)
+overrideFallSpeed = true
+overrideFrictionCoefficient = Vector2(0.2, 0.2)
+overrideAirFrictionCoefficient = Vector2(0.2, 0.2)
+useFrictionOverrides = true
+animationName = "TFDU2"
+animationLength = 11
+ticksPerFrame = 5
+duration = 60
+fallbackState = "IdleAir"
+continueOnWait = false
+particleEffect = ExtResource("342_8k3y3")
+particleTick = 25
+onEnterSFX = ExtResource("342_23llw")
+enterSFXVolume = 1.0
+SFX = ExtResource("343_wwndf")
+SFXVolume = -2.0
+SFXTick = 25
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/TFDU2" index="0"]
+script = ExtResource("27_4fx2p")
+damage = 15
+knockbackForce = 430.0
+knockbackAwayFromCenter = true
+inheritAttackersSpeedOnHitPercent = 0.6
+stunTicks = 46
+hitstopTicks = 11
+selfHitstopTicks = 15
+hurtState = "HurtGM"
+startFrame = 26
+duration = 4
+hitcancellable = false
+hitcancelDelay = 5
+hitSound = ExtResource("343_0gfil")
+hitSoundVolume = -6.0
+bassSound = ExtResource("181_csoi5")
+bassSoundVolume = -6.0
+bounds = Vector2(200, 200)
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/TFDU2" index="1"]
+script = ExtResource("27_4fx2p")
+damage = 15
+knockbackForce = 430.0
+knockbackAwayFromCenter = true
+inheritAttackersSpeedOnHitPercent = 0.6
+stunTicks = 46
+hitstopTicks = 11
+selfHitstopTicks = 15
+hurtState = "HurtGM"
+startFrame = 26
+duration = 4
+hitcancellable = false
+hitcancelDelay = 5
+hitSound = ExtResource("343_0gfil")
+hitSoundVolume = -6.0
+bassSound = ExtResource("181_csoi5")
+bassSoundVolume = -6.0
+bounds = Vector2(130, 250)
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/TFDU2" index="2"]
+script = ExtResource("27_4fx2p")
+damage = 15
+knockbackForce = 430.0
+knockbackAwayFromCenter = true
+inheritAttackersSpeedOnHitPercent = 0.6
+stunTicks = 46
+hitstopTicks = 11
+selfHitstopTicks = 15
+hurtState = "HurtGM"
+startFrame = 26
+duration = 4
+hitcancellable = false
+hitcancelDelay = 5
+hitSound = ExtResource("343_0gfil")
+hitSoundVolume = -6.0
+bassSound = ExtResource("181_csoi5")
+bassSoundVolume = -6.0
+bounds = Vector2(250, 130)
 
 [node name="HealthBar" parent="." index="6"]
 visible = false

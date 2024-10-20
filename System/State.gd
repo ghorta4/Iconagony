@@ -87,11 +87,7 @@ func Tick():
 		return
 	
 	if currentTick == screenShakeTick && not host.isGhost:
-		var newShakeMote = ScreenShakeMote.new()
-		newShakeMote.intensity = screenShakeStrength
-		newShakeMote.direction = screenShakeDirection
-		newShakeMote.SetDuration(screenShakeDuration)
-		host.battleInstance.AddMote(newShakeMote)
+		host.ShakeScreen(screenShakeStrength, screenShakeDirection, screenShakeDuration)
 	
 	if currentTick == SFXTick:
 		PlaySFX()
@@ -129,7 +125,12 @@ func Tick():
 	currentTick += 1
 	currentRealTick += 1
 
+var initializedBefore = false
+
 func Init():
+	if initializedBefore:
+		return
+	
 	var myMethods = get_method_list()
 	for method in myMethods:
 		var methodName = method.name
@@ -174,6 +175,8 @@ func Init():
 			EnterSFXPlayer.stream = onEnterSFX
 			EnterSFXPlayer.volume_db = enterSFXVolume
 			add_child(EnterSFXPlayer)
+	
+	initializedBefore = true
 
 func OnEnter():
 	targetsHit = {}

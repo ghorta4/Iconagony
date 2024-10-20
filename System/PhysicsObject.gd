@@ -61,6 +61,8 @@ var battleInstance : BattleInstance
 #Simulation
 #----------------------
 func CopyTo(new):
+	if new.sprite != null && sprite != null:
+		new.sprite.rotation = sprite.rotation
 	
 	for varName in stateVariablesList:
 		if get(varName) is Vector2:
@@ -135,6 +137,9 @@ func NonTimeSensitiveTick():
 	
 	for trash in toRemove:
 		moteList.erase(trash)
+
+func DramaticFreezeFrameTick():
+	pass
 
 func PositionPhysicsUpdate():
 	
@@ -331,6 +336,14 @@ func SpawnAfterImage(duration : float = 0.4, color = Color.WHITE):
 	child.color *= color * sprite.modulate
 	child.material = material.duplicate()
 	newParticle.scale = sprite.scale
+
+#FFX
+func ShakeScreen(screenShakeStrength : float, screenShakeDirection : Vector2, screenShakeDuration : int):
+	var newShakeMote = ScreenShakeMote.new()
+	newShakeMote.intensity = screenShakeStrength
+	newShakeMote.direction = screenShakeDirection
+	newShakeMote.SetDuration(screenShakeDuration)
+	battleInstance.AddMote(newShakeMote)
 
 #Sounds
 func PlaySound(sfxname : String):

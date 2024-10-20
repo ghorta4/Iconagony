@@ -225,6 +225,9 @@ func RefreshCaches():
 func TickGame():
 	if universalHitstop > 0:
 		universalHitstop -= 1
+		
+		for object in allObjects:
+			object.DramaticFreezeFrameTick()
 		return
 	
 	currentTick += 1
@@ -277,6 +280,12 @@ func TickGame():
 				hurtboxes = stateHurtboxes
 			var connectingBoxes = []
 			for hitbox in hitboxes:
+				if hitbox.isGrabBox && target.ignoreGrabHitboxes:
+					continue
+				
+				if hitbox.isGrabHit && target.grabber != object:
+					continue
+				
 				var hasKey = attackerHitDictionary.has(hitbox.hitGroup)
 				if hasKey == true:
 					if attackerHitDictionary[hitbox.hitGroup].has(target.id):
@@ -284,7 +293,7 @@ func TickGame():
 				for hurtbox in hurtboxes:
 					var hitrect = Rect2(object.global_position - hitbox.bounds * Vector2(0.5, 0.5) + hitbox.position * Vector2(object.GetFacingInt() * 2, 1), hitbox.bounds)
 					var hurtrect = Rect2(2 * hurtbox.position * Vector2(target.GetFacingInt(), 1) + target.global_position - hurtbox.bounds * 0.5, hurtbox.bounds)
-					if hurtrect.intersects(hitrect):
+					if hurtrect.intersects(hitrect) || hitbox.isGrabHit:
 						connectingBoxes.append(hitbox)
 			
 			if connectingBoxes.size() <= 0:
@@ -297,6 +306,7 @@ func TickGame():
 					highest = box
 			
 			target.HitBy(highest.GetData())
+			
 			highest.PlayHitSFX()
 			
 			if not attackerHitDictionary.has(highest.hitGroup):
@@ -346,6 +356,7 @@ func SpawnObject(scene, recyclable : bool = false):
 			created = main.recycledFoesCache[scene.internalName].pop_back()
 			showHost.InstancedTemplateFoes[scene.internalName].CopyTo(created)
 			created.objectOrigin = "recycled"
+			print("wheeecycling")
 		else:
 			created = scene.duplicate()
 			created.objectOrigin = "scene"
@@ -410,7 +421,6 @@ func RestartPreview():
 	var objectsToDuplicate = copiedGame.allObjects.duplicate()
 	var recyclingPairs = {}
 	for toFree in objectsToFree:
-		break #--------------------------------------------------------------
 		for possiblePair in copiedGame.allObjects:
 			if possiblePair.id == toFree.id:
 				recyclingPairs[toFree] = possiblePair

@@ -6,3 +6,7 @@ func OnEnter():
 	else:
 		animationName = "HurtOTGB"
 	super()
+
+func OnExit():
+	if host.HP <= 0:
+		host.stateInterruptable = false

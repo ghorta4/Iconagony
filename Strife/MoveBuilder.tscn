@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv1w0m5hl70du"]
+[gd_scene load_steps=8 format=3 uid="uid://bv1w0m5hl70du"]
 
 [ext_resource type="Script" path="res://System/PlayerMoves/MoveClass.gd" id="1_mwexk"]
 [ext_resource type="PackedScene" uid="uid://c3guuasf5varg" path="res://Strife/ActionUI/JumpPlot.tscn" id="2_p57bc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Strife/MoveClasses/Grindstone.gd" id="4_3k7u5"]
 [ext_resource type="PackedScene" uid="uid://xqlv7jxvtv50" path="res://Strife/ActionUI/CirclePlot.tscn" id="5_wirba"]
 [ext_resource type="PackedScene" uid="uid://cbt86dctkekc" path="res://Strife/ActionUI/GunAim.tscn" id="6_muand"]
+[ext_resource type="Script" path="res://Strife/MoveClasses/KnapsackVillain.gd" id="7_awhe8"]
 
 [node name="MoveBuilder" type="Node"]
 
@@ -176,7 +177,7 @@ description = "Forwards swipe. Afterwards, uses the move below at a level 1 high
 flavorDesc = "The genesis of the dire beasts and the cognitive animals was the remnants of human civilization."
 groundedState = "FFlameG"
 aerialState = "FFlameA"
-defaultMaxUses = 6
+defaultMaxUses = 5
 pickupMoves = "LLRR
 0.02
 Abyss
@@ -234,12 +235,13 @@ maxMementos = 3
 [node name="TaleFrom" type="Node" parent="BaseSet"]
 script = ExtResource("1_mwexk")
 displayName = "Tale From Down Under"
-description = "If you would die, instead bursts and recovers a little health. Weakens on repeated uses."
+description = "If you would die, instead burst and recover a little health. Has a cooldown between uses."
 flavorDesc = "How could the humans have died in such fertile land? A tale will inspire: all it took was a kid with match in hand to set the world on fire..."
-groundedState = "Block"
-aerialState = "Block"
-defaultMaxUses = 6
+groundedState = "TFDU1"
+aerialState = "TFDU1"
+defaultMaxUses = 2
 maxMementos = 3
+UIScene = ExtResource("5_wirba")
 
 [node name="RiskRain" type="Node" parent="BaseSet"]
 script = ExtResource("1_mwexk")
@@ -262,3 +264,24 @@ defaultMaxUses = 4
 usability = 2
 maxMementos = 4
 UIScene = ExtResource("3_bwhoc")
+
+[node name="RainDown" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Raindowner"
+description = "Grabs the foe and brutally smashes them. Brings the foe close to being dazed."
+flavorDesc = "There is no nirvana, no heaven nor hell, no purgatory nor quiet void for those who have passed- this is the nature of death."
+groundedState = "RainDownGrab"
+aerialState = "RainDownGrab"
+defaultMaxUses = 2
+usability = 2
+maxMementos = 1
+
+[node name="Knapsack" type="Node" parent="BaseSet"]
+script = ExtResource("7_awhe8")
+displayName = "Knapsack Villain"
+description = "Powers up nearby moves that you've picked up this fight."
+flavorDesc = "By collecting memories and actualizing them, you can recall attacks from different times and places..."
+groundedState = "KnapG"
+aerialState = "KnapA"
+defaultMaxUses = 4
+maxMementos = 2

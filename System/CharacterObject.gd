@@ -15,6 +15,11 @@ var HP = 100.0
 @export var MaxSP = 100.0 #Stress points. Basically, enemies get stressed over time, or my certain moves. This can make them more aggressive instead of defensive, but is meant to debuff them.
 var SP = 100.0
 
+var grabberID #used in grabs to determine who's grabbing this
+var grabbeeID #used in grabs to determine who this is grabbing
+var grabber : GameObject
+var grabbee : GameObject
+
 #Decor related
 @export var IgnoreYShake = false #makes it ignore vibrations in the y direction
 
@@ -45,7 +50,7 @@ var pickupMoveCache : Array[Array] = [[]] #for each internal array, first value 
 
 func _init():
 	stateVariablesList.append_array(["stunTicks", "wasAirborneLastFrame", "stateInterruptable", "lateHitcancelTicks", "HP", "MaxHP", "SP", "MaxSP",
-	"queuedParams", "queuedFlip", "recyclable"])
+	"queuedParams", "queuedFlip", "recyclable", "grabberID", "grabbeeID"])
 
 func _ready() -> void:
 	HPBar = get_node_or_null("HealthBar")
@@ -66,6 +71,8 @@ func Initialize():
 		pickupMoveCache.append([moveName, weight])
 		locationPointer += 2
 	
+	if sprite != null:
+		sprite.rotation = 0
 	super()
 
 func Tick():
@@ -73,7 +80,17 @@ func Tick():
 	while  stowedRandomFloats.size() < desiredRandomBufferSize:
 		stowedRandomFloats.append(battleInstance.GetRandom(0.0, 100.0))
 	
+	if grabber != null:
+		if grabber.grabbee != self:
+			grabber = null
+			grabberID = null
+		else:
+			NonTimeSensitiveTick()
+			return
+	
 	super()
+	
+	GrabberUpdate()
 	
 	var grounded = IsOnGround()
 	
@@ -160,6 +177,16 @@ func CopyTo(new):
 		new.queuedMoveInstance = MoveManager.GetMoveAtPosition(queuedMoveInstance.moveLocation, queuedMoveInstance.moveSlot, get("instancedMoves"))
 	
 	new.UpdateHealthBar()
+	
+	if new.grabberID != null:
+		new.grabber = new.battleInstance.FindObjectOfID(new.grabberID)
+	else:
+		new.grabber = null
+	
+	if new.grabbeeID != null:
+		new.grabbee = new.battleInstance.FindObjectOfID(new.grabbeeID)
+	else:
+		new.grabbee = null
 
 func ChangeState(newStateName, parameters = null, level : int = 0):
 	var state = CurrentState()
@@ -190,10 +217,16 @@ func HitBy(hitboxData : HitboxData):
 		dueHurtstate = hitboxData.hurtState
 	else:
 		dueHurtstate = hitboxData.hurtStateAir
-	#return
 	stunTicks = hitboxData.stunTicks
 	hitstopTicks = hitboxData.hitstopTicks
 	stateInterruptable = false
+	
+	var boxOwner = hitboxData.player
+	if hitboxData.isGrabBox && boxOwner.grabbee == null:
+		grabber = boxOwner
+		grabberID = grabber.id
+		boxOwner.grabbee = self
+		boxOwner.grabbeeID = id
 
 func HitCallback(_whoWasHit : GameObject, finalHitboxData : HitboxData):
 	if finalHitboxData.hitcancellable:
@@ -209,6 +242,40 @@ func PostHurtboxUpdate():
 		ChangeState(dueHurtstate)
 		dueHurtstate = null
 		stateInterruptable = false
+
+func GrabberUpdate():
+	if grabbee == null:
+		return
+	
+	var grabPos = GetCurrentGrabPosition()
+	if grabPos == null:
+		ReleaseGrabbee()
+		return
+	grabbee.sprite.position = Vector2.ZERO
+	grabbee.position = position + Vector2(GetFacingInt(), 1) * grabPos
+
+func GetCurrentGrabPosition():
+	var mySpritePath = sprite.sprite_frames.get_frame_texture(sprite.animation, sprite.frame)
+	var myState = CurrentState()
+	
+	if not myState is GrabState:
+		return null
+	
+	var posAvailable = myState.grabLocations.has(mySpritePath)
+	
+	if not posAvailable:
+		return null
+	
+	return myState.grabLocations[mySpritePath]
+
+func ReleaseGrabbee():
+	if grabbee != null:
+		grabbee.position.y = -grabbee.GetLowestY() #helps upwards throws work when released from inside the ground
+		grabbee.grabber = null
+		grabbee.grabberID = null
+	
+	grabbee = null
+	grabbeeID = null
 
 func GetEnemiesSortedByDistance(basePosition = null):
 	var enemies = battleInstance.allCharacters.duplicate()

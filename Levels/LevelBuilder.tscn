@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuw0rqsbiol26"]
+[gd_scene load_steps=8 format=3 uid="uid://cuw0rqsbiol26"]
 
 [ext_resource type="Script" path="res://Levels/Showhosts/ShowhostAI.gd" id="1_nv2d7"]
 [ext_resource type="PackedScene" uid="uid://b3bxr6syskysx" path="res://Strife/StrifeScene.tscn" id="2_kp0ni"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b25n3t47t7grw" path="res://Enemies/Icon of Conquest/Icon of Conquest.tscn" id="4_fs635"]
 [ext_resource type="PackedScene" uid="uid://ddkkk2ilnuwko" path="res://Enemies/Unlocking Runoff/UnlockingRunoff.tscn" id="5_rqhll"]
 [ext_resource type="PackedScene" uid="uid://ce70i04setjqn" path="res://Enemies/Acrophilia/Acrophilia.tscn" id="6_vwldj"]
-[ext_resource type="PackedScene" uid="uid://cl4tg6qn7wkps" path="res://Enemies/ShyCal/ShyCalendar.tscn" id="8_iwqif"]
 
 [node name="LevelBuilder" type="Node"]
 
@@ -70,15 +69,14 @@ ingameShownSubtitle = "Enemy Overload in Blue"
 playerCharacter = ExtResource("2_kp0ni")
 background = ExtResource("4_4rx21")
 forceInfiniteTimer = true
-spawnFoesClose = true
-UsedFoes = Array[PackedScene]([ExtResource("8_iwqif")])
+UsedFoes = Array[PackedScene]([ExtResource("5_rqhll")])
 enemySpawningEnabled = true
 minDelayBetweenSpawns = 22
 maxDelayBetweenSpawns = 50
 initialSpawnDelay = 0
 difficultyAccruementPerTick = 999.0
 difficultyIncreaseOverTime = 0.0
-maxFoesSpawnedAtOnce = 1
+maxFoesSpawnedAtOnce = 4
 initialAccruedDifficulty = 9999.0
-maxFoesPresent = 1
-foeKillsToWin = 1
+maxFoesPresent = 9
+foeKillsToWin = 12

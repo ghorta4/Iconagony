@@ -435,6 +435,7 @@ script = ExtResource("4_bypip")
 canLandCancel = false
 landCancelLag = 9
 isHurtState = true
+animationName = "HurtGrabbed"
 fallbackState = "Idle"
 
 [node name="HurtThrown" type="Node" parent="StateMachine" index="7"]
@@ -442,6 +443,7 @@ script = ExtResource("4_bypip")
 canLandCancel = false
 landCancelLag = 9
 isHurtState = true
+animationName = "HurtThrown"
 fallbackState = "Idle"
 
 [node name="HurtGM" type="Node" parent="StateMachine" index="8"]
