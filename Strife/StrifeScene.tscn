@@ -1,4 +1,4 @@
-[gd_scene load_steps=352 format=3 uid="uid://b3bxr6syskysx"]
+[gd_scene load_steps=363 format=3 uid="uid://b3bxr6syskysx"]
 
 [ext_resource type="PackedScene" uid="uid://c4ndnsar8nwlh" path="res://System/ObjectTemplates/PlayerObject.tscn" id="1_lb1vs"]
 [ext_resource type="Texture2D" uid="uid://da5gev3oo7bat" path="res://Strife/Sprites/BaseSet/idleAndRef2.png" id="2_gqiqr"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://b88uwbtfhher2" path="res://Strife/Sprites/BaseSet/idleAndRef23.png" id="4_uo8re"]
 [ext_resource type="PackedScene" uid="uid://t5pik6yo07ta" path="res://Particles/GenericFFX/HitSpark.tscn" id="4_xueth"]
 [ext_resource type="Script" path="res://Strife/DrawHelper.gd" id="5_1wvvy"]
+[ext_resource type="Texture2D" uid="uid://7bu1mksp3xfh" path="res://PixelTextureGrid_256.png" id="5_3gwwf"]
 [ext_resource type="Texture2D" uid="uid://celbks37l0lkn" path="res://Strife/Sprites/BaseSet/idleAndRef24.png" id="5_boqe5"]
+[ext_resource type="Shader" path="res://ShadersLibrary/ColorPull.gdshader" id="5_dnhkm"]
 [ext_resource type="Texture2D" uid="uid://dibafm68i1i1j" path="res://Strife/Sprites/Attacks2/attacks28.png" id="5_pdnpg"]
 [ext_resource type="AudioStream" uid="uid://nky2710mtj8v" path="res://Strife/SFX/50cal.wav" id="5_qpeeh"]
 [ext_resource type="Texture2D" uid="uid://cw4n1fhgibjxp" path="res://Strife/Sprites/BaseSet/idleAndRef5.png" id="5_t6ipu"]
@@ -274,19 +276,26 @@
 [ext_resource type="Texture2D" uid="uid://tfnohy00xp2h" path="res://Strife/Sprites/Attacks3/seta4.png" id="195_xaw43"]
 [ext_resource type="AudioStream" uid="uid://cxaalbfmfaac1" path="res://Strife/SFX/FlickUp.wav" id="196_1xxnr"]
 [ext_resource type="Texture2D" uid="uid://ban5ft625y8mg" path="res://Strife/Sprites/Attacks3/seta5.png" id="196_ruqge"]
+[ext_resource type="Texture2D" uid="uid://cidvdovw45olx" path="res://Strife/Sprites/Attacks3/seta39.png" id="197_odede"]
 [ext_resource type="Texture2D" uid="uid://gnejb6rk7ktk" path="res://Strife/Sprites/Attacks3/seta6.png" id="197_yycq4"]
+[ext_resource type="Texture2D" uid="uid://clpuk3f3r01ko" path="res://Strife/Sprites/Attacks3/seta40.png" id="198_78reu"]
 [ext_resource type="AudioStream" uid="uid://cnsareouw2kjw" path="res://Sound Library/Universal/Shorts/ChunkySlash.wav" id="198_b1ldt"]
 [ext_resource type="Texture2D" uid="uid://2q8o4n1eirc5" path="res://Strife/Sprites/Attacks3/seta7.png" id="198_km2ll"]
+[ext_resource type="Texture2D" uid="uid://1dwcqmebpkb6" path="res://Strife/Sprites/Attacks3/seta41.png" id="199_jruvs"]
 [ext_resource type="AudioStream" uid="uid://ds2sayuonmsvg" path="res://Sound Library/Universal/Shorts/MetalBooster.wav" id="199_ku5y1"]
 [ext_resource type="Texture2D" uid="uid://bi2ada85sc11j" path="res://Strife/Sprites/Attacks3/seta8.png" id="199_ta2h6"]
 [ext_resource type="Script" path="res://System/State.gd" id="200_43ssd"]
 [ext_resource type="Texture2D" uid="uid://fn8jrm1tyqtm" path="res://Strife/Sprites/Attacks3/seta9.png" id="200_61aoe"]
+[ext_resource type="Texture2D" uid="uid://dlt4wvnllxdrw" path="res://Strife/Sprites/Attacks3/seta42.png" id="200_reij4"]
+[ext_resource type="Texture2D" uid="uid://bhfv1dnv86pbd" path="res://Strife/Sprites/Attacks3/seta43.png" id="201_a7isk"]
 [ext_resource type="Texture2D" uid="uid://dhnoqi3wqorpt" path="res://Strife/Sprites/Attacks3/seta10.png" id="201_dasft"]
 [ext_resource type="PackedScene" uid="uid://4i2lxb6ty02s" path="res://Strife/Particles/IntroSpark.tscn" id="201_ef0ff"]
 [ext_resource type="AudioStream" uid="uid://dysu02xni577j" path="res://Strife/SFX/Windup2.wav" id="201_hckbe"]
 [ext_resource type="AudioStream" uid="uid://dmr7msjnnuvgk" path="res://Sound Library/Universal/Shorts/HeavySwing.wav" id="202_1m780"]
+[ext_resource type="Texture2D" uid="uid://bmu4qvyvlme8g" path="res://Strife/Sprites/Attacks3/seta44.png" id="202_gpjsv"]
 [ext_resource type="AudioStream" uid="uid://uc06lbgaavrq" path="res://Strife/SFX/IntroSFX1.wav" id="202_iplll"]
 [ext_resource type="Texture2D" uid="uid://twhjv47iasdj" path="res://Strife/Sprites/Attacks3/seta11.png" id="202_tbji4"]
+[ext_resource type="Texture2D" uid="uid://crsrqsb4o6iss" path="res://Strife/Sprites/Attacks3/seta45.png" id="203_e6h87"]
 [ext_resource type="AudioStream" uid="uid://c2oxsu50p5rfr" path="res://Strife/SFX/IntroSwing.wav" id="203_gv3ux"]
 [ext_resource type="Texture2D" uid="uid://cd5cvbcdgvevm" path="res://Strife/Sprites/Attacks3/seta12.png" id="203_mjrnn"]
 [ext_resource type="AudioStream" uid="uid://owvec87hcc8e" path="res://Sound Library/Universal/UI/StageLose.wav" id="204_ccd8d"]
@@ -349,6 +358,7 @@
 [ext_resource type="AudioStream" uid="uid://dusidnv122vml" path="res://Strife/SFX/Windup2Fast.wav" id="342_23llw"]
 [ext_resource type="AudioStream" uid="uid://dsuni3oggfc0k" path="res://Strife/SFX/UTesque.wav" id="343_0gfil"]
 [ext_resource type="AudioStream" uid="uid://ddi3oovamw6hi" path="res://Strife/SFX/Refused2.wav" id="343_wwndf"]
+[ext_resource type="Script" path="res://Strife/States/Orlando.gd" id="357_vp5wb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ehwu"]
 shader = ExtResource("2_lpybg")
@@ -359,6 +369,13 @@ shader_parameter/replaceColor2 = Color(1, 1, 1, 1)
 shader_parameter/outlineColor1 = Color(0, 0, 0, 1)
 shader_parameter/outlineColor2 = Color(1, 1, 1, 1)
 shader_parameter/manualAlphaAdjustment = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k35dq"]
+shader = ExtResource("5_dnhkm")
+shader_parameter/AreaShape = Vector2(0, 0)
+shader_parameter/IntensityCap = 1.0
+shader_parameter/FinalIntensityMultiplier = 1.0
+shader_parameter/MixedColor = Vector4(1, 1, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ilb7w"]
 animations = [{
@@ -1317,6 +1334,65 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("197_odede")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_78reu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_78reu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_jruvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_jruvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_jruvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_jruvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_reij4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_reij4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_a7isk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_gpjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_e6h87")
+}],
+"loop": true,
+"name": &"Orlando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("175_5oflg")
 }, {
 "duration": 1.0,
@@ -1795,29 +1871,43 @@ levelEnded
 taleFromDownUnderTicks
 taleFromDownUnderExhaustion
 taleFromDownUnderLevel
-scenematicGlobalPauseMove"
+scenematicGlobalPauseMove
+orlandoEnabled
+orlandoLevel"
 groundFrictionCoefficient = Vector2(0.09, 0.01)
 airFrictionCoefficient = Vector2(0.003, 0.01)
 speedLimits = Vector2(1500, 1500)
 defaultHitspark = ExtResource("4_xueth")
 
-[node name="MovementBox" parent="." index="0"]
+[node name="Shaders" type="Node2D" parent="." index="0"]
+
+[node name="Orlando" type="Sprite2D" parent="Shaders" index="0"]
+z_index = -90
+material = SubResource("ShaderMaterial_k35dq")
+scale = Vector2(100, 100)
+texture = ExtResource("5_3gwwf")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Shaders/Orlando" index="0"]
+z_index = -1
+copy_mode = 2
+
+[node name="MovementBox" parent="." index="1"]
 z_index = 0
 texture_filter = 1
 position = Vector2(0, 2)
 bounds = Vector2(30, 44)
 
-[node name="HurtBox" parent="." index="1"]
+[node name="HurtBox" parent="." index="2"]
 visible = false
 z_index = 0
 position = Vector2(0, 3.715)
 bounds = Vector2(25.18, 38.585)
 
-[node name="DrawingHelper" type="Node2D" parent="." index="2"]
+[node name="DrawingHelper" type="Node2D" parent="." index="3"]
 z_index = 4096
 script = ExtResource("5_1wvvy")
 
-[node name="Sounds" parent="." index="3"]
+[node name="Sounds" parent="." index="4"]
 unique_name_in_owner = false
 
 [node name="50Cal" type="AudioStreamPlayer" parent="Sounds" index="0"]
@@ -1836,9 +1926,9 @@ pitch_scale = 0.89
 [node name="MoveBreak" type="AudioStreamPlayer" parent="Sounds" index="3"]
 stream = ExtResource("8_rwbe3")
 
-[node name="Sprite" parent="." index="4"]
+[node name="Sprite" parent="." index="5"]
 sprite_frames = SubResource("SpriteFrames_ilb7w")
-animation = &"UTDeath"
+animation = &"Orlando"
 
 [node name="GungeousArm" type="Sprite2D" parent="Sprite" index="0"]
 visible = false
@@ -3485,7 +3575,22 @@ bassSound = ExtResource("181_csoi5")
 bassSoundVolume = -6.0
 bounds = Vector2(250, 130)
 
-[node name="HealthBar" parent="." index="6"]
+[node name="Orlando" type="Node" parent="StateMachine" index="51"]
+script = ExtResource("357_vp5wb")
+canLandCancel = false
+landCancelLag = 4
+interruptOnExit = true
+enterForce = Vector2(40, 0)
+appliedForce = Vector2(160, 0)
+appliedForceTick = 8
+animationName = "Orlando"
+animationLength = 18
+ticksPerFrame = 3
+duration = 74
+fallbackState = "Idle"
+continueOnWait = false
+
+[node name="HealthBar" parent="." index="7"]
 visible = false
 rotation = 0.0
 pivot_offset = Vector2(0, 0)

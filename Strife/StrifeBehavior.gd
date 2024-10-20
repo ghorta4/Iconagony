@@ -24,16 +24,22 @@ const defaultTurnTime = 90.0
 #Move Related
 var scenematicGlobalPauseMove = false
 
+#tale from Down Under
 var taleFromDownUnderTicks = 0
 var taleFromDownUnderExhaustion = 0
 var taleFromDownUnderLevel = 0
 const maxTaleFromDownUnderExaustion = 240
 
+#Orlando Beats
+var orlandoLevel = 0
+var orlandoEnabled = false
+var orlandoTrackedMoves = []
+
 func Initialize():
 	super()
 	gungeousArm.visible = false
 	greyHealth = MaxHP
-	
+
 
 func CopyTo(new):
 	new.instancedMoves.clear()
@@ -48,6 +54,10 @@ func CopyTo(new):
 	
 	new.gungeousArm.visible = gungeousArm.visible
 	new.canPollMoves = true
+	
+	new.orlandoTrackedMoves = []
+	for move in orlandoTrackedMoves:
+		new.orlandoTrackedMoves.append(move)
 
 func _physics_process(delta: float):
 	if not stateInterruptable || infiniteTime:
@@ -56,10 +66,16 @@ func _physics_process(delta: float):
 	timeLeftThisTurn = max(timeLeftThisTurn, 0)
 
 func Tick():
+	#Tale from Down Under
 	TFDUMacro()
 	
 	taleFromDownUnderExhaustion = max(0, taleFromDownUnderExhaustion - 1)
 	taleFromDownUnderTicks = max(0, taleFromDownUnderTicks - 1)
+	
+	#Orlando Beats
+	var shouldShowOrlando = orlandoEnabled && not isGhost
+	$Shaders/Orlando.visible = shouldShowOrlando
+	
 	
 	UpdateGreyHealth()
 	MoveManager.AdjustMoveLevels(instancedMoves)
@@ -113,6 +129,25 @@ func HitBy(hitbox : HitboxData):
 		return
 	
 	super(hitbox)
+
+func ChangeState(newStateName, parameters = null, level : int = 0):
+	
+	#we can tell if a move has been selected, or if this is just a followup state, by checking if queuedMoveInstance is null or not.
+	if orlandoEnabled && queuedMoveInstance != null:
+		var usedMove = queuedMoveInstance.moveClassReference.name
+		var alreadyUsed = orlandoTrackedMoves.has(usedMove)
+		var levelBoost = orlandoLevel + 1
+		if alreadyUsed:
+			orlandoEnabled = false
+			if levelBoost >= 0:
+				levelBoost += 1
+			else:
+				levelBoost -= 1
+		else:
+			orlandoTrackedMoves.append(usedMove)
+		level += levelBoost
+	
+	super(newStateName, parameters, level)
 
 
 func UpdateGreyHealth():

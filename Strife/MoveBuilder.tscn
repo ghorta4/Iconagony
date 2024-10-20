@@ -79,7 +79,11 @@ defaultMaxUses = 4
 pickupMoves = "FireSnap
 0.1
 LLRR
-0.005"
+0.005
+Divebomb
+0.02
+Knapsack
+0.001"
 maxMementos = 2
 
 [node name="Divebomb" type="Node" parent="BaseSet"]
@@ -139,7 +143,9 @@ pickupMoves = "Abyss
 LLRR
 0.05
 FirstFlame
-0.05"
+0.05
+RiskRain
+0.001"
 maxMementos = 1
 
 [node name="Gungeous" type="Node" parent="BaseSet"]
@@ -251,6 +257,10 @@ flavorDesc = "... And our music was electric."
 groundedState = "RiskyRain"
 aerialState = "RiskyRain"
 defaultMaxUses = 3
+pickupMoves = "RainDown
+0.02
+LLRR
+0.1"
 maxMementos = 2
 
 [node name="Death44" type="Node" parent="BaseSet"]
@@ -262,6 +272,8 @@ groundedState = "Death44"
 aerialState = "Death44"
 defaultMaxUses = 4
 usability = 2
+pickupMoves = "Death44
+0.01"
 maxMementos = 4
 UIScene = ExtResource("3_bwhoc")
 
@@ -274,6 +286,8 @@ groundedState = "RainDownGrab"
 aerialState = "RainDownGrab"
 defaultMaxUses = 2
 usability = 2
+pickupMoves = "RiskRain
+0.05"
 maxMementos = 1
 
 [node name="Knapsack" type="Node" parent="BaseSet"]
@@ -284,4 +298,15 @@ flavorDesc = "By collecting memories and actualizing them, you can recall attack
 groundedState = "KnapG"
 aerialState = "KnapA"
 defaultMaxUses = 4
+pickupMoves = "Grindstone
+0.01"
 maxMementos = 2
+
+[node name="Orlando" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Orlando Beats"
+description = "Activates a special state. Powers up all moves as long as you avoid repeating attacks."
+flavorDesc = "\"Why is there an Icon of Suffering? Why must the world create such a miserable thing?\""
+groundedState = "Orlando"
+aerialState = "Orlando"
+defaultMaxUses = 1

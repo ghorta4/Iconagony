@@ -57,4 +57,5 @@ material = SubResource("ShaderMaterial_ash4e")
 texture = ExtResource("4_hm001")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Fisheye"]
+z_index = -1
 copy_mode = 2

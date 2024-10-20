@@ -356,7 +356,6 @@ func SpawnObject(scene, recyclable : bool = false):
 			created = main.recycledFoesCache[scene.internalName].pop_back()
 			showHost.InstancedTemplateFoes[scene.internalName].CopyTo(created)
 			created.objectOrigin = "recycled"
-			print("wheeecycling")
 		else:
 			created = scene.duplicate()
 			created.objectOrigin = "scene"

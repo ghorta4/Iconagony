@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckkv42fr7k3ru"]
+
+[ext_resource type="Script" path="res://Particles/Particle.gd" id="1_m7hhx"]
+[ext_resource type="Texture2D" uid="uid://dsqlil35cp7os" path="res://Particles/DefaultSprites/MiscParticles10.png" id="3_27qw0"]
+
+[sub_resource type="Curve" id="Curve_5wy2b"]
+_data = [Vector2(0, 0), 0.0, 2.05508, 0, 0, Vector2(0.989362, 1), 0.330163, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_vokht"]
+offsets = PackedFloat32Array(0, 0.0545977, 0.224138, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_3w5hk"]
+colors = PackedColorArray(0.244776, 0.244776, 0.244776, 1, 0.868985, 0.868985, 0.868985, 1)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_m7hhx")
+maxLifetime = 2.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+amount = 6
+lifetime = 0.3
+explosiveness = 1.0
+lifetime_randomness = 0.52
+texture = ExtResource("3_27qw0")
+gravity = Vector2(0, 0)
+scale_amount_min = 5.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_5wy2b")
+color_ramp = SubResource("Gradient_vokht")
+color_initial_ramp = SubResource("Gradient_3w5hk")
