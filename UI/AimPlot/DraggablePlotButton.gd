@@ -29,6 +29,37 @@ func StartMoving():
 func StopMoving():
 	pass
 
+func StartMovingIfRegionClicked():
+	var mousePos = MousePos() - parent.position
+	var relativePos = mousePos - (parent.size * (parent.center * 2)) / 2.0
+	var angleToCenter = atan2(relativePos.y, relativePos.x)
+	var dist = relativePos.length()
+	
+	var psize = parent.size.y
+	if dist > parent.radius * psize:
+		return
+	if dist < parent.radiusMin * psize:
+		return
+	var startAngle = parent.start + parent.rotationOffset
+	var endAngle = parent.end + parent.rotationOffset
+	
+	if parent.flipped:
+		startAngle = PI - startAngle
+		endAngle = PI - endAngle
+		
+		var switch = endAngle
+		endAngle = startAngle
+		startAngle = switch
+	startAngle *= -1
+	endAngle *= -1
+	var pass1 = angleToCenter > startAngle && angleToCenter < endAngle + PI * 2
+	var pass2 = angleToCenter < endAngle && angleToCenter > startAngle - PI * 2
+	
+	if (pass1 || pass2):
+		return
+	follow = true
+	offset = parent.position + size / 2.0
+
 func MousePos():
 	return get_viewport().get_mouse_position()
 

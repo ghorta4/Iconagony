@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckkv42fr7k3ru"]
+[gd_scene load_steps=10 format=3 uid="uid://ckkv42fr7k3ru"]
 
 [ext_resource type="Script" path="res://Particles/Particle.gd" id="1_m7hhx"]
+[ext_resource type="Texture2D" uid="uid://cfo30vj6qotbu" path="res://Strife/Sprites/Misc/paintSplats.png" id="3_8d2wn"]
 [ext_resource type="Texture2D" uid="uid://dsqlil35cp7os" path="res://Particles/DefaultSprites/MiscParticles10.png" id="3_27qw0"]
 
 [sub_resource type="Curve" id="Curve_5wy2b"]
@@ -13,6 +14,19 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_3w5hk"]
 colors = PackedColorArray(0.244776, 0.244776, 0.244776, 1, 0.868985, 0.868985, 0.868985, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2ck66"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_qpxk7"]
+offsets = PackedFloat32Array(0, 0.00862069, 0.132184, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_d3d1f"]
+colors = PackedColorArray(0.0253638, 0.0253638, 0.0253638, 1, 0.377919, 0.377919, 0.377919, 1)
 
 [node name="ParticleEffect" type="Node2D"]
 script = ExtResource("1_m7hhx")
@@ -31,3 +45,61 @@ scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_5wy2b")
 color_ramp = SubResource("Gradient_vokht")
 color_initial_ramp = SubResource("Gradient_3w5hk")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 50
+material = SubResource("CanvasItemMaterial_2ck66")
+amount = 30
+lifetime = 1.3
+explosiveness = 0.82
+lifetime_randomness = 0.41
+texture = ExtResource("3_8d2wn")
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+color = Color(1, 1, 1, 0.654902)
+color_ramp = SubResource("Gradient_qpxk7")
+color_initial_ramp = SubResource("Gradient_d3d1f")
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+z_index = 50
+material = SubResource("CanvasItemMaterial_2ck66")
+amount = 7
+lifetime = 0.7
+explosiveness = 0.82
+lifetime_randomness = 0.41
+texture = ExtResource("3_8d2wn")
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+color = Color(1, 1, 1, 0.654902)
+color_ramp = SubResource("Gradient_qpxk7")
+anim_offset_max = 1.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+z_index = 50
+material = SubResource("CanvasItemMaterial_2ck66")
+amount = 10
+lifetime = 0.7
+explosiveness = 0.82
+lifetime_randomness = 0.41
+texture = ExtResource("3_8d2wn")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 80)
+gravity = Vector2(0, 0)
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+color = Color(1, 1, 1, 0.654902)
+color_ramp = SubResource("Gradient_qpxk7")
+anim_offset_max = 1.0

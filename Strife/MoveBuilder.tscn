@@ -310,3 +310,13 @@ flavorDesc = "\"Why is there an Icon of Suffering? Why must the world create suc
 groundedState = "Orlando"
 aerialState = "Orlando"
 defaultMaxUses = 1
+
+[node name="RuinedLib" type="Node" parent="BaseSet"]
+script = ExtResource("1_mwexk")
+displayName = "Ruined Library"
+description = "Basic attack. Allows you to find more moves at once while in your inventory."
+flavorDesc = "There was once a bird born from a story, a story where he sought to become a real person. Now he walks the land, wondering if there is a level of abstraction higher..."
+groundedState = "RLibG"
+aerialState = "RLibA"
+defaultMaxUses = 5
+maxMementos = 2

@@ -46,6 +46,10 @@ func CopyTo(new):
 		new.slottedMementos.append(memento)
 	if relevantMoveControls != null:
 		new.predictionMemorizedInput = relevantMoveControls.GetData()
+	
+	new.tags = []
+	for tag in tags:
+		new.tags.append(tag)
 
 static func GenerateMoveInstance(moveClass : MoveClass):
 	var newGuy = MoveInstance.new()
@@ -59,12 +63,13 @@ static func GenerateMoveInstance(moveClass : MoveClass):
 	return newGuy
 
 func RecalculateMoveLevels(targetArray):
-	moveClassReference.MoveLevelProcessing(self, targetArray)
 	
 	for memento in slottedMementos:
 		if memento == null:
 			continue
 		memento.ApplyLevelEffects(self, targetArray)
+	
+	moveClassReference.MoveLevelProcessing(self, targetArray)
 	
 	remainingUses = min(remainingUses, maxUses)
 

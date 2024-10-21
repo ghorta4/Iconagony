@@ -9,34 +9,34 @@
 shader = ExtResource("1_bqato")
 shader_parameter/color = Color(0.054902, 0.0627451, 0.0666667, 1)
 shader_parameter/secondaryColor = Color(0.65098, 0.65098, 0.65098, 1)
-shader_parameter/circleCenter = Vector2(0.5, 0.975)
-shader_parameter/radius = 0.83
-shader_parameter/radiusMin = 0.095
+shader_parameter/circleCenter = Vector2(0.5, 0.955)
+shader_parameter/radius = 0.86
+shader_parameter/radiusMin = 0.25
 shader_parameter/outlineSize = 0.01
-shader_parameter/startAngle = -0.6
-shader_parameter/endAngle = 0.6
+shader_parameter/startAngle = -0.5
+shader_parameter/endAngle = 0.5
 shader_parameter/rotateOffset = 1.571
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cy3kr"]
 
-[node name="AimPlot" type="ColorRect"]
+[node name="AimPlot" type="Button"]
 material = SubResource("ShaderMaterial_0sy4i")
 anchors_preset = -1
 anchor_left = 0.472884
 anchor_top = 0.423438
 anchor_right = 0.472884
 anchor_bottom = 0.423438
-offset_left = 211.693
-offset_top = -201.719
-offset_right = 410.693
-offset_bottom = -2.71902
-mouse_filter = 2
+offset_left = 212.693
+offset_top = -202.719
+offset_right = 411.693
+offset_bottom = -3.71904
+mouse_filter = 1
 script = ExtResource("2_np4pk")
-start = -0.6
-end = 0.6
-center = Vector2(0.5, 0.975)
-radius = 0.83
-radiusMin = 0.095
+start = -0.5
+end = 0.5
+center = Vector2(0.5, 0.955)
+radius = 0.86
+radiusMin = 0.25
 rotationOffset = 1.571
 metadata/_edit_use_anchors_ = true
 
@@ -62,12 +62,12 @@ offset_left = 87.0
 offset_top = -93.0
 offset_right = 111.0
 offset_bottom = -69.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cy3kr")
 action_mode = 0

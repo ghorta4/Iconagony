@@ -1,5 +1,5 @@
 @tool
-extends ColorRect
+extends Button
 
 @export var plotSize : float = 100.0
 @export var start : float = -1.0
@@ -19,6 +19,8 @@ func _ready():
 	button.parent = self
 	button.clampPos()
 	UpdateLinePos()
+	
+	button_down.connect(button.StartMovingIfRegionClicked)
 
 
 func PushPropertiesToMaterial():

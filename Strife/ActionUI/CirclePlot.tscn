@@ -15,11 +15,11 @@ shader_parameter/radiusMin = 0.0
 shader_parameter/outlineSize = 0.01
 shader_parameter/startAngle = -4.0
 shader_parameter/endAngle = 4.0
-shader_parameter/rotateOffset = 0.0
+shader_parameter/rotateOffset = 1.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cy3kr"]
 
-[node name="AimPlot" type="ColorRect"]
+[node name="AimPlot" type="Button"]
 material = SubResource("ShaderMaterial_0sy4i")
 anchors_preset = -1
 anchor_left = 0.472884
@@ -35,7 +35,6 @@ script = ExtResource("2_f46tu")
 start = -4.0
 end = 4.0
 radiusMin = 0.0
-rotationOffset = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Line" type="Line2D" parent="."]
@@ -60,12 +59,12 @@ offset_left = 11.0304
 offset_top = -177.784
 offset_right = 35.0304
 offset_bottom = -153.784
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cy3kr")
 action_mode = 0

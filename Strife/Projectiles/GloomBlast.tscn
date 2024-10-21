@@ -126,7 +126,7 @@ bounds = Vector2(10, 10)
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c8kfk")
-animation = &"empty"
+frame = 11
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("4_uocye")
@@ -158,6 +158,25 @@ hitSoundVolume = -4.0
 bassSound = ExtResource("27_afjva")
 bassSoundVolume = -12.0
 bounds = Vector2(181.445, 71.635)
+
+[node name="Hitbox1_2" type="Node2D" parent="StateMachine/Default"]
+position = Vector2(-38, 11)
+script = ExtResource("25_t2wt8")
+damage = 75
+knockbackDirection = Vector2(1, 0)
+knockbackForce = 750.0
+stunTicks = 32
+hitstopTicks = 12
+hurtState = "HurtGM"
+startFrame = 40
+duration = 4
+hitcancellable = false
+hitcancelDelay = 0
+hitSound = ExtResource("26_ylm35")
+hitSoundVolume = -4.0
+bassSound = ExtResource("27_afjva")
+bassSoundVolume = -12.0
+bounds = Vector2(150.72, 103.655)
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/Default"]
 position = Vector2(-68.2, 11.83)

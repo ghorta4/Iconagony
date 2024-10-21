@@ -28,7 +28,7 @@ var scenematicGlobalPauseMove = false
 var taleFromDownUnderTicks = 0
 var taleFromDownUnderExhaustion = 0
 var taleFromDownUnderLevel = 0
-const maxTaleFromDownUnderExaustion = 240
+const maxTaleFromDownUnderExaustion = 480
 
 #Orlando Beats
 var orlandoLevel = 0
@@ -48,8 +48,6 @@ func CopyTo(new):
 		move.CopyTo(newInstance)
 		new.instancedMoves.append(newInstance)
 	
-	MoveManager.AdjustMoveLevels(new.instancedMoves)
-	
 	super(new)
 	
 	new.gungeousArm.visible = gungeousArm.visible
@@ -58,6 +56,8 @@ func CopyTo(new):
 	new.orlandoTrackedMoves = []
 	for move in orlandoTrackedMoves:
 		new.orlandoTrackedMoves.append(move)
+	
+	MoveManager.AdjustMoveLevels(new.instancedMoves)
 
 func _physics_process(delta: float):
 	if not stateInterruptable || infiniteTime:
@@ -139,6 +139,8 @@ func ChangeState(newStateName, parameters = null, level : int = 0):
 		var levelBoost = orlandoLevel + 1
 		if alreadyUsed:
 			orlandoEnabled = false
+			SpawnParticleRelative(preload("res://Strife/Particles/orlandoReverb.tscn"), Vector2.ZERO)
+			PlaySound("OrlandoCrash2")
 			if levelBoost >= 0:
 				levelBoost += 1
 			else:
@@ -177,6 +179,13 @@ func RefreshPickupMoves(): #Has awkward isGhost checks to prevent desyncing from
 	var totalWeight = GetTotalWeightFromPickupPool(pickupList)
 	
 	var numberMovesToGrab = floor(totalWeight) #base the number of moves we can get on the size of the move pool (using move weights)
+	
+	#ruined library boost
+	for move in instancedMoves:
+		if move.moveClassReference.name == "RuinedLib":
+			numberMovesToGrab += 1
+	
+	
 	numberMovesToGrab = clamp(numberMovesToGrab, 1, MoveManager.EquippedBackpack.MaxPickupSlots)
 	
 	if not isGhost:
@@ -320,12 +329,12 @@ func TFDUMacro():
 	if taleFromDownUnderTicks > 0 && (not "isHurtState" in myState || not myState.isHurtState):
 		taleFromDownUnderTicks = 0
 	
-	if taleFromDownUnderTicks > 0 && taleFromDownUnderExhaustion < maxTaleFromDownUnderExaustion / 2 && HP <= 0:
+	if taleFromDownUnderTicks > 0 && taleFromDownUnderExhaustion < maxTaleFromDownUnderExaustion / 2.0 && HP <= 0:
 		ignoreMeleeHitboxes = true
 		ignoreGrabHitboxes = true
 		ignoreProjectileHitboxes = true
-		var exhaustDegrade = (taleFromDownUnderExhaustion - maxTaleFromDownUnderExaustion/2) / maxTaleFromDownUnderExaustion * 2
-		HP = MaxHP * pow(1.5, taleFromDownUnderLevel) * 0.2
+		var exhaustDegrade = (taleFromDownUnderExhaustion - maxTaleFromDownUnderExaustion/2.0) / maxTaleFromDownUnderExaustion * 2
+		HP = MaxHP * pow(1.5, taleFromDownUnderLevel) * 0.2 * exhaustDegrade
 		taleFromDownUnderTicks = 0
 		taleFromDownUnderExhaustion = maxTaleFromDownUnderExaustion
 		ChangeState("TFDU2")

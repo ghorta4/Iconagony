@@ -8,6 +8,8 @@ func OnEnter():
 	
 	if stateMachine.stateIsRepeated:
 		currentTick = startMovingAt - 1
+	
+	
 
 func Tick():
 	super()

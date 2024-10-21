@@ -19,7 +19,7 @@ shader_parameter/rotateOffset = 1.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cy3kr"]
 
-[node name="AimPlot" type="ColorRect"]
+[node name="AimPlot" type="Button"]
 material = SubResource("ShaderMaterial_0sy4i")
 anchors_preset = -1
 anchor_left = 0.472884
@@ -30,6 +30,7 @@ offset_left = 211.693
 offset_top = -201.719
 offset_right = 410.693
 offset_bottom = -2.71902
+focus_mode = 0
 mouse_filter = 2
 script = ExtResource("2_85bc2")
 metadata/_edit_use_anchors_ = true
