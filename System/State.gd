@@ -79,7 +79,13 @@ func CopyTo(new):
 	
 	new.parameters = parameters
 	
-	new.targetsHit = targetsHit.duplicate(true)
+	new.targetsHit = {}
+	for key in targetsHit:
+		new.targetsHit[key] = []
+		
+		for value in targetsHit[key]:
+			new.targetsHit[key].append(value)
+	#targetsHit.duplicate(true)
 
 func Tick():
 	if holdFrames > 0:

@@ -517,7 +517,7 @@ func OnMoveSelected(move : MoveInstance):
 	if moveClass.UIScene != null:
 		
 		moveControls = move.relevantMoveControls
-		if moveControls.get_parent() != null:
+		if is_instance_valid(moveControls) && moveControls.get_parent() != null:
 			moveControls.get_parent().remove_child(moveControls)
 		
 		$MoveControls.add_child(moveControls)

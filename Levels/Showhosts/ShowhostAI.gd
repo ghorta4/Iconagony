@@ -199,6 +199,7 @@ func TickFoeSpawning():
 		foe.position.y -= foe.spawnHeight
 		foe.position.y += GetRandom() * foe.spawnHeightVariation / 100.0
 		
+		foe.isGhost = isGhost
 		
 		instantiatedFoes.append(foe)
 		#need a position function here

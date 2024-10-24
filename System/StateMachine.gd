@@ -11,6 +11,7 @@ func CopyTo(new):
 	new.stateIsRepeated = stateIsRepeated
 	new.currentState = new.get_node(NodePath(currentState.name))
 	if currentState == null:
+		new.currentState = null
 		return
 	currentState.CopyTo(new.currentState)
 
@@ -19,7 +20,9 @@ func Initialize():
 		state.host = host
 		state.stateMachine = self
 		state.Init()
-		
+	
+	currentState = null
+	stateIsRepeated = false
 	
 	host.ChangeState("Default")
 

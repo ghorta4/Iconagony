@@ -17,3 +17,4 @@ func Tick():
 			parameters = Vector2.UP * 1
 		
 		host.velocity += parameters * jumpForce * powerMult
+		

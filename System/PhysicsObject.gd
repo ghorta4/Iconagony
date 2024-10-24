@@ -86,7 +86,11 @@ func CopyTo(new):
 	if stateMachine != null:
 		stateMachine.CopyTo(new.stateMachine)
 	else:
+		#new.stateMachine.Initialize()
+		new.stateMachine.currentState = null
+		new.stateMachine.stateIsRepeated = false
 		new.ChangeState("Default")
+		
 
 #Motes
 #----------------------

@@ -128,7 +128,9 @@ groundedState = "SnapG1"
 aerialState = "SnapA1"
 defaultMaxUses = 2
 pickupMoves = "DarkAge
-0.2"
+0.15
+FireSnap
+0.05"
 
 [node name="LLRR" type="Node" parent="BaseSet"]
 script = ExtResource("1_mwexk")
@@ -156,6 +158,8 @@ flavorDesc = "Firearms were a sacred tool, massive armaments of an age long gone
 groundedState = "GunG"
 aerialState = "GunA"
 defaultMaxUses = 4
+pickupMoves = "Gungeous
+0.2"
 maxMementos = 2
 UIScene = ExtResource("6_muand")
 
@@ -236,6 +240,8 @@ flavorDesc = "An icon can certainly recieve harm, but sans a normal flow of time
 groundedState = "Block"
 aerialState = "Block"
 defaultMaxUses = 6
+pickupMoves = "Block
+0.2"
 maxMementos = 3
 
 [node name="TaleFrom" type="Node" parent="BaseSet"]
@@ -246,6 +252,8 @@ flavorDesc = "How could the humans have died in such fertile land? A tale will i
 groundedState = "TFDU1"
 aerialState = "TFDU1"
 defaultMaxUses = 2
+pickupMoves = "TaleFrom
+0.2"
 maxMementos = 3
 UIScene = ExtResource("5_wirba")
 
@@ -273,7 +281,15 @@ aerialState = "Death44"
 defaultMaxUses = 4
 usability = 2
 pickupMoves = "Death44
-0.01"
+0.01
+RuinedLib
+0.05
+Orlando
+0.01
+RainDown
+0.02
+Death44
+0.1"
 maxMementos = 4
 UIScene = ExtResource("3_bwhoc")
 
@@ -287,6 +303,10 @@ aerialState = "RainDownGrab"
 defaultMaxUses = 2
 usability = 2
 pickupMoves = "RiskRain
+0.05
+RuinedLib
+0.1
+Death44
 0.05"
 maxMementos = 1
 
@@ -299,7 +319,11 @@ groundedState = "KnapG"
 aerialState = "KnapA"
 defaultMaxUses = 4
 pickupMoves = "Grindstone
-0.01"
+0.03
+RuinedLib
+0.03
+Abjure
+0.02"
 maxMementos = 2
 
 [node name="Orlando" type="Node" parent="BaseSet"]
@@ -310,6 +334,12 @@ flavorDesc = "\"Why is there an Icon of Suffering? Why must the world create suc
 groundedState = "Orlando"
 aerialState = "Orlando"
 defaultMaxUses = 1
+pickupMoves = "RuinedLib
+0.17
+RainDown
+0.015
+Death44
+0.015"
 
 [node name="RuinedLib" type="Node" parent="BaseSet"]
 script = ExtResource("1_mwexk")
@@ -319,4 +349,12 @@ flavorDesc = "There was once a bird born from a story, a story where he sought t
 groundedState = "RLibG"
 aerialState = "RLibA"
 defaultMaxUses = 5
+pickupMoves = "Orlando
+0.01
+RuinedLib
+0.13
+Death44
+0.03
+Knapsack
+0.03"
 maxMementos = 2

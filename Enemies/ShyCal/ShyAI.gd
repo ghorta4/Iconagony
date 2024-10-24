@@ -8,7 +8,6 @@ func Tick():
 		stateInterruptable = false
 
 func DecideWhatMoveToUse():
-	
 	var targets = GetEnemiesSortedByDistance()
 	if targets.size() == 0:
 		return

@@ -1,6 +1,15 @@
+@tool
 extends CharacterObject
 
+@export_group("Strife Specific")
+var cachedHeadSpriteInfos : Dictionary = {}
+var cachedHeadSprites : Dictionary = {}
+var currentExpression = "Neutral"
+
+
 @onready var gungeousArm = $"Sprite/GungeousArm"
+
+
 
 var instancedMoves : Array[MoveInstance] = []
 
@@ -35,6 +44,11 @@ var orlandoLevel = 0
 var orlandoEnabled = false
 var orlandoTrackedMoves = []
 
+func _init() -> void:
+	cachedHeadSpriteInfos = {}
+	cachedHeadSprites = {}
+	super()
+
 func Initialize():
 	super()
 	gungeousArm.visible = false
@@ -57,6 +71,9 @@ func CopyTo(new):
 	for move in orlandoTrackedMoves:
 		new.orlandoTrackedMoves.append(move)
 	
+	new.cachedHeadSpriteInfos = cachedHeadSpriteInfos
+	new.cachedHeadSprites = cachedHeadSprites
+	
 	MoveManager.AdjustMoveLevels(new.instancedMoves)
 
 func _physics_process(delta: float):
@@ -64,6 +81,10 @@ func _physics_process(delta: float):
 		return
 	timeLeftThisTurn -= delta
 	timeLeftThisTurn = max(timeLeftThisTurn, 0)
+
+func NonTimeSensitiveTick():
+	super()
+	UpdateHeadGraphic()
 
 func Tick():
 	#Tale from Down Under
@@ -94,6 +115,8 @@ func Tick():
 		lastQueuedMoveLocation = queuedMoveInstance.moveLocation
 		lastQueuedMoveSlot = queuedMoveInstance.moveSlot
 		
+	
+	UpdateExpression()
 	
 	super()
 
@@ -127,6 +150,9 @@ func HitBy(hitbox : HitboxData):
 		SpawnParticle(preload("res://Strife/Particles/BlockSpark.tscn"), (position + hitbox.player.position + hitbox.position * Vector2(hitbox.player.GetFacingInt(), 1)) / 2.0, Vector2.RIGHT)
 		PlaySound("Block")
 		return
+	
+	if hitbox.damage > 0:
+		angerCooldown = 120
 	
 	super(hitbox)
 
@@ -341,6 +367,73 @@ func TFDUMacro():
 		return true
 	return false
 
+var head
+func UpdateHeadGraphic():
+	
+	if head == null:
+		head = get_node("Sprite/Head")
+	
+	if head == null:
+		return
+	
+	var currentSprite : Texture2D = sprite.get_sprite_frames().get_frame_texture(sprite.animation, sprite.frame)
+	var spritePath = currentSprite.resource_path
+	var hasCachedData = cachedHeadSpriteInfos.has(spritePath)
+	
+	if not hasCachedData:
+		var infoPath = spritePath + ".info"
+		var exists = FileAccess.file_exists(infoPath)
+		if not exists:
+			cachedHeadSpriteInfos[spritePath] = null
+		else:
+			cachedHeadSpriteInfos[spritePath] = HeadTrackingInfo.Deserialize(FileAccess.get_file_as_bytes(spritePath + ".info"))
+	
+	var locationData : HeadTrackingInfo = cachedHeadSpriteInfos[spritePath]
+	if locationData == null:
+		head.visible = false
+		return null
+	else:
+		head.visible = true
+	
+	var usedExpression = currentExpression
+	if not locationData.expressionOverride.is_empty():
+		usedExpression = locationData.expressionOverride
+	var targetFaceSpritePath = HeadTrackingBuilder.normalPath + "/Heads/Face/" + usedExpression +"/"
+	
+	var spriteName = "Faces"
+	var backgroundAddition = 0 if not locationData.backgroundFacingSprite else 28
+	spriteName += str(locationData.spriteMapLocation.x +( locationData.spriteMapLocation.y + 3) * 4 + 1 + backgroundAddition)
+	
+	var fullSpritePath = targetFaceSpritePath + spriteName + ".png"
+	cachedHeadSprites = {} #---------------------------------------------------------
+	if not cachedHeadSprites.has(currentSprite.resource_path):
+		var asset : CompressedTexture2D = load(fullSpritePath)
+		if asset == null:
+			push_warning("Failed to load asset at path '" + fullSpritePath +'.')
+			return null
+		cachedHeadSprites[currentSprite.resource_path] = asset
+	
+	var usedSprite = cachedHeadSprites[currentSprite.resource_path]
+	head.texture = usedSprite
+	head.position = locationData.position - currentSprite.get_size() / 2.0
+	head.flip_h = locationData.reverseFromPlayerSprite
+	
+	if locationData.showBehindPlayer:
+		head.z_index = -2
+	else:
+		head.z_index = 2
+	
+	return {"infoPath" : spritePath + ".info", "data" : locationData, "sprite" : fullSpritePath}
+
+var angerCooldown = 0
+func UpdateExpression(): #called as tick
+	angerCooldown = max(angerCooldown- 1, 0)
+	if angerCooldown > 0:
+		currentExpression = "Angry"
+		return
+	
+	
+	currentExpression = "Neutral"
 
 func DramaticFreezeFrameTick():
 	super()

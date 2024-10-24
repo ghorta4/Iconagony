@@ -496,7 +496,7 @@ func SpawnParticle(particle : PackedScene, pposition : Vector2, direction : Vect
 func RecycleObject(target):
 	target.id = -1
 	
-	if not "recyclable" in target || not target.recyclable:
+	if not "recyclable" in target || not target.recyclable || GameLoader.forceDisableObjectRecycling:
 		target.queue_free()
 		return
 	

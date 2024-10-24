@@ -36,7 +36,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/nodeselection/plugin.cfg")
+enabled=PackedStringArray("res://addons/inspector_buttons/plugin.cfg", "res://addons/nodeselection/plugin.cfg")
 
 [input]
 

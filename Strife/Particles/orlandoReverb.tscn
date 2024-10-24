@@ -46,6 +46,20 @@ scale_amount_curve = SubResource("Curve_5wy2b")
 color_ramp = SubResource("Gradient_vokht")
 color_initial_ramp = SubResource("Gradient_3w5hk")
 
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+texture_filter = 1
+amount = 2
+lifetime = 0.45
+explosiveness = 1.0
+lifetime_randomness = 0.52
+texture = ExtResource("3_27qw0")
+gravity = Vector2(0, 0)
+scale_amount_min = 10.0
+scale_amount_max = 14.0
+scale_amount_curve = SubResource("Curve_5wy2b")
+color_ramp = SubResource("Gradient_vokht")
+color_initial_ramp = SubResource("Gradient_3w5hk")
+
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 z_index = 50
 material = SubResource("CanvasItemMaterial_2ck66")

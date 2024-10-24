@@ -8,6 +8,8 @@ var timer = 0.0
 
 static var TestSavePath
 
+const forceDisableObjectRecycling = false
+
 func _physics_process(delta: float) -> void:
 	timer += delta
 	if not initStarted:
