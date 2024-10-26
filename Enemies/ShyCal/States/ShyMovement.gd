@@ -17,6 +17,7 @@ func Frame2():
 func Frame8():
 	holdFrames = 4
 	host.stateInterruptable = true
+	#if host.battleInstance.currentTick < 6:
 
 func Frame10():
 	host.PlaySound("Move2")

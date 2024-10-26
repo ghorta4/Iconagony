@@ -68,7 +68,8 @@ func Tick():
 	
 	RunIntroSequence()
 	while  stowedRandomFloats.size() < 500:
-		stowedRandomFloats.append(battleInstance.GetRandom(-100.0, 100.0))
+		stowedRandomFloats.append(0) #=================================================
+		#stowedRandomFloats.append(battleInstance.GetRandom(-100.0, 100.0))
 	
 	RefreshCaches()
 	
@@ -207,8 +208,6 @@ func TickFoeSpawning():
 		accruedDifficulty -= foe.difficultyWeight
 		
 		enemiesSpawned += 1
-		
-		
 
 
 func GetTotalSpawnWeight() -> float:

@@ -17,8 +17,6 @@ func _physics_process(delta: float) -> void:
 		Init()
 
 func Init():
-	
-	
 	TestSavePath = "user://SaveSlot1/"
 	#DirAccess.remove_absolute(TestSavePath + "OwnedMoves.vhs")
 	DirAccess.make_dir_recursive_absolute(TestSavePath)

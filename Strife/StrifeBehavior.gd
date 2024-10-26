@@ -369,50 +369,51 @@ func TFDUMacro():
 
 var head
 func UpdateHeadGraphic():
-	
 	if head == null:
 		head = get_node("Sprite/Head")
 	
 	if head == null:
 		return
-	
 	var currentSprite : Texture2D = sprite.get_sprite_frames().get_frame_texture(sprite.animation, sprite.frame)
 	var spritePath = currentSprite.resource_path
 	var hasCachedData = cachedHeadSpriteInfos.has(spritePath)
-	
 	if not hasCachedData:
 		var infoPath = spritePath + ".info"
 		var exists = FileAccess.file_exists(infoPath)
-		if not exists:
+		if exists == null:
 			cachedHeadSpriteInfos[spritePath] = null
 		else:
-			cachedHeadSpriteInfos[spritePath] = HeadTrackingInfo.Deserialize(FileAccess.get_file_as_bytes(spritePath + ".info"))
+			cachedHeadSpriteInfos[spritePath] = HeadTrackingInfo.Deserialize(FileAccess.get_file_as_bytes(infoPath))
 	
 	var locationData : HeadTrackingInfo = cachedHeadSpriteInfos[spritePath]
+	
 	if locationData == null:
 		head.visible = false
 		return null
 	else:
 		head.visible = true
-	
 	var usedExpression = currentExpression
 	if not locationData.expressionOverride.is_empty():
 		usedExpression = locationData.expressionOverride
 	var targetFaceSpritePath = HeadTrackingBuilder.normalPath + "/Heads/Face/" + usedExpression +"/"
-	
 	var spriteName = "Faces"
 	var backgroundAddition = 0 if not locationData.backgroundFacingSprite else 28
 	spriteName += str(locationData.spriteMapLocation.x +( locationData.spriteMapLocation.y + 3) * 4 + 1 + backgroundAddition)
-	
 	var fullSpritePath = targetFaceSpritePath + spriteName + ".png"
 	cachedHeadSprites = {} #---------------------------------------------------------
 	if not cachedHeadSprites.has(currentSprite.resource_path):
-		var asset : CompressedTexture2D = load(fullSpritePath)
+		var asset : CompressedTexture2D = null
+		
+		var webOverride = OS.get_name() == "Web"
+		if webOverride:
+			asset = load(fullSpritePath)
+		
+		if not webOverride && FileAccess.file_exists(fullSpritePath):
+			asset = load(fullSpritePath)
 		if asset == null:
 			push_warning("Failed to load asset at path '" + fullSpritePath +'.')
 			return null
 		cachedHeadSprites[currentSprite.resource_path] = asset
-	
 	var usedSprite = cachedHeadSprites[currentSprite.resource_path]
 	head.texture = usedSprite
 	head.position = locationData.position - currentSprite.get_size() / 2.0
@@ -422,7 +423,6 @@ func UpdateHeadGraphic():
 		head.z_index = -2
 	else:
 		head.z_index = 2
-	
 	return {"infoPath" : spritePath + ".info", "data" : locationData, "sprite" : fullSpritePath}
 
 var angerCooldown = 0

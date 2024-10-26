@@ -122,7 +122,9 @@ func ProcessImageFile(path : String):
 	print("Generating head position data for " + associatedPath + " with position " + str(basePos) + ", aim direction " + str(aimPos) + ".")
 	
 	var infoPath = associatedPath + ".info"
-	var preexistingInfo = load(infoPath)
+	var preexistingInfo = null
+	if FileAccess.file_exists(infoPath):
+		preexistingInfo = HeadTrackingInfo.Deserialize(FileAccess.get_file_as_bytes(infoPath))
 	var editedTrackingInfo = HeadTrackingInfo.new()
 	if preexistingInfo != null:
 		print("Old data found. Overriding position data.")

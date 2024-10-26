@@ -7,6 +7,8 @@ var showHost : Showhost
 
 var readFromReplay : bool = false
 
+var discarded = false
+
 var isGhost : bool = false
 var copiedGame : BattleInstance
 var currentTick : int = 0
@@ -273,7 +275,6 @@ func TickGame():
 				continue
 			if (target.ignoreMeleeHitboxes && object is CharacterObject) || (target.ignoreProjectileHitboxes && object.treatAsProjectile):
 				continue
-			
 			var hurtboxes = target.GetHurtboxes()
 			var stateHurtboxes = target.CurrentState().GetHurtboxes()
 			if stateHurtboxes != null:
@@ -304,9 +305,7 @@ func TickGame():
 			for box in connectingBoxes:
 				if box.hitPriority >= highest.hitPriority:
 					highest = box
-			
 			target.HitBy(highest.GetData())
-			
 			highest.PlayHitSFX()
 			
 			if not attackerHitDictionary.has(highest.hitGroup):
@@ -350,21 +349,23 @@ func SpawnObject(scene, recyclable : bool = false):
 	
 	if scene is PackedScene:
 		created = scene.instantiate()
+		add_child(created)
 		created.objectOrigin = "packedScene"
 	else:
 		if main.recycledFoesCache.has(scene.internalName) && main.recycledFoesCache[scene.internalName].size() > 0:
 			created = main.recycledFoesCache[scene.internalName].pop_back()
+			add_child(created)
 			showHost.InstancedTemplateFoes[scene.internalName].CopyTo(created)
 			created.objectOrigin = "recycled"
 		else:
 			created = scene.duplicate()
+			add_child(created)
 			created.objectOrigin = "scene"
 	
 	created.id = nextAvailableObjectID
 	nextAvailableObjectID += 1
 	
 	allObjects.append(created)
-	add_child(created)
 	
 	created.battleInstance = self
 	RefreshCaches()

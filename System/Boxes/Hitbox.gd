@@ -74,7 +74,7 @@ func CopyTo(new):
 #Nuke this in the web build
 func DrawMe():
 	if Engine.is_editor_hint():
-		var list = NodeSelection.SelectedNodes
+		var list = NodeSelection.SelectedNodes #this is the problem line.
 		if (self in list):
 			super()
 		return
@@ -120,24 +120,23 @@ func GetData() -> HitboxData:
 	return newHolder
 
 func Init():
-	if not player.isGhost:
-		if hitSound != null:
-			hitSoundPlayer = AudioStreamPlayer.new()
-			hitSoundPlayer.stream = hitSound
-			hitSoundPlayer.volume_db = hitSoundVolume
-			add_child(hitSoundPlayer)
-		
-		if bassSound != null:
-			bassSoundPlayer = AudioStreamPlayer.new()
-			bassSoundPlayer.stream = bassSound
-			bassSoundPlayer.volume_db = bassSoundVolume
-			add_child(bassSoundPlayer)
-		
-		if whiffSound != null:
-			whiffSoundPlayer = AudioStreamPlayer.new()
-			whiffSoundPlayer.stream = whiffSound
-			whiffSoundPlayer.volume_db = whiffSoundVolume
-			add_child(whiffSoundPlayer)
+	if hitSound != null:
+		hitSoundPlayer = AudioStreamPlayer.new()
+		hitSoundPlayer.stream = hitSound
+		hitSoundPlayer.volume_db = hitSoundVolume
+		add_child(hitSoundPlayer)
+	
+	if bassSound != null:
+		bassSoundPlayer = AudioStreamPlayer.new()
+		bassSoundPlayer.stream = bassSound
+		bassSoundPlayer.volume_db = bassSoundVolume
+		add_child(bassSoundPlayer)
+	
+	if whiffSound != null:
+		whiffSoundPlayer = AudioStreamPlayer.new()
+		whiffSoundPlayer.stream = whiffSound
+		whiffSoundPlayer.volume_db = whiffSoundVolume
+		add_child(whiffSoundPlayer)
 
 func PlayHitSFX():
 	if player.isGhost:

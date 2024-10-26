@@ -141,6 +141,8 @@ func Tick():
 	if stunTicks > 0:
 		lateHitcancelTicks = -1
 		stunTicks -= 1
+		if stunTicks <= 0:
+			stateInterruptable = true
 	
 	if lateHitcancelTicks > 0 && hitstopTicks <= 0:
 		lateHitcancelTicks -= 1

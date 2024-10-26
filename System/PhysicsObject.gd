@@ -83,14 +83,10 @@ func CopyTo(new):
 	
 	new.stateMachine.host = new
 	
-	if stateMachine != null:
-		stateMachine.CopyTo(new.stateMachine)
-	else:
-		#new.stateMachine.Initialize()
-		new.stateMachine.currentState = null
-		new.stateMachine.stateIsRepeated = false
-		new.ChangeState("Default")
-		
+	if stateMachine == null:
+		stateMachine = get_node("StateMachine")
+	
+	stateMachine.CopyTo(new.stateMachine)
 
 #Motes
 #----------------------
@@ -123,6 +119,9 @@ func Tick():
 		visible = false
 		return
 	
+	if CurrentState() == null:
+		ChangeState("Default")
+	
 	PositionPhysicsUpdate()
 	stateMachine.Tick()
 	NonTimeSensitiveTick()
@@ -153,20 +152,21 @@ func PositionPhysicsUpdate():
 	if currentState != null:
 		if currentState.overrideFallSpeed:
 			usedFallspeed = currentState.fallSpeed
-	
-	if not IsOnGround():
-		velocity += Vector2.DOWN * usedFallspeed * frameLength
-	
-	if IsOnGround():
-		if currentState.useFrictionOverrides:
-			velocity *= Vector2.ONE - currentState.overrideFrictionCoefficient
+		
+		if not IsOnGround():
+			velocity += Vector2.DOWN * usedFallspeed * frameLength
+		
+		if IsOnGround():
+			if currentState.useFrictionOverrides:
+				velocity *= Vector2.ONE - currentState.overrideFrictionCoefficient
+			else:
+				velocity *= Vector2.ONE - groundFrictionCoefficient
 		else:
-			velocity *= Vector2.ONE - groundFrictionCoefficient
-	else:
-		if currentState.useFrictionOverrides:
-			velocity *= Vector2.ONE - currentState.overrideAirFrictionCoefficient
-		else:
-			velocity *= Vector2.ONE - airFrictionCoefficient
+			if currentState.useFrictionOverrides:
+				velocity *= Vector2.ONE - currentState.overrideAirFrictionCoefficient
+			else:
+				velocity *= Vector2.ONE - airFrictionCoefficient
+	
 	
 	position += velocity * frameLength
 	

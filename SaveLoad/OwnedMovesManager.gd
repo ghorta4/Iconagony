@@ -176,7 +176,6 @@ static func LoadAllMoves(loadPath : String):
 		push_warning("No save found.")
 		return
 	
-	#print(loadedList)
 	for key in loadedList: #restores encoded objects
 		var value = loadedList[key]
 		for tuple in value:
@@ -207,7 +206,9 @@ static func LoadMoveset(player : CharacterObject, loadPath : String) -> bool:
 		push_warning("Moveset load failure.")
 		return false
 	
-	var loadedList = bytes_to_var(loadedStream)
+	var loadedList = null
+	if loadedStream.size() >= 4:
+		bytes_to_var(loadedStream)
 	
 	if loadedList == null:
 		push_warning("No moveset found.")

@@ -1,5 +1,6 @@
 extends CharacterObject
 
+static  var debugList
 func Tick():
 	super()
 	
@@ -19,7 +20,7 @@ func DecideWhatMoveToUse():
 		return
 	
 	if abs(distToTarget.x) < 50:
-		if CurrentState().currentTick > 15:
+		if true || CurrentState().currentTick > 15:
 			ChangeState("Atk1")
 			return
 		

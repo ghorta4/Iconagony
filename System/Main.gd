@@ -50,6 +50,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("ui_text_completion_replace"):
 		fullMoveDisplay = !fullMoveDisplay
+		#ResetScene(true)
 	
 	if Input.is_action_just_released("ui_cancel"):
 		paused = !paused
@@ -79,8 +80,12 @@ func ResetScene(replay : bool):
 	
 	mainScene.queue_free()
 	
+	mainScene.discarded = true
+	previewScene.discarded = true
+	
 	mainScene = null
 	previewScene = null
+	
 	
 	Setup(stolenUI)
 	stolenUI.RegenerateMoveObjects()

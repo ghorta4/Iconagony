@@ -9,11 +9,20 @@ var stateIsRepeated = false
 
 func CopyTo(new):
 	new.stateIsRepeated = stateIsRepeated
-	new.currentState = new.get_node(NodePath(currentState.name))
+	
+	var myChildren = get_children()
+	var theirChildren = new.get_children()
+	var count = 0
+	for state in myChildren:
+		var theirState = theirChildren[count]
+		state.CopyTo(theirState)
+		count += 1
+	
 	if currentState == null:
 		new.currentState = null
 		return
-	currentState.CopyTo(new.currentState)
+	new.currentState = new.get_node(NodePath(currentState.name))
+	# currentState.CopyTo(new.currentState)
 
 func Initialize():
 	for state in get_children():
@@ -28,14 +37,13 @@ func Initialize():
 
 func Tick():
 	currentState.Tick()
-	
 	if currentState is CharacterState && currentState.isHurtState:
 		if host.stunTicks <= 0:
 			if host.IsOnGround():
 				host.ChangeState("Idle")
 			else:
 				host.ChangeState("IdleAir")
-			
+		
 		return
 	
 	if currentState.currentTick > currentState.duration && not currentState.endless:

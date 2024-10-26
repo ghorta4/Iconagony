@@ -85,6 +85,11 @@ func CopyTo(new):
 		
 		for value in targetsHit[key]:
 			new.targetsHit[key].append(value)
+	
+	var count = 0
+	for b in cachedHitboxes:
+		b.CopyTo(new.cachedHitboxes[count])
+		count += 1
 	#targetsHit.duplicate(true)
 
 func Tick():
@@ -126,7 +131,6 @@ func Tick():
 				if not targetsHit.keys().has(box.hitGroup):
 					box.PlayWhiffSFX()
 				targetsHit.erase(box.hitGroup)
-		
 	
 	currentTick += 1
 	currentRealTick += 1
@@ -169,18 +173,17 @@ func Init():
 	if cachedHurtboxes.size() <= 0:
 		cachedHurtboxes = null
 	
-	if not host.isGhost:
-		if SFX != null:
-			SFXPlayer = AudioStreamPlayer.new()
-			SFXPlayer.stream = SFX
-			SFXPlayer.volume_db = SFXVolume
-			add_child(SFXPlayer)
-		
-		if onEnterSFX != null:
-			EnterSFXPlayer = AudioStreamPlayer.new()
-			EnterSFXPlayer.stream = onEnterSFX
-			EnterSFXPlayer.volume_db = enterSFXVolume
-			add_child(EnterSFXPlayer)
+	if SFX != null:
+		SFXPlayer = AudioStreamPlayer.new()
+		SFXPlayer.stream = SFX
+		SFXPlayer.volume_db = SFXVolume
+		add_child(SFXPlayer)
+	
+	if onEnterSFX != null:
+		EnterSFXPlayer = AudioStreamPlayer.new()
+		EnterSFXPlayer.stream = onEnterSFX
+		EnterSFXPlayer.volume_db = enterSFXVolume
+		add_child(EnterSFXPlayer)
 	
 	initializedBefore = true
 
