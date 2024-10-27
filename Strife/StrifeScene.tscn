@@ -352,7 +352,7 @@
 [ext_resource type="PackedScene" uid="uid://b5dgvd162khlh" path="res://Strife/Particles/RiskyRainTP.tscn" id="270_u37ef"]
 [ext_resource type="AudioStream" uid="uid://co3qcs3cunwp6" path="res://Strife/SFX/ScratchStrike.wav" id="271_vx7rm"]
 [ext_resource type="AudioStream" uid="uid://k6p67yqbuigq" path="res://Strife/SFX/RRain2.wav" id="272_rxvfl"]
-[ext_resource type="Texture2D" uid="uid://ddl8fiwffcrlt" path="res://Strife/Sprites/Heads/Face/Neutral/Faces16.png" id="283_r4wjy"]
+[ext_resource type="Texture2D" uid="uid://bty3g6201f1ol" path="res://Strife/Sprites/Heads/Face/Neutral/Faces15.png" id="283_golje"]
 [ext_resource type="Script" path="res://Strife/States/BoD.gd" id="285_0si4g"]
 [ext_resource type="AudioStream" uid="uid://bfvj3ac8ww5fs" path="res://Strife/SFX/44Windup.wav" id="286_f6db8"]
 [ext_resource type="PackedScene" uid="uid://b358cai6hfbbh" path="res://Strife/Particles/Death44Spark.tscn" id="286_q0y4s"]
@@ -1969,12 +1969,12 @@ speedLimits = Vector2(1500, 1500)
 defaultHitspark = ExtResource("4_xueth")
 
 [node name="HeadTrackerBuilder" type="Node2D" parent="." index="0"]
-position = Vector2(131, 49)
+position = Vector2(126, 121)
 script = ExtResource("5_rwwmu")
-editedFile = "res://Strife/Sprites/Attacks3/setb14.png.info"
-usedSprite = "res://Strife/Sprites/Heads/Face/Neutral/Faces16.png"
-position = Vector2(131, 49)
-spriteLocation = Vector2i(3, 0)
+editedFile = "res://Strife/Sprites/Attacks2/attacks32.png.info"
+usedSprite = "res://Strife/Sprites/Heads/Face/Neutral/Faces15.png"
+position = Vector2(126, 121)
+spriteLocation = Vector2i(2, 0)
 
 [node name="Shaders" type="Node2D" parent="." index="1"]
 
@@ -2030,7 +2030,7 @@ volume_db = 6.0
 
 [node name="Sprite" parent="." index="6"]
 sprite_frames = SubResource("SpriteFrames_ilb7w")
-animation = &"BoD2"
+animation = &"GunG"
 
 [node name="GungeousArm" type="Sprite2D" parent="Sprite" index="0"]
 visible = false
@@ -2040,8 +2040,8 @@ texture = ExtResource("125_obr36")
 [node name="Head" type="Sprite2D" parent="Sprite" index="1"]
 z_index = 2
 use_parent_material = true
-position = Vector2(3, -15)
-texture = ExtResource("283_r4wjy")
+position = Vector2(-2, -7)
+texture = ExtResource("283_golje")
 
 [node name="Idle" parent="StateMachine" index="0"]
 InterruptabilityInterval = 20

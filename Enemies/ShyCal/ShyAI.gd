@@ -20,7 +20,7 @@ func DecideWhatMoveToUse():
 		return
 	
 	if abs(distToTarget.x) < 50:
-		if true || CurrentState().currentTick > 15:
+		if CurrentState().currentTick > 15:
 			ChangeState("Atk1")
 			return
 		
