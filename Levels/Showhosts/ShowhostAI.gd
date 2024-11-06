@@ -68,8 +68,7 @@ func Tick():
 	
 	RunIntroSequence()
 	while  stowedRandomFloats.size() < 500:
-		stowedRandomFloats.append(0) #=================================================
-		#stowedRandomFloats.append(battleInstance.GetRandom(-100.0, 100.0))
+		stowedRandomFloats.append(battleInstance.GetRandom(-100.0, 100.0))
 	
 	RefreshCaches()
 	
@@ -99,7 +98,7 @@ func CopyTo(new : Showhost):
 	
 	new.InstancedTemplateFoes = InstancedTemplateFoes
 	
-#	new.instantiatedFoes.clear()
+	new.instantiatedFoes.clear() #------- comment this line out if needed?
 	for foe in instantiatedFoes:
 		new.instantiatedFoes.append(new.battleInstance.FindObjectOfID(foe.id))
 	
@@ -203,7 +202,6 @@ func TickFoeSpawning():
 		foe.isGhost = isGhost
 		
 		instantiatedFoes.append(foe)
-		#need a position function here
 		
 		accruedDifficulty -= foe.difficultyWeight
 		

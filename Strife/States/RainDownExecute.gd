@@ -17,7 +17,7 @@ func OnExit():
 
 func Frame1():
 	zoomMote = CameraZoomMote.new()
-	zoomMote.SetDuration(75)
+	zoomMote.SetDuration(80)
 	zoomMote.desiredZoom = 1.3
 	zoomMote.targetedObject = host
 	zoomMote.zoomLerpSpeed = 6.0

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b25n3t47t7grw" path="res://Enemies/Icon of Conquest/Icon of Conquest.tscn" id="4_fs635"]
 [ext_resource type="PackedScene" uid="uid://ddkkk2ilnuwko" path="res://Enemies/Unlocking Runoff/UnlockingRunoff.tscn" id="5_rqhll"]
 [ext_resource type="PackedScene" uid="uid://ce70i04setjqn" path="res://Enemies/Acrophilia/Acrophilia.tscn" id="6_vwldj"]
-[ext_resource type="PackedScene" uid="uid://cl4tg6qn7wkps" path="res://Enemies/ShyCal/ShyCalendar.tscn" id="8_iwqif"]
+[ext_resource type="PackedScene" uid="uid://o4lmjx1pba6u" path="res://Enemies/Muertvo/Muertvo.tscn" id="8_iamwk"]
 
 [node name="LevelBuilder" type="Node"]
 
@@ -69,8 +69,7 @@ ingameShownSubtitle = "Enemy Overload in Blue"
 playerCharacter = ExtResource("2_kp0ni")
 background = ExtResource("4_4rx21")
 forceInfiniteTimer = true
-spawnFoesClose = true
-UsedFoes = Array[PackedScene]([ExtResource("8_iwqif")])
+UsedFoes = Array[PackedScene]([ExtResource("8_iamwk")])
 enemySpawningEnabled = true
 minDelayBetweenSpawns = 5
 maxDelayBetweenSpawns = 10
